@@ -10,13 +10,16 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    tablero.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    tablero.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    tablero.ui
 
 TRANSLATIONS += \
     Juego-OCA_es_419.ts
@@ -27,3 +30,6 @@ CONFIG += embed_translations
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Recursos.qrc
