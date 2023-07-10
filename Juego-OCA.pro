@@ -9,15 +9,20 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    casilla.cpp \
+    ficha.cpp \
     main.cpp \
     mainwindow.cpp \
     tablero.cpp
 
 HEADERS += \
+    casilla.h \
+    ficha.h \
     mainwindow.h \
     tablero.h
 
 FORMS += \
+    casilla.ui \
     mainwindow.ui \
     tablero.ui
 
