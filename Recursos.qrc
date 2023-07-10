@@ -7,5 +7,6 @@
         <file>Recursos/Imagenes/Ficha4.jpeg</file>
         <file>Recursos/Imagenes/PantallaCarga.jpeg</file>
         <file>Recursos/Imagenes/Tablero.jpeg</file>
+        <file>Recursos/Imagenes/Casilla.png</file>
     </qresource>
 </RCC>
