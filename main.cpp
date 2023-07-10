@@ -1,8 +1,9 @@
-#include "dice.h"
+#include "mainwindow.h"
+#include "tablero.h"
+
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
-#include "tablero.h"
 
 int main(int argc, char *argv[])
 {
@@ -18,7 +19,6 @@ int main(int argc, char *argv[])
         }
     }
     Tablero w;
-
     w.show();
     return a.exec();
 }
