@@ -9,8 +9,13 @@ class Ficha : public QObject
 public:
     explicit Ficha(QObject *parent = nullptr);
 
+    const QString &urlFicha() const;
+    void setUrlFicha(const QString &newUrlFicha);
+
 signals:
 
+private:
+    QString m_urlFicha;
 };
 
 #endif // FICHA_H
