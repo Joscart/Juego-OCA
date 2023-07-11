@@ -1,12 +1,22 @@
 <RCC>
     <qresource prefix="/">
         <file>Recursos/Imagenes/Casilla.jpeg</file>
+        <file>Recursos/Imagenes/Casilla.png</file>
+        <file>Recursos/Imagenes/Dice1.png</file>
+        <file>Recursos/Imagenes/Dice2.png</file>
+        <file>Recursos/Imagenes/Dice3.png</file>
+        <file>Recursos/Imagenes/Dice4.png</file>
+        <file>Recursos/Imagenes/Dice5.png</file>
+        <file>Recursos/Imagenes/Dice6.png</file>
         <file>Recursos/Imagenes/Ficha1.jpeg</file>
+        <file>Recursos/Imagenes/Ficha1.png</file>
         <file>Recursos/Imagenes/Ficha2.jpeg</file>
+        <file>Recursos/Imagenes/Ficha2.png</file>
         <file>Recursos/Imagenes/Ficha3.jpeg</file>
+        <file>Recursos/Imagenes/Ficha3.png</file>
         <file>Recursos/Imagenes/Ficha4.jpeg</file>
+        <file>Recursos/Imagenes/Ficha4.png</file>
         <file>Recursos/Imagenes/PantallaCarga.jpeg</file>
         <file>Recursos/Imagenes/Tablero.jpeg</file>
-        <file>Recursos/Imagenes/Casilla.png</file>
     </qresource>
 </RCC>
