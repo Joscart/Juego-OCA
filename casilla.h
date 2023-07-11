@@ -16,11 +16,13 @@ public:
     ~Casilla();
     void añadirFicha(Ficha *newFicha);
     void eliminarFicha(Ficha *ficha);
+    void casillaEncontrada();
 
 private:
     Ui::Casilla *ui;
     QVector<Ficha*> Fichas;
     void mostrarFicha();
+    //enum
 };
 
 #endif // CASILLA_H
