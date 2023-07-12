@@ -14,15 +14,28 @@ class Casilla : public QWidget
 public:
     explicit Casilla(QWidget *parent = nullptr);
     ~Casilla();
-    void añadirFicha(Ficha *newFicha);
+    void aniadirFicha(Ficha *newFicha);
     void eliminarFicha(Ficha *ficha);
-    void casillaEncontrada();
+    int casillaEncontrada();
+
+    enum class Tipo {
+        Normal,
+        Calavera,
+        Oca,
+        Puente
+    };
+
+    Casilla(Tipo tipo);//Constructor de casilla
+    // Esta es una función miembro constante llamada 'getTipo' que no toma argumentos.
+    // Devuelve el valor del miembro de datos 'tipo'. Como es constante, no puede modificar ningún miembro de datos de la clase.
+    Tipo getTipo() const;
 
 private:
     Ui::Casilla *ui;
     QVector<Ficha*> Fichas;
     void mostrarFicha();
-    //enum
+    Tipo tipo; //Almacena tipo de casilla
+
 };
 
 #endif // CASILLA_H
