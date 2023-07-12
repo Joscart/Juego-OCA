@@ -45,6 +45,21 @@ Casilla::Tipo Casilla::getTipo() const
     return tipo;
 }
 
+void Casilla::casilllAccion(int casilla)
+{
+if(casilla==0){
+    //pregunta
+}else if (casilla==1){
+
+}else if(casilla==2){
+
+}else if(casilla==3){
+
+}else if(casilla==4){
+
+}
+}
+
 int Casilla::casillaEncontrada()
 {
     switch (tipo) {
@@ -60,3 +75,4 @@ int Casilla::casillaEncontrada()
         return -1;  // Podría ser útil tener un valor por defecto en caso de error.
     }
 }
+
