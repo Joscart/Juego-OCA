@@ -6,7 +6,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //ui->horizontalLayout->replaceWidget(ui->Tablero,new Tablero());
+    ui->horizontalLayout->replaceWidget(ui->Tablero,new Tablero());
+    ui->stackedWidget->setCurrentIndex(1);
 }
 
 MainWindow::~MainWindow()
