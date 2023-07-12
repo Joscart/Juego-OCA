@@ -10,13 +10,21 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    preguntas.cpp \
+    preguntasdialog.cpp \
+    temario.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    preguntas.h \
+    preguntasdialog.h \
+    temario.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    preguntasdialog.ui \
+    temario.ui
 
 TRANSLATIONS += \
     Juego-OCA_es_419.ts
