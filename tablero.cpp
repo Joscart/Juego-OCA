@@ -7,11 +7,31 @@ Tablero::Tablero(QWidget *parent) :
 {
     ui->setupUi(this);
     m_dado = new Dado(this);
+    m_formulario = new Formulario(this);
     cargarWidgets();
+
+    //Sombras de letras
+    int xOffset = 2;
+    int yOffset = 1;
+
+    //Numerar los label
     for(int i=0;i<m_numeradores.size();i++){
         m_numeradores[i]->setText(QString::number(i+1));
+        auto effect = new QGraphicsDropShadowEffect(m_numeradores[i]);
+        effect->setColor(Qt::white);
+        effect->setOffset(xOffset,yOffset);
+        m_numeradores[i]->setGraphicsEffect(effect);
     }
 
+    //aplicar sombra a Label extras
+    auto effect_2 = new QGraphicsDropShadowEffect(ui->lblInicio);
+    effect_2->setColor(Qt::white);
+    effect_2->setOffset(xOffset,yOffset);
+    ui->lblInicio->setGraphicsEffect(effect_2);
+    auto effect_3 = new QGraphicsDropShadowEffect(ui->lblMeta);
+    effect_3->setColor(Qt::white);
+    effect_3->setOffset(xOffset,yOffset);
+    ui->lblMeta->setGraphicsEffect(effect_3);
 }
 
 Tablero::~Tablero()
@@ -21,6 +41,7 @@ Tablero::~Tablero()
 
 void Tablero::cargarWidgets()
 {
+    //Cargar manualmente label y casillas creados por ui
     m_numeradores.append(ui->lblCasilla_1);
     m_numeradores.append(ui->lblCasilla_2);
     m_numeradores.append(ui->lblCasilla_3);
@@ -149,6 +170,11 @@ void Tablero::cargarWidgets()
     m_casillas.append(ui->Casilla_62);
     m_casillas.append(ui->Casilla_63);
     m_casillas.append(ui->Casilla_64);
+}
+
+Formulario *Tablero::formulario() const
+{
+    return m_formulario;
 }
 
 Dado *Tablero::dado() const

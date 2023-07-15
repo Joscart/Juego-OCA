@@ -14,7 +14,8 @@ Dado::Dado(QWidget *parent) :
     QTimer *timer = new QTimer(this);
     connect(ui->btnDado,&QPushButton::clicked,[timer, this](){
         contadorAnimacion = -1;
-        timer->start(200);
+        m_resultado = -1;
+        timer->start(200);//Tiempo que dura la animacion del dado
     });
     ui->btnDado->setIcon(QPixmap(":/Recursos/Imagenes/Dice1.png"));
     ui->btnDado->setIconSize(QSize(250,250));
@@ -24,10 +25,12 @@ Dado::Dado(QWidget *parent) :
             ui->btnDado->setIcon(imagenes[contadorAnimacion]);
         }else{
             timer->stop();
-            contadorAnimacion = QRandomGenerator::global()->bounded(1,7)-1;
+            contadorAnimacion = QRandomGenerator::global()->bounded(1,7) - 1;
             ui->btnDado->setIcon(imagenes[contadorAnimacion]);
+            m_resultado = contadorAnimacion + 1;
         }
     });
+
 }
 
 Dado::~Dado()
@@ -37,6 +40,7 @@ Dado::~Dado()
 
 int Dado::resultado() const
 {
-    return contadorAnimacion+1;
+    return m_resultado;
 }
+
 

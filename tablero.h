@@ -3,7 +3,9 @@
 
 #include <QWidget>
 #include <QLabel>
+#include <QGraphicsDropShadowEffect>
 #include <dado.h>
+#include <formulario.h>
 
 namespace Ui {
 class Tablero;
@@ -19,12 +21,15 @@ public:
 
     Dado *dado() const;
 
+    Formulario *formulario() const;
+
 private:
     Ui::Tablero *ui;
     QList <QWidget*> m_casillas;
     QList <QLabel*> m_numeradores;
     void cargarWidgets();
     Dado *m_dado;
+    Formulario *m_formulario;
 };
 
 #endif // TABLERO_H

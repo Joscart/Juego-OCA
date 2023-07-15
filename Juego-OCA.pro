@@ -10,17 +10,20 @@ CONFIG += c++11
 
 SOURCES += \
     dado.cpp \
+    formulario.cpp \
     main.cpp \
     mainwindow.cpp \
     tablero.cpp
 
 HEADERS += \
     dado.h \
+    formulario.h \
     mainwindow.h \
     tablero.h
 
 FORMS += \
     dado.ui \
+    formulario.ui \
     mainwindow.ui \
     tablero.ui
 

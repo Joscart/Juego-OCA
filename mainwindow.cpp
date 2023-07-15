@@ -7,7 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     //fondo azul areado
-    ui->stackedWidget->setCurrentIndex(0);
+    //Por defult que inicie en una windows vacia
+    ui->stackedWidget->setCurrentIndex(0);//widget vacio
     m_tablero = new Tablero();
 }
 
@@ -24,9 +25,11 @@ void MainWindow::on_actionSalir_triggered()
 
 void MainWindow::on_actionNuevo_Juego_triggered()
 {
+    //Iniciar el widget del juego
     ui->stackedWidget->setCurrentIndex(1);
     ui->horizontalLayout->replaceWidget(ui->Tablero,m_tablero);
     ui->verticalLayout->replaceWidget(ui->Dado,m_tablero->dado());
+    ui->verticalLayout->replaceWidget(ui->Pregunta,m_tablero->formulario());
     setStyleSheet("QWidget#Tablero{"
                   "min-width: 880px;"
                   "min-height: 680px;"
