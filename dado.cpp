@@ -34,3 +34,9 @@ Dado::~Dado()
 {
     delete ui;
 }
+
+int Dado::resultado() const
+{
+    return contadorAnimacion+1;
+}
+

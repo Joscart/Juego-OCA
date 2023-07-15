@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1235</width>
-    <height>740</height>
+    <width>320</width>
+    <height>287</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -38,6 +38,13 @@
    <iconset resource="Recursos.qrc">
     <normaloff>:/Recursos/Imagenes/Ficha1.png</normaloff>:/Recursos/Imagenes/Ficha1.png</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow#MainWindow{
+	background-color: rgb(255, 109, 66);
+	alternate-background-color: rgb(255, 109, 66);
+	selection-background-color: rgb(255, 109, 66);
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="minimumSize">
     <size>
@@ -53,7 +60,7 @@
    </property>
    <property name="styleSheet">
     <string notr="true">QWidget#centralwidget  {
-	border-image: url(:/Recursos/Imagenes/PantallaCarga.jpeg);
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 244, 255,255), stop:1 rgba(255, 228, 255,255));
 }</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -75,22 +82,23 @@
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
            <widget class="QWidget" name="Tablero" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
-              <width>880</width>
-              <height>680</height>
+              <width>0</width>
+              <height>0</height>
              </size>
             </property>
-            <property name="maximumSize">
-             <size>
-              <width>880</width>
-              <height>680</height>
-             </size>
+            <property name="autoFillBackground">
+             <bool>false</bool>
             </property>
             <property name="styleSheet">
-             <string notr="true">QWidget#Tablero  {
-	border-image: url(:/Recursos/Imagenes/Tablero.jpeg);
-}</string>
+             <string notr="true"/>
             </property>
            </widget>
           </item>
@@ -104,7 +112,14 @@
           <item>
            <layout class="QVBoxLayout" name="verticalLayout">
             <item>
-             <widget class="QWidget" name="Pregunta" native="true"/>
+             <widget class="QWidget" name="Pregunta" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+             </widget>
             </item>
             <item>
              <widget class="Line" name="line_2">
@@ -115,23 +130,22 @@
             </item>
             <item>
              <widget class="QWidget" name="Dado" native="true">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
               <property name="minimumSize">
                <size>
-                <width>300</width>
-                <height>300</height>
+                <width>0</width>
+                <height>0</height>
                </size>
               </property>
-              <property name="maximumSize">
-               <size>
-                <width>300</width>
-                <height>300</height>
-               </size>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton#btnDado {
+	image: url(:/Recursos/Imagenes/Dice1.png);
+	alternate-background-color: rgba(0, 0, 0, 0);
+	background-color: rgba(0, 0, 0, 0);
+	selection-background-color: rgba(0, 0, 0, 0);
+}</string>
               </property>
              </widget>
             </item>
@@ -150,8 +164,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1235</width>
-     <height>22</height>
+     <width>320</width>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuJuego">

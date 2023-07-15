@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>880</width>
-    <height>700</height>
+    <height>680</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -22,7 +22,7 @@
   <property name="maximumSize">
    <size>
     <width>880</width>
-    <height>700</height>
+    <height>680</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -33,14 +33,14 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget#Tablero {
-	border-image: url(:/Recursos/Imagenes/Tablero.jpeg);
+	border-image: url(:/Recursos/Imagenes/Tablero2.png);
 }</string>
   </property>
   <widget class="QWidget" name="Casilla_1" native="true">
    <property name="geometry">
     <rect>
-     <x>800</x>
-     <y>620</y>
+     <x>130</x>
+     <y>110</y>
      <width>80</width>
      <height>80</height>
     </rect>
@@ -58,14 +58,16 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
   <widget class="QWidget" name="Casilla_2" native="true">
    <property name="geometry">
     <rect>
-     <x>790</x>
-     <y>550</y>
+     <x>80</x>
+     <y>170</y>
      <width>80</width>
      <height>80</height>
     </rect>
@@ -83,438 +85,15 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
   <widget class="QWidget" name="Casilla_3" native="true">
    <property name="geometry">
     <rect>
-     <x>780</x>
-     <y>480</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_4" native="true">
-   <property name="geometry">
-    <rect>
-     <x>770</x>
-     <y>410</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_5" native="true">
-   <property name="geometry">
-    <rect>
-     <x>760</x>
-     <y>340</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_6" native="true">
-   <property name="geometry">
-    <rect>
-     <x>750</x>
-     <y>270</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_7" native="true">
-   <property name="geometry">
-    <rect>
-     <x>740</x>
-     <y>200</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_8" native="true">
-   <property name="geometry">
-    <rect>
-     <x>720</x>
-     <y>130</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_9" native="true">
-   <property name="geometry">
-    <rect>
-     <x>680</x>
-     <y>60</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_10" native="true">
-   <property name="geometry">
-    <rect>
-     <x>610</x>
-     <y>30</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_11" native="true">
-   <property name="geometry">
-    <rect>
-     <x>540</x>
-     <y>20</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_12" native="true">
-   <property name="geometry">
-    <rect>
-     <x>470</x>
-     <y>10</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_13" native="true">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>10</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_14" native="true">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>10</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_15" native="true">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>20</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_16" native="true">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>30</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_17" native="true">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>50</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_18" native="true">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>90</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_19" native="true">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>160</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_20" native="true">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
+     <x>60</x>
      <y>230</y>
      <width>80</width>
      <height>80</height>
@@ -533,13 +112,15 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_21" native="true">
+  <widget class="QWidget" name="Casilla_4" native="true">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>50</x>
      <y>300</y>
      <width>80</width>
      <height>80</height>
@@ -558,13 +139,15 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_22" native="true">
+  <widget class="QWidget" name="Casilla_5" native="true">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>60</x>
      <y>370</y>
      <width>80</width>
      <height>80</height>
@@ -583,288 +166,15 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_23" native="true">
+  <widget class="QWidget" name="Casilla_6" native="true">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>440</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_24" native="true">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>510</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_25" native="true">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>550</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_26" native="true">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>590</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_27" native="true">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>600</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_28" native="true">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>610</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_29" native="true">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>610</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_30" native="true">
-   <property name="geometry">
-    <rect>
-     <x>470</x>
-     <y>610</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_31" native="true">
-   <property name="geometry">
-    <rect>
-     <x>540</x>
-     <y>590</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_32" native="true">
-   <property name="geometry">
-    <rect>
-     <x>610</x>
-     <y>560</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_33" native="true">
-   <property name="geometry">
-    <rect>
-     <x>660</x>
-     <y>500</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_34" native="true">
-   <property name="geometry">
-    <rect>
-     <x>680</x>
+     <x>80</x>
      <y>430</y>
      <width>80</width>
      <height>80</height>
@@ -883,14 +193,16 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_35" native="true">
+  <widget class="QWidget" name="Casilla_7" native="true">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>360</y>
+     <x>130</x>
+     <y>490</y>
      <width>80</width>
      <height>80</height>
     </rect>
@@ -908,13 +220,285 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_36" native="true">
+  <widget class="QWidget" name="Casilla_8" native="true">
    <property name="geometry">
     <rect>
-     <x>680</x>
+     <x>200</x>
+     <y>530</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_9" native="true">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>560</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_10" native="true">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>570</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_11" native="true">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>570</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_12" native="true">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>560</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_13" native="true">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>540</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_14" native="true">
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>510</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_15" native="true">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>460</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_16" native="true">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>410</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_17" native="true">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>350</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_18" native="true">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
      <y>290</y>
      <width>80</width>
      <height>80</height>
@@ -933,10 +517,660 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_19" native="true">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>230</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_20" native="true">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>170</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_21" native="true">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>120</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_22" native="true">
+   <property name="geometry">
+    <rect>
+     <x>630</x>
+     <y>81</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_23" native="true">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>60</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_24" native="true">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>50</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_25" native="true">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>60</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_26" native="true">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>80</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_27" native="true">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>110</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_28" native="true">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>160</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_29" native="true">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>210</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_30" native="true">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>270</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_31" native="true">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>330</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_32" native="true">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>390</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_33" native="true">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>441</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_34" native="true">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>480</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_35" native="true">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>500</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_36" native="true">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>511</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
   <widget class="QWidget" name="Casilla_37" native="true">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>510</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_38" native="true">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>490</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_39" native="true">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>450</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_40" native="true">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>400</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_41" native="true">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>340</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_42" native="true">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>280</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_43" native="true">
    <property name="geometry">
     <rect>
      <x>660</x>
@@ -958,164 +1192,16 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_38" native="true">
-   <property name="geometry">
-    <rect>
-     <x>640</x>
-     <y>150</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_39" native="true">
-   <property name="geometry">
-    <rect>
-     <x>570</x>
-     <y>110</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_40" native="true">
-   <property name="geometry">
-    <rect>
-     <x>500</x>
-     <y>90</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_41" native="true">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>80</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_42" native="true">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>80</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_43" native="true">
-   <property name="geometry">
-    <rect>
-     <x>290</x>
-     <y>90</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
   <widget class="QWidget" name="Casilla_44" native="true">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>100</y>
+     <x>620</x>
+     <y>170</y>
      <width>80</width>
      <height>80</height>
     </rect>
@@ -1133,13 +1219,15 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
   <widget class="QWidget" name="Casilla_45" native="true">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>560</x>
      <y>130</y>
      <width>80</width>
      <height>80</height>
@@ -1158,14 +1246,16 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
   <widget class="QWidget" name="Casilla_46" native="true">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>200</y>
+     <x>490</x>
+     <y>110</y>
      <width>80</width>
      <height>80</height>
     </rect>
@@ -1183,14 +1273,16 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
   <widget class="QWidget" name="Casilla_47" native="true">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>270</y>
+     <x>410</x>
+     <y>120</y>
      <width>80</width>
      <height>80</height>
     </rect>
@@ -1208,14 +1300,16 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
   <widget class="QWidget" name="Casilla_48" native="true">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>340</y>
+     <x>340</x>
+     <y>140</y>
      <width>80</width>
      <height>80</height>
     </rect>
@@ -1233,14 +1327,16 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
   <widget class="QWidget" name="Casilla_49" native="true">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>410</y>
+     <x>280</x>
+     <y>180</y>
      <width>80</width>
      <height>80</height>
     </rect>
@@ -1258,14 +1354,16 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
   <widget class="QWidget" name="Casilla_50" native="true">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>480</y>
+     <x>230</x>
+     <y>230</y>
      <width>80</width>
      <height>80</height>
     </rect>
@@ -1283,14 +1381,16 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
   <widget class="QWidget" name="Casilla_51" native="true">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>520</y>
+     <x>210</x>
+     <y>290</y>
      <width>80</width>
      <height>80</height>
     </rect>
@@ -1308,163 +1408,15 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
   <widget class="QWidget" name="Casilla_52" native="true">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>530</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_53" native="true">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>540</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_54" native="true">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>540</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_55" native="true">
-   <property name="geometry">
-    <rect>
-     <x>500</x>
-     <y>520</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_56" native="true">
-   <property name="geometry">
-    <rect>
-     <x>570</x>
-     <y>490</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_57" native="true">
-   <property name="geometry">
-    <rect>
-     <x>600</x>
-     <y>420</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_58" native="true">
-   <property name="geometry">
-    <rect>
-     <x>610</x>
+     <x>210</x>
      <y>350</y>
      <width>80</width>
      <height>80</height>
@@ -1483,113 +1435,15 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_59" native="true">
+  <widget class="QWidget" name="Casilla_53" native="true">
    <property name="geometry">
     <rect>
-     <x>600</x>
-     <y>280</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_60" native="true">
-   <property name="geometry">
-    <rect>
-     <x>530</x>
-     <y>320</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_61" native="true">
-   <property name="geometry">
-    <rect>
-     <x>510</x>
-     <y>390</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_62" native="true">
-   <property name="geometry">
-    <rect>
-     <x>440</x>
-     <y>420</y>
-     <width>80</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>80</width>
-     <height>80</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="Casilla_63" native="true">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
+     <x>260</x>
      <y>400</y>
      <width>80</width>
      <height>80</height>
@@ -1608,14 +1462,16 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_64" native="true">
+  <widget class="QWidget" name="Casilla_54" native="true">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>330</y>
+     <x>330</x>
+     <y>430</y>
      <width>80</width>
      <height>80</height>
     </rect>
@@ -1633,22 +1489,293 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/Recursos/Imagenes/Casilla.png);</string>
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_55" native="true">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>440</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_56" native="true">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>430</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_57" native="true">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>390</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_58" native="true">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>340</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_59" native="true">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>270</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_60" native="true">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>210</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_61" native="true">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>170</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_62" native="true">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>190</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_63" native="true">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>250</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="Casilla_64" native="true">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>310</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border-image: url(:/Recursos/Imagenes/Casilla4.png);
+}</string>
    </property>
   </widget>
   <widget class="QLabel" name="lblMeta">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>360</y>
-     <width>91</width>
-     <height>18</height>
+     <x>410</x>
+     <y>330</y>
+     <width>61</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <pointsize>16</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -1662,16 +1789,15 @@
   <widget class="QLabel" name="lblInicio">
    <property name="geometry">
     <rect>
-     <x>730</x>
-     <y>670</y>
-     <width>91</width>
-     <height>18</height>
+     <x>190</x>
+     <y>90</y>
+     <width>74</width>
+     <height>29</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <pointsize>18</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -1685,10 +1811,10 @@
   <widget class="QLabel" name="lblCasilla_1">
    <property name="geometry">
     <rect>
-     <x>810</x>
-     <y>630</y>
-     <width>81</width>
-     <height>20</height>
+     <x>140</x>
+     <y>130</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -1709,10 +1835,10 @@
   <widget class="QLabel" name="lblCasilla_2">
    <property name="geometry">
     <rect>
-     <x>800</x>
-     <y>560</y>
-     <width>101</width>
-     <height>20</height>
+     <x>90</x>
+     <y>190</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -1733,10 +1859,10 @@
   <widget class="QLabel" name="lblCasilla_3">
    <property name="geometry">
     <rect>
-     <x>790</x>
-     <y>490</y>
-     <width>101</width>
-     <height>20</height>
+     <x>70</x>
+     <y>250</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -1757,10 +1883,10 @@
   <widget class="QLabel" name="lblCasilla_4">
    <property name="geometry">
     <rect>
-     <x>780</x>
-     <y>420</y>
-     <width>101</width>
-     <height>20</height>
+     <x>60</x>
+     <y>320</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -1781,10 +1907,10 @@
   <widget class="QLabel" name="lblCasilla_5">
    <property name="geometry">
     <rect>
-     <x>770</x>
-     <y>350</y>
-     <width>101</width>
-     <height>20</height>
+     <x>70</x>
+     <y>390</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -1805,10 +1931,10 @@
   <widget class="QLabel" name="lblCasilla_6">
    <property name="geometry">
     <rect>
-     <x>760</x>
-     <y>280</y>
-     <width>101</width>
-     <height>20</height>
+     <x>90</x>
+     <y>450</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -1829,10 +1955,10 @@
   <widget class="QLabel" name="lblCasilla_7">
    <property name="geometry">
     <rect>
-     <x>750</x>
-     <y>210</y>
-     <width>101</width>
-     <height>20</height>
+     <x>140</x>
+     <y>510</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -1853,10 +1979,10 @@
   <widget class="QLabel" name="lblCasilla_8">
    <property name="geometry">
     <rect>
-     <x>730</x>
-     <y>140</y>
-     <width>101</width>
-     <height>20</height>
+     <x>210</x>
+     <y>550</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -1877,10 +2003,10 @@
   <widget class="QLabel" name="lblCasilla_9">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>70</y>
-     <width>101</width>
-     <height>20</height>
+     <x>280</x>
+     <y>580</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -1901,10 +2027,10 @@
   <widget class="QLabel" name="lblCasilla_10">
    <property name="geometry">
     <rect>
-     <x>620</x>
-     <y>40</y>
-     <width>101</width>
-     <height>20</height>
+     <x>360</x>
+     <y>590</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -1925,10 +2051,10 @@
   <widget class="QLabel" name="lblCasilla_11">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>30</y>
-     <width>101</width>
-     <height>20</height>
+     <x>440</x>
+     <y>590</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -1949,10 +2075,10 @@
   <widget class="QLabel" name="lblCasilla_12">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>20</y>
-     <width>101</width>
-     <height>21</height>
+     <x>510</x>
+     <y>580</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -1973,10 +2099,10 @@
   <widget class="QLabel" name="lblCasilla_13">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>20</y>
-     <width>101</width>
-     <height>21</height>
+     <x>580</x>
+     <y>560</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -1997,10 +2123,10 @@
   <widget class="QLabel" name="lblCasilla_14">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>20</y>
-     <width>101</width>
-     <height>21</height>
+     <x>650</x>
+     <y>530</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2021,10 +2147,10 @@
   <widget class="QLabel" name="lblCasilla_15">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>30</y>
-     <width>101</width>
-     <height>16</height>
+     <x>700</x>
+     <y>480</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2045,10 +2171,10 @@
   <widget class="QLabel" name="lblCasilla_16">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>40</y>
-     <width>101</width>
-     <height>21</height>
+     <x>740</x>
+     <y>430</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2069,10 +2195,10 @@
   <widget class="QLabel" name="lblCasilla_17">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>60</y>
-     <width>101</width>
-     <height>21</height>
+     <x>760</x>
+     <y>370</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2093,10 +2219,10 @@
   <widget class="QLabel" name="lblCasilla_18">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>100</y>
-     <width>101</width>
-     <height>16</height>
+     <x>770</x>
+     <y>310</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2117,10 +2243,10 @@
   <widget class="QLabel" name="lblCasilla_19">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>170</y>
-     <width>101</width>
-     <height>20</height>
+     <x>760</x>
+     <y>250</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2141,10 +2267,10 @@
   <widget class="QLabel" name="lblCasilla_20">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>240</y>
-     <width>101</width>
-     <height>20</height>
+     <x>740</x>
+     <y>190</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2165,10 +2291,10 @@
   <widget class="QLabel" name="lblCasilla_21">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>310</y>
-     <width>101</width>
-     <height>20</height>
+     <x>700</x>
+     <y>140</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2189,10 +2315,10 @@
   <widget class="QLabel" name="lblCasilla_22">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>379</y>
-     <width>101</width>
-     <height>21</height>
+     <x>640</x>
+     <y>100</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2213,10 +2339,10 @@
   <widget class="QLabel" name="lblCasilla_23">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>450</y>
-     <width>101</width>
-     <height>21</height>
+     <x>570</x>
+     <y>80</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2237,10 +2363,10 @@
   <widget class="QLabel" name="lblCasilla_24">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>520</y>
-     <width>101</width>
-     <height>20</height>
+     <x>490</x>
+     <y>70</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2261,10 +2387,10 @@
   <widget class="QLabel" name="lblCasilla_25">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>560</y>
-     <width>101</width>
-     <height>20</height>
+     <x>410</x>
+     <y>80</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2285,10 +2411,10 @@
   <widget class="QLabel" name="lblCasilla_26">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>600</y>
-     <width>101</width>
-     <height>16</height>
+     <x>330</x>
+     <y>100</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2309,10 +2435,10 @@
   <widget class="QLabel" name="lblCasilla_27">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>610</y>
-     <width>101</width>
-     <height>21</height>
+     <x>260</x>
+     <y>130</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2333,10 +2459,10 @@
   <widget class="QLabel" name="lblCasilla_28">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>620</y>
-     <width>101</width>
-     <height>21</height>
+     <x>200</x>
+     <y>180</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2357,10 +2483,10 @@
   <widget class="QLabel" name="lblCasilla_29">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>620</y>
-     <width>101</width>
-     <height>20</height>
+     <x>160</x>
+     <y>230</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2381,10 +2507,10 @@
   <widget class="QLabel" name="lblCasilla_30">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>620</y>
-     <width>101</width>
-     <height>20</height>
+     <x>140</x>
+     <y>290</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2405,10 +2531,10 @@
   <widget class="QLabel" name="lblCasilla_31">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>599</y>
-     <width>101</width>
-     <height>21</height>
+     <x>140</x>
+     <y>349</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2429,10 +2555,10 @@
   <widget class="QLabel" name="lblCasilla_32">
    <property name="geometry">
     <rect>
-     <x>620</x>
-     <y>569</y>
-     <width>101</width>
-     <height>21</height>
+     <x>150</x>
+     <y>409</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2453,10 +2579,10 @@
   <widget class="QLabel" name="lblCasilla_33">
    <property name="geometry">
     <rect>
-     <x>670</x>
-     <y>509</y>
-     <width>101</width>
-     <height>16</height>
+     <x>190</x>
+     <y>460</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2477,10 +2603,10 @@
   <widget class="QLabel" name="lblCasilla_34">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>439</y>
-     <width>101</width>
-     <height>21</height>
+     <x>250</x>
+     <y>499</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2501,10 +2627,10 @@
   <widget class="QLabel" name="lblCasilla_35">
    <property name="geometry">
     <rect>
-     <x>700</x>
-     <y>370</y>
-     <width>101</width>
-     <height>21</height>
+     <x>320</x>
+     <y>520</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2525,10 +2651,10 @@
   <widget class="QLabel" name="lblCasilla_36">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>299</y>
-     <width>101</width>
-     <height>21</height>
+     <x>400</x>
+     <y>530</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2549,10 +2675,10 @@
   <widget class="QLabel" name="lblCasilla_37">
    <property name="geometry">
     <rect>
-     <x>670</x>
-     <y>230</y>
-     <width>101</width>
-     <height>21</height>
+     <x>480</x>
+     <y>530</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2573,10 +2699,10 @@
   <widget class="QLabel" name="lblCasilla_38">
    <property name="geometry">
     <rect>
-     <x>650</x>
-     <y>160</y>
-     <width>101</width>
-     <height>21</height>
+     <x>550</x>
+     <y>510</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2597,10 +2723,10 @@
   <widget class="QLabel" name="lblCasilla_39">
    <property name="geometry">
     <rect>
-     <x>580</x>
-     <y>120</y>
-     <width>101</width>
-     <height>20</height>
+     <x>610</x>
+     <y>470</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2621,10 +2747,10 @@
   <widget class="QLabel" name="lblCasilla_40">
    <property name="geometry">
     <rect>
-     <x>510</x>
-     <y>100</y>
-     <width>101</width>
-     <height>20</height>
+     <x>660</x>
+     <y>420</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2645,10 +2771,10 @@
   <widget class="QLabel" name="lblCasilla_41">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>90</y>
-     <width>101</width>
-     <height>20</height>
+     <x>680</x>
+     <y>360</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2669,10 +2795,10 @@
   <widget class="QLabel" name="lblCasilla_42">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>90</y>
-     <width>101</width>
-     <height>20</height>
+     <x>690</x>
+     <y>300</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2693,10 +2819,10 @@
   <widget class="QLabel" name="lblCasilla_43">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>100</y>
-     <width>101</width>
-     <height>20</height>
+     <x>670</x>
+     <y>240</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2717,10 +2843,10 @@
   <widget class="QLabel" name="lblCasilla_44">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>110</y>
-     <width>101</width>
-     <height>20</height>
+     <x>630</x>
+     <y>190</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2741,10 +2867,10 @@
   <widget class="QLabel" name="lblCasilla_45">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>140</y>
-     <width>101</width>
-     <height>21</height>
+     <x>570</x>
+     <y>150</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2765,10 +2891,10 @@
   <widget class="QLabel" name="lblCasilla_46">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>210</y>
-     <width>101</width>
-     <height>20</height>
+     <x>500</x>
+     <y>130</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2789,10 +2915,10 @@
   <widget class="QLabel" name="lblCasilla_47">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>280</y>
-     <width>101</width>
-     <height>20</height>
+     <x>420</x>
+     <y>140</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2813,10 +2939,10 @@
   <widget class="QLabel" name="lblCasilla_48">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>350</y>
-     <width>101</width>
-     <height>20</height>
+     <x>350</x>
+     <y>160</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2837,10 +2963,10 @@
   <widget class="QLabel" name="lblCasilla_49">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>420</y>
-     <width>101</width>
-     <height>20</height>
+     <x>290</x>
+     <y>200</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2861,10 +2987,10 @@
   <widget class="QLabel" name="lblCasilla_50">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>490</y>
-     <width>101</width>
-     <height>20</height>
+     <x>240</x>
+     <y>250</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2885,10 +3011,10 @@
   <widget class="QLabel" name="lblCasilla_51">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>530</y>
-     <width>101</width>
-     <height>21</height>
+     <x>220</x>
+     <y>310</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2909,10 +3035,10 @@
   <widget class="QLabel" name="lblCasilla_52">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>540</y>
-     <width>101</width>
-     <height>20</height>
+     <x>220</x>
+     <y>370</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2933,10 +3059,10 @@
   <widget class="QLabel" name="lblCasilla_53">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>550</y>
-     <width>101</width>
-     <height>20</height>
+     <x>270</x>
+     <y>420</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2957,10 +3083,10 @@
   <widget class="QLabel" name="lblCasilla_54">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>550</y>
-     <width>101</width>
-     <height>20</height>
+     <x>340</x>
+     <y>450</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -2981,10 +3107,10 @@
   <widget class="QLabel" name="lblCasilla_55">
    <property name="geometry">
     <rect>
-     <x>510</x>
-     <y>530</y>
-     <width>101</width>
-     <height>21</height>
+     <x>420</x>
+     <y>460</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -3005,10 +3131,10 @@
   <widget class="QLabel" name="lblCasilla_56">
    <property name="geometry">
     <rect>
-     <x>580</x>
-     <y>500</y>
-     <width>101</width>
-     <height>20</height>
+     <x>500</x>
+     <y>450</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -3029,10 +3155,10 @@
   <widget class="QLabel" name="lblCasilla_57">
    <property name="geometry">
     <rect>
-     <x>610</x>
-     <y>430</y>
-     <width>101</width>
-     <height>20</height>
+     <x>560</x>
+     <y>410</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -3053,10 +3179,10 @@
   <widget class="QLabel" name="lblCasilla_58">
    <property name="geometry">
     <rect>
-     <x>620</x>
+     <x>600</x>
      <y>360</y>
-     <width>101</width>
-     <height>20</height>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -3077,10 +3203,10 @@
   <widget class="QLabel" name="lblCasilla_59">
    <property name="geometry">
     <rect>
-     <x>610</x>
+     <x>590</x>
      <y>290</y>
-     <width>101</width>
-     <height>20</height>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -3101,10 +3227,10 @@
   <widget class="QLabel" name="lblCasilla_60">
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>330</y>
-     <width>101</width>
-     <height>21</height>
+     <x>570</x>
+     <y>230</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -3125,10 +3251,10 @@
   <widget class="QLabel" name="lblCasilla_61">
    <property name="geometry">
     <rect>
-     <x>520</x>
-     <y>400</y>
-     <width>101</width>
-     <height>20</height>
+     <x>510</x>
+     <y>190</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -3149,10 +3275,10 @@
   <widget class="QLabel" name="lblCasilla_62">
    <property name="geometry">
     <rect>
-     <x>450</x>
-     <y>430</y>
-     <width>101</width>
-     <height>21</height>
+     <x>440</x>
+     <y>210</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -3173,10 +3299,10 @@
   <widget class="QLabel" name="lblCasilla_63">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>410</y>
-     <width>101</width>
-     <height>20</height>
+     <x>420</x>
+     <y>270</y>
+     <width>31</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
