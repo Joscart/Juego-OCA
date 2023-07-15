@@ -6,6 +6,7 @@
 #include <QGraphicsDropShadowEffect>
 #include <dado.h>
 #include <formulario.h>
+#include <casilla.h>
 
 namespace Ui {
 class Tablero;

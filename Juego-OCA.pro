@@ -9,19 +9,26 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    casilla.cpp \
     dado.cpp \
+    ficha.cpp \
     formulario.cpp \
     main.cpp \
     mainwindow.cpp \
+    pregunta.cpp \
     tablero.cpp
 
 HEADERS += \
+    casilla.h \
     dado.h \
+    ficha.h \
     formulario.h \
     mainwindow.h \
+    pregunta.h \
     tablero.h
 
 FORMS += \
+    casilla.ui \
     dado.ui \
     formulario.ui \
     mainwindow.ui \
