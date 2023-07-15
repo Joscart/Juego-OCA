@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    //fondo azul areado
     ui->stackedWidget->setCurrentIndex(0);
     m_tablero = new Tablero();
 }

@@ -39,11 +39,7 @@
     <normaloff>:/Recursos/Imagenes/Ficha1.png</normaloff>:/Recursos/Imagenes/Ficha1.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">QMainWindow#MainWindow{
-	background-color: rgb(255, 109, 66);
-	alternate-background-color: rgb(255, 109, 66);
-	selection-background-color: rgb(255, 109, 66);
-}</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="minimumSize">
@@ -60,7 +56,7 @@
    </property>
    <property name="styleSheet">
     <string notr="true">QWidget#centralwidget  {
-	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 244, 255,255), stop:1 rgba(255, 228, 255,255));
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgb(219,228,223), stop:1 rgb(184,202,212));
 }</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
