@@ -20,7 +20,8 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget#Casilla{border-image: url(:/Recursos/Imagenes/Casilla.jpeg);}
+   <string notr="true">
+color: rgb(0, 0, 0);
 </string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -72,7 +73,7 @@
           </size>
          </property>
          <property name="text">
-          <string/>
+          <string>c</string>
          </property>
         </widget>
        </item>
@@ -91,7 +92,7 @@
           </size>
          </property>
          <property name="text">
-          <string/>
+          <string>a</string>
          </property>
         </widget>
        </item>
@@ -110,7 +111,7 @@
           </size>
          </property>
          <property name="text">
-          <string/>
+          <string>d</string>
          </property>
         </widget>
        </item>
@@ -129,7 +130,7 @@
           </size>
          </property>
          <property name="text">
-          <string/>
+          <string>b</string>
          </property>
         </widget>
        </item>

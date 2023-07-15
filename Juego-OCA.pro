@@ -10,19 +10,27 @@ CONFIG += c++11
 
 SOURCES += \
     casilla.cpp \
+    dado.cpp \
     ficha.cpp \
+    formulario.cpp \
     main.cpp \
     mainwindow.cpp \
+    pregunta.cpp \
     tablero.cpp
 
 HEADERS += \
     casilla.h \
+    dado.h \
     ficha.h \
+    formulario.h \
     mainwindow.h \
+    pregunta.h \
     tablero.h
 
 FORMS += \
     casilla.ui \
+    dado.ui \
+    formulario.ui \
     mainwindow.ui \
     tablero.ui
 

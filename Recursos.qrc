@@ -1,11 +1,37 @@
 <RCC>
     <qresource prefix="/">
         <file>Recursos/Imagenes/Casilla.jpeg</file>
+        <file>Recursos/Imagenes/Casilla.png</file>
+        <file>Recursos/Imagenes/Dice1.png</file>
+        <file>Recursos/Imagenes/Dice2.png</file>
+        <file>Recursos/Imagenes/Dice3.png</file>
+        <file>Recursos/Imagenes/Dice4.png</file>
+        <file>Recursos/Imagenes/Dice5.png</file>
+        <file>Recursos/Imagenes/Dice6.png</file>
         <file>Recursos/Imagenes/Ficha1.jpeg</file>
+        <file>Recursos/Imagenes/Ficha1.png</file>
         <file>Recursos/Imagenes/Ficha2.jpeg</file>
+        <file>Recursos/Imagenes/Ficha2.png</file>
         <file>Recursos/Imagenes/Ficha3.jpeg</file>
+        <file>Recursos/Imagenes/Ficha3.png</file>
         <file>Recursos/Imagenes/Ficha4.jpeg</file>
+        <file>Recursos/Imagenes/Ficha4.png</file>
         <file>Recursos/Imagenes/PantallaCarga.jpeg</file>
         <file>Recursos/Imagenes/Tablero.jpeg</file>
+        <file>Recursos/Imagenes/Casilla2.jpeg</file>
+        <file>Recursos/Imagenes/Casilla2.png</file>
+        <file>Recursos/Imagenes/Casilla3.jpeg</file>
+        <file>Recursos/Imagenes/Casilla3.png</file>
+        <file>Recursos/Imagenes/Tablero2.jpeg</file>
+        <file>Recursos/Imagenes/Tablero2.png</file>
+        <file>Recursos/Imagenes/Tablero3.jpeg</file>
+        <file>Recursos/Imagenes/Tablero4.jpeg</file>
+        <file>Recursos/Imagenes/Tablero4.png</file>
+        <file>Recursos/Imagenes/Tablero5.jpeg</file>
+        <file>Recursos/Imagenes/Tablero5.png</file>
+        <file>Recursos/Imagenes/Casilla4.jpeg</file>
+        <file>Recursos/Imagenes/Casilla4.png</file>
+        <file>Recursos/Imagenes/Portal.jpeg</file>
+        <file>Recursos/Imagenes/Portal.png</file>
     </qresource>
 </RCC>
