@@ -26,7 +26,7 @@ void MainWindow::on_actionSalir_triggered()
 void MainWindow::on_actionNuevo_Juego_triggered()
 {
     //Iniciar el widget del juego
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(2);
     ui->horizontalLayout->replaceWidget(ui->Tablero,m_tablero);
     ui->verticalLayout->replaceWidget(ui->Dado,m_tablero->dado());
     ui->verticalLayout->replaceWidget(ui->Pregunta,m_tablero->formulario());
@@ -43,5 +43,12 @@ void MainWindow::on_actionNuevo_Juego_triggered()
                   "min-width: 300px;"
                   "min-height: 340px;"
                   "}");
+}
+
+
+void MainWindow::on_btnEasterEgg_clicked()
+{
+    ui->lblEasterEgg->setText("Disfruta el show :D");
+    QDesktopServices::openUrl(QUrl("https://www.youtube.com/watch?v=7YZCUpnaTfg&ab_channel=DontSubscribeToMe"));
 }
 

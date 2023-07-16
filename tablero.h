@@ -7,6 +7,7 @@
 #include <dado.h>
 #include <formulario.h>
 #include <casilla.h>
+#include <ficha.h>
 
 namespace Ui {
 class Tablero;
@@ -24,10 +25,13 @@ public:
 
     Formulario *formulario() const;
 
+    void addFicha(Ficha *newFicha);
+
 private:
     Ui::Tablero *ui;
     QList <QWidget*> m_casillas;
     QList <QLabel*> m_numeradores;
+    QList <Ficha*> m_jugadores;
     void cargarWidgets();
     Dado *m_dado;
     Formulario *m_formulario;

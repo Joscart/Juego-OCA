@@ -41,7 +41,7 @@
 	border-image: url(:/Recursos/Imagenes/Tablero2.png);
 }</string>
   </property>
-  <widget class="QWidget" name="Casilla_1" native="true">
+  <widget class="Casilla" name="Casilla_1" native="true">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -68,7 +68,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_2" native="true">
+  <widget class="Casilla" name="Casilla_2" native="true">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -95,7 +95,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_3" native="true">
+  <widget class="Casilla" name="Casilla_3" native="true">
    <property name="geometry">
     <rect>
      <x>60</x>
@@ -122,7 +122,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_4" native="true">
+  <widget class="Casilla" name="Casilla_4" native="true">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -149,7 +149,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_5" native="true">
+  <widget class="Casilla" name="Casilla_5" native="true">
    <property name="geometry">
     <rect>
      <x>60</x>
@@ -176,7 +176,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_6" native="true">
+  <widget class="Casilla" name="Casilla_6" native="true">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -203,7 +203,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_7" native="true">
+  <widget class="Casilla" name="Casilla_7" native="true">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -230,7 +230,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_8" native="true">
+  <widget class="Casilla" name="Casilla_8" native="true">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -257,7 +257,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_9" native="true">
+  <widget class="Casilla" name="Casilla_9" native="true">
    <property name="geometry">
     <rect>
      <x>270</x>
@@ -284,7 +284,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_10" native="true">
+  <widget class="Casilla" name="Casilla_10" native="true">
    <property name="geometry">
     <rect>
      <x>350</x>
@@ -311,7 +311,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_11" native="true">
+  <widget class="Casilla" name="Casilla_11" native="true">
    <property name="geometry">
     <rect>
      <x>430</x>
@@ -338,7 +338,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_12" native="true">
+  <widget class="Casilla" name="Casilla_12" native="true">
    <property name="geometry">
     <rect>
      <x>500</x>
@@ -365,7 +365,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_13" native="true">
+  <widget class="Casilla" name="Casilla_13" native="true">
    <property name="geometry">
     <rect>
      <x>570</x>
@@ -392,7 +392,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_14" native="true">
+  <widget class="Casilla" name="Casilla_14" native="true">
    <property name="geometry">
     <rect>
      <x>640</x>
@@ -419,7 +419,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_15" native="true">
+  <widget class="Casilla" name="Casilla_15" native="true">
    <property name="geometry">
     <rect>
      <x>690</x>
@@ -446,7 +446,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_16" native="true">
+  <widget class="Casilla" name="Casilla_16" native="true">
    <property name="geometry">
     <rect>
      <x>730</x>
@@ -473,7 +473,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_17" native="true">
+  <widget class="Casilla" name="Casilla_17" native="true">
    <property name="geometry">
     <rect>
      <x>750</x>
@@ -500,7 +500,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_18" native="true">
+  <widget class="Casilla" name="Casilla_18" native="true">
    <property name="geometry">
     <rect>
      <x>760</x>
@@ -527,7 +527,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_19" native="true">
+  <widget class="Casilla" name="Casilla_19" native="true">
    <property name="geometry">
     <rect>
      <x>750</x>
@@ -554,7 +554,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_20" native="true">
+  <widget class="Casilla" name="Casilla_20" native="true">
    <property name="geometry">
     <rect>
      <x>730</x>
@@ -581,7 +581,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_21" native="true">
+  <widget class="Casilla" name="Casilla_21" native="true">
    <property name="geometry">
     <rect>
      <x>690</x>
@@ -608,7 +608,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_22" native="true">
+  <widget class="Casilla" name="Casilla_22" native="true">
    <property name="geometry">
     <rect>
      <x>630</x>
@@ -635,7 +635,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_23" native="true">
+  <widget class="Casilla" name="Casilla_23" native="true">
    <property name="geometry">
     <rect>
      <x>560</x>
@@ -662,7 +662,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_24" native="true">
+  <widget class="Casilla" name="Casilla_24" native="true">
    <property name="geometry">
     <rect>
      <x>480</x>
@@ -689,7 +689,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_25" native="true">
+  <widget class="Casilla" name="Casilla_25" native="true">
    <property name="geometry">
     <rect>
      <x>400</x>
@@ -716,7 +716,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_26" native="true">
+  <widget class="Casilla" name="Casilla_26" native="true">
    <property name="geometry">
     <rect>
      <x>320</x>
@@ -743,7 +743,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_27" native="true">
+  <widget class="Casilla" name="Casilla_27" native="true">
    <property name="geometry">
     <rect>
      <x>250</x>
@@ -770,7 +770,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_28" native="true">
+  <widget class="Casilla" name="Casilla_28" native="true">
    <property name="geometry">
     <rect>
      <x>190</x>
@@ -797,7 +797,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_29" native="true">
+  <widget class="Casilla" name="Casilla_29" native="true">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -824,7 +824,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_30" native="true">
+  <widget class="Casilla" name="Casilla_30" native="true">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -851,7 +851,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_31" native="true">
+  <widget class="Casilla" name="Casilla_31" native="true">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -878,7 +878,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_32" native="true">
+  <widget class="Casilla" name="Casilla_32" native="true">
    <property name="geometry">
     <rect>
      <x>140</x>
@@ -905,7 +905,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_33" native="true">
+  <widget class="Casilla" name="Casilla_33" native="true">
    <property name="geometry">
     <rect>
      <x>180</x>
@@ -932,7 +932,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_34" native="true">
+  <widget class="Casilla" name="Casilla_34" native="true">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -959,7 +959,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_35" native="true">
+  <widget class="Casilla" name="Casilla_35" native="true">
    <property name="geometry">
     <rect>
      <x>310</x>
@@ -986,7 +986,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_36" native="true">
+  <widget class="Casilla" name="Casilla_36" native="true">
    <property name="geometry">
     <rect>
      <x>390</x>
@@ -1013,7 +1013,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_37" native="true">
+  <widget class="Casilla" name="Casilla_37" native="true">
    <property name="geometry">
     <rect>
      <x>470</x>
@@ -1040,7 +1040,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_38" native="true">
+  <widget class="Casilla" name="Casilla_38" native="true">
    <property name="geometry">
     <rect>
      <x>540</x>
@@ -1067,7 +1067,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_39" native="true">
+  <widget class="Casilla" name="Casilla_39" native="true">
    <property name="geometry">
     <rect>
      <x>600</x>
@@ -1094,7 +1094,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_40" native="true">
+  <widget class="Casilla" name="Casilla_40" native="true">
    <property name="geometry">
     <rect>
      <x>650</x>
@@ -1121,7 +1121,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_41" native="true">
+  <widget class="Casilla" name="Casilla_41" native="true">
    <property name="geometry">
     <rect>
      <x>670</x>
@@ -1148,7 +1148,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_42" native="true">
+  <widget class="Casilla" name="Casilla_42" native="true">
    <property name="geometry">
     <rect>
      <x>680</x>
@@ -1175,7 +1175,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_43" native="true">
+  <widget class="Casilla" name="Casilla_43" native="true">
    <property name="geometry">
     <rect>
      <x>660</x>
@@ -1202,7 +1202,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_44" native="true">
+  <widget class="Casilla" name="Casilla_44" native="true">
    <property name="geometry">
     <rect>
      <x>620</x>
@@ -1229,7 +1229,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_45" native="true">
+  <widget class="Casilla" name="Casilla_45" native="true">
    <property name="geometry">
     <rect>
      <x>560</x>
@@ -1256,7 +1256,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_46" native="true">
+  <widget class="Casilla" name="Casilla_46" native="true">
    <property name="geometry">
     <rect>
      <x>490</x>
@@ -1283,7 +1283,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_47" native="true">
+  <widget class="Casilla" name="Casilla_47" native="true">
    <property name="geometry">
     <rect>
      <x>410</x>
@@ -1310,7 +1310,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_48" native="true">
+  <widget class="Casilla" name="Casilla_48" native="true">
    <property name="geometry">
     <rect>
      <x>340</x>
@@ -1337,7 +1337,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_49" native="true">
+  <widget class="Casilla" name="Casilla_49" native="true">
    <property name="geometry">
     <rect>
      <x>280</x>
@@ -1364,7 +1364,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_50" native="true">
+  <widget class="Casilla" name="Casilla_50" native="true">
    <property name="geometry">
     <rect>
      <x>230</x>
@@ -1391,7 +1391,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_51" native="true">
+  <widget class="Casilla" name="Casilla_51" native="true">
    <property name="geometry">
     <rect>
      <x>210</x>
@@ -1418,7 +1418,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_52" native="true">
+  <widget class="Casilla" name="Casilla_52" native="true">
    <property name="geometry">
     <rect>
      <x>210</x>
@@ -1445,7 +1445,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_53" native="true">
+  <widget class="Casilla" name="Casilla_53" native="true">
    <property name="geometry">
     <rect>
      <x>260</x>
@@ -1472,7 +1472,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_54" native="true">
+  <widget class="Casilla" name="Casilla_54" native="true">
    <property name="geometry">
     <rect>
      <x>330</x>
@@ -1499,7 +1499,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_55" native="true">
+  <widget class="Casilla" name="Casilla_55" native="true">
    <property name="geometry">
     <rect>
      <x>410</x>
@@ -1526,7 +1526,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_56" native="true">
+  <widget class="Casilla" name="Casilla_56" native="true">
    <property name="geometry">
     <rect>
      <x>490</x>
@@ -1553,7 +1553,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_57" native="true">
+  <widget class="Casilla" name="Casilla_57" native="true">
    <property name="geometry">
     <rect>
      <x>550</x>
@@ -1580,7 +1580,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_58" native="true">
+  <widget class="Casilla" name="Casilla_58" native="true">
    <property name="geometry">
     <rect>
      <x>590</x>
@@ -1607,7 +1607,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_59" native="true">
+  <widget class="Casilla" name="Casilla_59" native="true">
    <property name="geometry">
     <rect>
      <x>580</x>
@@ -1634,7 +1634,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_60" native="true">
+  <widget class="Casilla" name="Casilla_60" native="true">
    <property name="geometry">
     <rect>
      <x>560</x>
@@ -1661,7 +1661,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_61" native="true">
+  <widget class="Casilla" name="Casilla_61" native="true">
    <property name="geometry">
     <rect>
      <x>500</x>
@@ -1688,7 +1688,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_62" native="true">
+  <widget class="Casilla" name="Casilla_62" native="true">
    <property name="geometry">
     <rect>
      <x>430</x>
@@ -1715,7 +1715,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_63" native="true">
+  <widget class="Casilla" name="Casilla_63" native="true">
    <property name="geometry">
     <rect>
      <x>410</x>
@@ -1742,7 +1742,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="Casilla_64" native="true">
+  <widget class="Casilla" name="Casilla_64" native="true">
    <property name="geometry">
     <rect>
      <x>400</x>
@@ -1782,6 +1782,7 @@
     <font>
      <pointsize>16</pointsize>
      <bold>true</bold>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -1804,6 +1805,7 @@
     <font>
      <pointsize>18</pointsize>
      <bold>true</bold>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -1825,6 +1827,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -1849,6 +1852,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -1873,6 +1877,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -1897,6 +1902,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -1921,6 +1927,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -1945,6 +1952,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -1969,6 +1977,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -1993,6 +2002,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2017,6 +2027,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2041,6 +2052,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2065,6 +2077,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2089,6 +2102,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2113,6 +2127,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2137,6 +2152,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2161,6 +2177,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2185,6 +2202,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2209,6 +2227,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2233,6 +2252,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2257,6 +2277,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2281,6 +2302,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2305,6 +2327,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2329,6 +2352,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2353,6 +2377,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2377,6 +2402,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2401,6 +2427,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2425,6 +2452,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2449,6 +2477,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2473,6 +2502,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2497,6 +2527,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2521,6 +2552,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2545,6 +2577,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2569,6 +2602,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2593,6 +2627,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2617,6 +2652,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2641,6 +2677,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2665,6 +2702,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2689,6 +2727,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2713,6 +2752,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2737,6 +2777,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2761,6 +2802,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2785,6 +2827,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2809,6 +2852,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2833,6 +2877,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2857,6 +2902,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2881,6 +2927,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2905,6 +2952,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2929,6 +2977,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2953,6 +3002,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -2977,6 +3027,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -3001,6 +3052,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -3025,6 +3077,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -3049,6 +3102,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -3073,6 +3127,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -3097,6 +3152,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -3121,6 +3177,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -3145,6 +3202,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -3169,6 +3227,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -3193,6 +3252,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -3217,6 +3277,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -3241,6 +3302,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -3265,6 +3327,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -3289,6 +3352,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -3313,6 +3377,7 @@
    <property name="font">
     <font>
      <pointsize>11</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="styleSheet">
@@ -3326,6 +3391,14 @@
    </property>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Casilla</class>
+   <extends>QWidget</extends>
+   <header>casilla.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -6,12 +6,22 @@ Ficha::Ficha(QObject *parent)
 
 }
 
-const QString &Ficha::urlFicha() const
+const QString &Ficha::NombreJugador() const
 {
-    return m_urlFicha;
+    return m_NombreJugador;
 }
 
-void Ficha::setUrlFicha(const QString &newUrlFicha)
+void Ficha::setNombreJugador(const QString &newNombreJugador)
 {
-    m_urlFicha = newUrlFicha;
+    m_NombreJugador = newNombreJugador;
+}
+
+const QPixmap &Ficha::imagen() const
+{
+    return m_imagen;
+}
+
+void Ficha::setImagen(const QPixmap &newImagen)
+{
+    m_imagen = newImagen;
 }

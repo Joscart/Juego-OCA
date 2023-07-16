@@ -13,6 +13,7 @@ SOURCES += \
     dado.cpp \
     ficha.cpp \
     formulario.cpp \
+    jugador.cpp \
     main.cpp \
     mainwindow.cpp \
     pregunta.cpp \
@@ -23,6 +24,7 @@ HEADERS += \
     dado.h \
     ficha.h \
     formulario.h \
+    jugador.h \
     mainwindow.h \
     pregunta.h \
     tablero.h

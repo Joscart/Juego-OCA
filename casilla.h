@@ -30,14 +30,14 @@ public:
     // Esta es una función miembro constante llamada 'getTipo' que no toma argumentos.
     // Devuelve el valor del miembro de datos 'tipo'. Como es constante, no puede modificar ningún miembro de datos de la clase.
     Tipo getTipo() const;
-    void casilllAccion(int casilla);
+    void casillaAccion(int casilla);
 
 private:
     Ui::Casilla *ui;
-    QVector<Ficha*> Fichas;
+    QVector<Ficha*> m_Fichas;
     void mostrarFicha();
     Tipo tipo; //Almacena tipo de casilla
-
+    QList <QWidget*> LugarFichas;
 };
 
 #endif // CASILLA_H

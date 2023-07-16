@@ -6,6 +6,7 @@ Casilla::Casilla(QWidget *parent) :
     ui(new Ui::Casilla)
 {
     ui->setupUi(this);
+
 }
 
 Casilla::Casilla(Tipo tipo) //Constructor añadido
@@ -19,25 +20,21 @@ Casilla::~Casilla()
 
 void Casilla::aniadirFicha(Ficha *newFicha)
 {
-    Fichas.append(newFicha);
+    m_Fichas.append(newFicha);
 }
 
 void Casilla::eliminarFicha(Ficha *ficha)
 {
-    Fichas.removeOne(ficha);
+    m_Fichas.removeOne(ficha);
 }
 
 
 void Casilla::mostrarFicha()
 {
-    if(Fichas.size()>4)
+    if(m_Fichas.size()>4)
         return;
 
-    QString style = "QWidget#Casilla{border-image: url(:/Recursos/Imagenes/Casilla.jpeg);}\n";
-    for (int i=0;i<Fichas.size();i++) {
-        style += "QLabel#lbl"+QString::number(i+1)+"{border-image: url("+Fichas[i]->urlFicha()+");}\n";
-    }
-    setStyleSheet(style);
+
 }
 
 Casilla::Tipo Casilla::getTipo() const
@@ -45,7 +42,7 @@ Casilla::Tipo Casilla::getTipo() const
     return tipo;
 }
 
-void Casilla::casilllAccion(int casilla)
+void Casilla::casillaAccion(int casilla)
 {
 if(casilla==0){
     //pregunta

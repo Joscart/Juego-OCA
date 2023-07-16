@@ -177,6 +177,13 @@ Formulario *Tablero::formulario() const
     return m_formulario;
 }
 
+void Tablero::addFicha(Ficha *newFicha)
+{
+    if(m_jugadores.size()>=4)
+        m_jugadores.removeFirst();
+    m_jugadores.append(newFicha);
+}
+
 Dado *Tablero::dado() const
 {
     return m_dado;

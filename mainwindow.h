@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <tablero.h>
+#include <QDesktopServices>
+#include <QUrl>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,6 +22,8 @@ private slots:
     void on_actionSalir_triggered();
 
     void on_actionNuevo_Juego_triggered();
+
+    void on_btnEasterEgg_clicked();
 
 private:
     Ui::MainWindow *ui;
