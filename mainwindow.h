@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <tablero.h>
+#include <configuracion.h>
 #include <QDesktopServices>
 #include <QUrl>
 
@@ -25,8 +26,11 @@ private slots:
 
     void on_btnEasterEgg_clicked();
 
+    void on_actionConfiguracion_triggered();
+
 private:
     Ui::MainWindow *ui;
     Tablero *m_tablero;
+    Configuracion m_config;
 };
 #endif // MAINWINDOW_H

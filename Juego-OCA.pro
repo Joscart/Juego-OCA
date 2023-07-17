@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     casilla.cpp \
+    configuracion.cpp \
     dado.cpp \
     ficha.cpp \
     formulario.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
 
 HEADERS += \
     casilla.h \
+    configuracion.h \
     dado.h \
     ficha.h \
     formulario.h \
@@ -31,6 +33,7 @@ HEADERS += \
 
 FORMS += \
     casilla.ui \
+    configuracion.ui \
     dado.ui \
     formulario.ui \
     mainwindow.ui \

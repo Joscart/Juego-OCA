@@ -52,3 +52,9 @@ void MainWindow::on_btnEasterEgg_clicked()
     QDesktopServices::openUrl(QUrl("https://www.youtube.com/watch?v=7YZCUpnaTfg&ab_channel=DontSubscribeToMe"));
 }
 
+
+void MainWindow::on_actionConfiguracion_triggered()
+{
+    m_config.exec();
+}
+
