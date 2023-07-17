@@ -81,26 +81,20 @@
    </item>
    <item>
     <widget class="QStackedWidget" name="stkConfig">
-     <widget class="QWidget" name="Temario">
-      <widget class="QPushButton" name="pushButton">
-       <property name="geometry">
-        <rect>
-         <x>80</x>
-         <y>130</y>
-         <width>89</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>PushButton</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_2"/>
+     <widget class="Temario" name="Opcion_1"/>
+     <widget class="QWidget" name="Opcion_2"/>
     </widget>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Temario</class>
+   <extends>QWidget</extends>
+   <header>temario.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

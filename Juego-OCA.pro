@@ -18,7 +18,9 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     pregunta.cpp \
-    tablero.cpp
+    preguntasdialog.cpp \
+    tablero.cpp \
+    temario.cpp
 
 HEADERS += \
     casilla.h \
@@ -29,7 +31,9 @@ HEADERS += \
     jugador.h \
     mainwindow.h \
     pregunta.h \
-    tablero.h
+    preguntasdialog.h \
+    tablero.h \
+    temario.h
 
 FORMS += \
     casilla.ui \
@@ -37,7 +41,9 @@ FORMS += \
     dado.ui \
     formulario.ui \
     mainwindow.ui \
-    tablero.ui
+    preguntasdialog.ui \
+    tablero.ui \
+    temario.ui
 
 TRANSLATIONS += \
     Juego-OCA_es_419.ts
