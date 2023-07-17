@@ -6,33 +6,23 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>449</width>
-    <height>182</height>
+    <width>454</width>
+    <height>158</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QFormLayout" name="formLayout">
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="lnlpregunta"/>
+   </item>
    <item row="0" column="0">
     <widget class="QLabel" name="lblpregunta">
      <property name="text">
       <string>pregunta</string>
      </property>
     </widget>
-   </item>
-   <item row="0" column="1">
-    <widget class="QLineEdit" name="lnlpregunta"/>
-   </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="lblrespuesta">
-     <property name="text">
-      <string>respuesta</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="QLineEdit" name="lnlrespuesta"/>
    </item>
    <item row="2" column="1">
     <widget class="QDialogButtonBox" name="buttonBox">
@@ -42,6 +32,32 @@
      <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>respuesta</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QRadioButton" name="verdaderoButton">
+        <property name="text">
+         <string>verdadero</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="falsobutton">
+        <property name="text">
+         <string>falso</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>

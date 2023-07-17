@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <QFile>
 #include <QMessageBox>
+#include <ctime>
+#include <QFile>
 
 #include "preguntas.h"
 #include "preguntasdialog.h"
@@ -24,13 +26,20 @@ private slots:
 
     void on_btnguardar_clicked();
 
+    void on_btneditar_clicked();
+
+    void on_btneliminar_clicked();
+
 private:
     Ui::Temario *ui;
     const QString ARCHIVO = "temario.cvs";
     enum columna{
         PREGUNTA, RESPUESTA
     };
+    QList <Preguntas*> m_listaPreguntas;
     void cargarPreguntas();
+    QStack<Preguntas*> randomizarPreguntas();
+    int mseleccion = -1;
 };
 
 #endif // TEMARIO_H
