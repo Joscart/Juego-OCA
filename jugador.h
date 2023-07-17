@@ -10,10 +10,23 @@ class Jugador : public QObject
 public:
     explicit Jugador(QObject *parent = nullptr);
 
+    void setFichaImagen(QPixmap imagen);
+
+    const QString &nombre() const;
+    void setNombre(const QString &newNombre);
+
+    Ficha *ficha() const;
+    void setFicha(Ficha *newFicha);
+
+    int puntaje() const;
+    void setPuntaje(int newPuntaje);
+
 signals:
 
 private:
-    Ficha m_ficha;
+    QString m_nombre;
+    Ficha *m_ficha;
+    int m_puntaje;
 };
 
 #endif // JUGADOR_H
