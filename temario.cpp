@@ -38,12 +38,12 @@ void Temario::on_btnagregar_clicked()
     if(res==QDialog::Rejected){
         return;
     }
-    Preguntas *p = pd.preguntas();
+    Pregunta *p = pd.preguntas();
     int fila=ui->tbl_temario->rowCount();
     ui->tbl_temario->insertRow(fila);
     ui->tbl_temario->setItem(fila, PREGUNTA, new QTableWidgetItem(p->pregunta()));
     ui->tbl_temario->setItem(fila, RESPUESTA, new QTableWidgetItem(p->respuesta()));
-    m_listaPreguntas.append(new Preguntas(QString::number(m_listaPreguntas.size()+1),p->pregunta(),p->respuesta()));
+    m_listaPreguntas.append(new Pregunta(QString::number(m_listaPreguntas.size()+1),p->pregunta(),p->respuesta()));
 }
 
 
@@ -96,16 +96,16 @@ void Temario::cargarPreguntas()
             ui->tbl_temario->insertRow(fila);
             ui->tbl_temario->setItem(fila, PREGUNTA, new QTableWidgetItem(datos[PREGUNTA]));
             ui->tbl_temario->setItem(fila, RESPUESTA, new QTableWidgetItem(datos[RESPUESTA]));
-            m_listaPreguntas.append(new Preguntas(QString::number(m_listaPreguntas.size()+1),datos[PREGUNTA],datos[RESPUESTA]));
+            m_listaPreguntas.append(new Pregunta(QString::number(m_listaPreguntas.size()+1),datos[PREGUNTA],datos[RESPUESTA]));
         }
         archivo.close();
     }
 }
 
-QStack<Preguntas *> Temario::randomizarPreguntas()
+QStack<Pregunta *> Temario::randomizarPreguntas()
 {
-    QList <Preguntas*> temp = m_listaPreguntas;
-    QStack <Preguntas*> sacarPreguntas;
+    QList <Pregunta*> temp = m_listaPreguntas;
+    QStack <Pregunta*> sacarPreguntas;
     srand(time(0));
 
     while(!temp.isEmpty()){

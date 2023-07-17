@@ -9,21 +9,40 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    casilla.cpp \
+    configuracion.cpp \
+    dado.cpp \
+    ficha.cpp \
+    formulario.cpp \
+    jugador.cpp \
     main.cpp \
     mainwindow.cpp \
-    preguntas.cpp \
+    pregunta.cpp \
     preguntasdialog.cpp \
+    tablero.cpp \
     temario.cpp
 
 HEADERS += \
+    casilla.h \
+    configuracion.h \
+    dado.h \
+    ficha.h \
+    formulario.h \
+    jugador.h \
     mainwindow.h \
-    preguntas.h \
+    pregunta.h \
     preguntasdialog.h \
+    tablero.h \
     temario.h
 
 FORMS += \
+    casilla.ui \
+    configuracion.ui \
+    dado.ui \
+    formulario.ui \
     mainwindow.ui \
     preguntasdialog.ui \
+    tablero.ui \
     temario.ui
 
 TRANSLATIONS += \
@@ -35,3 +54,6 @@ CONFIG += embed_translations
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Recursos.qrc

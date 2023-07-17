@@ -7,7 +7,7 @@
 #include <ctime>
 #include <QFile>
 
-#include "preguntas.h"
+#include "pregunta.h"
 #include "preguntasdialog.h"
 
 namespace Ui {class Temario;}
@@ -36,9 +36,9 @@ private:
     enum columna{
         PREGUNTA, RESPUESTA
     };
-    QList <Preguntas*> m_listaPreguntas;
+    QList <Pregunta*> m_listaPreguntas;
     void cargarPreguntas();
-    QStack<Preguntas*> randomizarPreguntas();
+    QStack<Pregunta*> randomizarPreguntas();
     int mseleccion = -1;
 };
 

@@ -2,7 +2,7 @@
 #define PREGUNTASDIALOG_H
 
 #include <QDialog>
-#include <preguntas.h>
+#include <pregunta.h>
 #include <QMessageBox>
 #include <QWidget>
 namespace Ui {
@@ -16,7 +16,7 @@ class preguntasdialog : public QDialog
 public:
     explicit preguntasdialog(QWidget *parent = nullptr);
     ~preguntasdialog();
-    Preguntas *preguntas() const;
+    Pregunta *preguntas() const;
 
     QString pregunta;
     QString respuesta;
@@ -34,7 +34,7 @@ private slots:
 
 private:
     Ui::preguntasdialog *ui;
-    Preguntas *m_preguntas;
+    Pregunta *m_preguntas;
 };
 
 #endif // PREGUNTASDIALOG_H

@@ -32,7 +32,7 @@ void preguntasdialog::on_buttonBox_accepted()
     }else if(ui->falsobutton->isChecked()){
         respuesta="falso";
     }
-    this->m_preguntas = new Preguntas(indice,pregunta,respuesta);
+    this->m_preguntas = new Pregunta(indice,pregunta,respuesta);
     accept();
 }
 
@@ -41,7 +41,7 @@ void preguntasdialog::on_buttonBox_rejected()
 {
     reject();
 }
-Preguntas *preguntasdialog::preguntas() const
+Pregunta *preguntasdialog::preguntas() const
 {
     return m_preguntas;
 }
@@ -72,6 +72,6 @@ QString preguntasdialog::getPregunta() const
 
 void preguntasdialog::setPregunta(const QString &newPregunta)
 {
-    ui->lblpregunta->setText(newPregunta);
+    ui->lnlpregunta->setText(newPregunta);
 }
 
