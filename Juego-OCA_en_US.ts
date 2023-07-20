@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es_419">
+<TS version="2.1" language="en_US">
 <context>
     <name>Casilla</name>
     <message>
@@ -102,7 +102,7 @@
     <message>
         <location filename="mainwindow.ui" line="169"/>
         <source>Juego</source>
-        <translation type="unfinished"></translation>
+        <translation>Game</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="177"/>
