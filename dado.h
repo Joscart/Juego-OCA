@@ -19,9 +19,6 @@ public:
 
     int resultado() const;
 
-signals:
-    void resultadoChanged();
-
 private:
     Ui::Dado *ui;
     QPixmap imagenes[6];

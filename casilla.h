@@ -27,11 +27,12 @@ public:
         Puente
     };
 
-    Casilla(Tipo tipo);//Constructor de casilla
     // Esta es una función miembro constante llamada 'getTipo' que no toma argumentos.
     // Devuelve el valor del miembro de datos 'tipo'. Como es constante, no puede modificar ningún miembro de datos de la clase.
     Tipo getTipo() const;
     void casillaAccion(int casilla);
+
+    void setTipo(Tipo newTipo);
 
 private:
     Ui::Casilla *ui;

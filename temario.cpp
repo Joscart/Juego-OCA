@@ -122,10 +122,10 @@ void Temario::mostrarPreguntas(const QString &rArchivo){
     }
 }
 
-QStack<Pregunta *> Temario::randomizarPreguntas()
+QList<Pregunta *> Temario::randomizarPreguntas()
 {
     QList <Pregunta*> temp = m_listaPreguntas;
-    QStack <Pregunta*> sacarPreguntas;
+    QList <Pregunta*> sacarPreguntas;
     srand(time(0));
 
     while(!temp.isEmpty()){

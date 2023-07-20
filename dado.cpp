@@ -29,7 +29,8 @@ Dado::Dado(QWidget *parent) :
             contadorAnimacion = QRandomGenerator::global()->bounded(1,7) - 1;
             ui->btnDado->setIcon(imagenes[contadorAnimacion]);
             m_resultado = contadorAnimacion + 1;
-            emit resultadoChanged();
+            this->setWindowTitle("");
+            this->setWindowTitle(QString::number(m_resultado));
             ui->btnDado->setEnabled(true);
         }
     });

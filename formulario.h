@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QMovie>
+#include <pregunta.h>
 
 namespace Ui {
 class Formulario;
@@ -16,8 +17,16 @@ public:
     explicit Formulario(QWidget *parent = nullptr);
     ~Formulario();
 
+    void setPreguntas(QList<Pregunta *> *newPreguntas);
+
+    void usarPregunta();
+
+    void mostrarPregunta();
+
 private:
     Ui::Formulario *ui;
+    QList<Pregunta*> *m_preguntas;
+    Pregunta *m_actual = nullptr;
 };
 
 #endif // FORMULARIO_H

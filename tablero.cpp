@@ -8,20 +8,7 @@ Tablero::Tablero(QWidget *parent) :
     ui->setupUi(this);
     m_dado = new Dado(this);
 
-    QTimer *timer = m_timer;
-    //conect timer
-    connect(timer,&QTimer::timeout,[timer,this](){
-        if(actual==nullptr)
-            return;
-        if(++m_contadorAnimacion<m_dado->resultado()){
-            m_casillas[actual->numCasillas() - 1]->eliminarFicha(actual);
-            m_casillas[actual->numCasillas()]->aniadirFicha(actual);
-            actual->setNumCasillas(actual->numCasillas() + 1);
-        }else{
-            timer->stop();
-            cambiarTurno();
-        }
-    });
+    connect(m_dado,SIGNAL(windowTitleChanged(QString)),this,SLOT(moverFicha(QString)));
     m_formulario = new Formulario(this);
     cargarWidgets();
 
@@ -185,14 +172,44 @@ void Tablero::cargarWidgets()
     m_casillas.append(ui->Casilla_62);
     m_casillas.append(ui->Casilla_63);
     m_casillas.append(ui->Casilla_64);
+
+    for(int i=0;i<m_casillas.size();i++){
+        foreach(int casilla,m_casillasOca){
+            if(i+1==casilla){
+                m_casillas[i]->setTipo(Casilla::Tipo::Oca);
+                m_casillas[i]->setStyleSheet("QFrame#frame{"
+                                             "border-image: url(:/Recursos/Imagenes/Casilla3.png);"
+                                             "}");
+            }
+        }
+        foreach(int casilla,m_casillasPuente){
+            if(i+1==casilla){
+                m_casillas[i]->setTipo(Casilla::Tipo::Puente);
+                m_casillas[i]->setStyleSheet("QFrame#frame{"
+                                             "border-image: url(:/Recursos/Imagenes/Portal.png);"
+                                             "}");
+            }
+        }
+        foreach(int casilla,m_casillasCalabera){
+            if(i+1==casilla){
+                m_casillas[i]->setTipo(Casilla::Tipo::Calavera);
+                m_casillas[i]->setStyleSheet("QFrame#frame{"
+                                             "border-image: url(:/Recursos/Imagenes/Casilla2.png);"
+                                             "}");
+            }
+        }
+    }
 }
 
 void Tablero::moverFicha(int pasos)
 {
     if(actual==nullptr)
         return;
+    if(m_preguntas.isEmpty())
+        restaurarPreguntas();
 
     for(int i=0;i<pasos;i++){
+        delay(m_speed);
         m_casillas[actual->numCasillas()]->eliminarFicha(actual);
         m_casillas[actual->numCasillas()+1]->aniadirFicha(actual);
         actual->setNumCasillas(actual->numCasillas() + 1);
@@ -201,13 +218,93 @@ void Tablero::moverFicha(int pasos)
         for(int i=0;i>pasos;i--){
             if(actual->numCasillas()<=0)
                 break;
+            delay(m_speed);
             actual->setNumCasillas(actual->numCasillas() - 1);
             m_casillas[actual->numCasillas()]->aniadirFicha(actual);
             m_casillas[actual->numCasillas()+1]->eliminarFicha(actual);
 
         }
     }
+    m_formulario->mostrarPregunta();
     cambiarTurno();
+    m_formulario->usarPregunta();
+}
+
+void Tablero::moverFicha(QString pasosText)
+{
+    if(actual==nullptr)
+        return;
+    if(pasosText.isEmpty())
+        return;
+    if(m_preguntas.isEmpty())
+        restaurarPreguntas();
+
+    int pasos = pasosText.toInt();
+
+    if(actual->numCasillas()+pasos<m_casillaFinal)
+    {
+        for(int i=0;i<pasos;i++){
+            delay(m_speed);
+            m_casillas[actual->numCasillas()]->eliminarFicha(actual);
+            m_casillas[actual->numCasillas()+1]->aniadirFicha(actual);
+            actual->setNumCasillas(actual->numCasillas() + 1);
+        }
+        if(pasos<0){
+            for(int i=0;i>pasos;i--){
+                if(actual->numCasillas()<=0)
+                    break;
+                delay(m_speed);
+                actual->setNumCasillas(actual->numCasillas() - 1);
+                m_casillas[actual->numCasillas()]->aniadirFicha(actual);
+                m_casillas[actual->numCasillas()+1]->eliminarFicha(actual);
+
+            }
+        }
+        switch (m_casillas[actual->numCasillas()]->getTipo()) {
+        case Casilla::Tipo::Normal:
+            m_formulario->mostrarPregunta();
+            break;
+        case Casilla::Tipo::Oca:
+            for(int i=0;i<m_casillasOca.size();i++){
+                if(actual->numCasillas()==m_casillasOca[i]-1){
+                    if(i==m_casillasOca.size())
+                        i = 0;
+                    moverFichaA(m_casillasOca[i+1]);
+                    break;
+                }
+            }
+            return;
+        case Casilla::Tipo::Calavera:
+            break;
+        case Casilla::Tipo::Puente:
+            break;
+        }
+    }
+
+    cambiarTurno();
+    m_formulario->usarPregunta();
+}
+
+void Tablero::moverFichaA(int casillaDestino)
+{
+    if(actual==nullptr or casillaDestino>m_casillaFinal or casillaDestino<=0)
+        return;
+    delay(m_speed);
+    m_casillas[actual->numCasillas()]->eliminarFicha(actual);
+    m_casillas[casillaDestino-1]->aniadirFicha(actual);
+    actual->setNumCasillas(casillaDestino-1);
+}
+
+QList<Pregunta *> Tablero::preguntas()
+{
+    return m_preguntas;
+}
+
+void Tablero::setPreguntas(QList<Pregunta *> newPreguntas)
+{
+    m_preguntas = newPreguntas;
+    m_formulario->setPreguntas(&m_preguntas);
+    m_preguntasBase = newPreguntas;
 }
 
 
@@ -223,6 +320,12 @@ void Tablero::cambiarTurno()
     actual = m_jugadores[m_turno];
 }
 
+void Tablero::restaurarPreguntas()
+{
+    m_preguntas = m_preguntasBase;
+    m_formulario->setPreguntas(&m_preguntas);
+}
+
 Formulario *Tablero::formulario() const
 {
     return m_formulario;
@@ -236,15 +339,17 @@ void Tablero::addFicha(Ficha *newFicha)
     m_casillas[0]->aniadirFicha(m_jugadores.last());
     if(m_jugadores.size()==1)
         actual = m_jugadores[0];
-}
-
-void Tablero::iniciarAnimacion()
-{
-    m_contadorAnimacion=-1;
-    m_timer->start(500);
+    m_turno=0;
 }
 
 Dado *Tablero::dado() const
 {
     return m_dado;
+}
+
+void Tablero::delay(int mSecs)
+{
+    QTime dieTime= QTime::currentTime().addMSecs(mSecs);
+    while (QTime::currentTime() < dieTime)
+        QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 }

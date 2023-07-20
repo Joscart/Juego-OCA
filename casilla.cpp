@@ -11,10 +11,7 @@ Casilla::Casilla(QWidget *parent) :
     LugarFichas.append(ui->lbl3);
     LugarFichas.append(ui->lbl4);
     mostrarFicha();
-}
-
-Casilla::Casilla(Tipo tipo) //Constructor añadido
-    : tipo(tipo) {
+    setTipo(Tipo::Normal);
 }
 
 Casilla::~Casilla()
@@ -49,6 +46,11 @@ void Casilla::mostrarFicha()
         }
     }
 
+}
+
+void Casilla::setTipo(Tipo newTipo)
+{
+    tipo = newTipo;
 }
 
 Casilla::Tipo Casilla::getTipo() const

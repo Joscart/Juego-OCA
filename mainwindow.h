@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <tablero.h>
 #include <jugador.h>
+#include <temario.h>
 #include <configuracion.h>
 #include <QDesktopServices>
 #include <QUrl>
@@ -34,5 +35,6 @@ private:
     Tablero *m_tablero;
     QList <Jugador*> m_jugadores;
     Configuracion m_config;
+    Temario *m_preguntas;
 };
 #endif // MAINWINDOW_H

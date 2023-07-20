@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     //fondo azul areado
     //Por defult que inicie en una windows vacia
     ui->stackedWidget->setCurrentIndex(0);//widget vacio
+    m_preguntas = m_config.temario();
 }
 
 MainWindow::~MainWindow()
@@ -53,9 +54,7 @@ void MainWindow::on_actionNuevo_Juego_triggered()
     m_tablero->addFicha(m_jugadores[0]->ficha());
     m_tablero->addFicha(m_jugadores[1]->ficha());
     m_tablero->addFicha(m_jugadores[2]->ficha());
-    m_tablero->moverFicha(5);
-    m_tablero->moverFicha(-1);
-    m_tablero->moverFicha(6);
+    m_tablero->setPreguntas(m_preguntas->randomizarPreguntas());
 }
 
 

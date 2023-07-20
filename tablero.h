@@ -8,6 +8,7 @@
 #include <formulario.h>
 #include <casilla.h>
 #include <ficha.h>
+#include <pregunta.h>
 
 namespace Ui {
 class Tablero;
@@ -27,25 +28,41 @@ public:
 
     void addFicha(Ficha *newFicha);
 
-    void moverFicha(int pasos);
+    QList<Pregunta *> preguntas();
+    void setPreguntas(QList<Pregunta *> newPreguntas);
 
-private slots:
-    void iniciarAnimacion();
+public slots:
+    void moverFicha(int pasos);
+    void moverFicha(QString pasosText);
+    void moverFichaA(int casillaDestino);
 
 private:
     Ui::Tablero *ui;
     QList <Casilla*> m_casillas;
     QList <QLabel*> m_numeradores;
     QList <Ficha*> m_jugadores;
+    QList <Pregunta*> m_preguntas;
+    QList <Pregunta*> m_preguntasBase;
     Ficha *actual = nullptr;
     void cargarWidgets();
-
     void cambiarTurno();
-    int m_turno;
-    int m_contadorAnimacion=-1;
+    void restaurarPreguntas();
+    int m_turno = -1;
+    int m_speed = 250;
     Dado *m_dado;
     Formulario *m_formulario;
-    QTimer *m_timer = new QTimer(this);
+    void delay(int mSecs);
+    QList <int> m_casillasOca = {
+        1,5,9,14,18,23,27,32,36,41,45,51,54,59,63
+    };
+    QList <int> m_casillasPuente = {
+        15,30
+    };
+    QList <int> m_casillasCalabera = {
+        58
+    };
+    int m_casillaFinal = 64;
+
 };
 
 #endif // TABLERO_H

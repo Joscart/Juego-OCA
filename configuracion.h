@@ -2,6 +2,7 @@
 #define CONFIGURACION_H
 
 #include <QDialog>
+#include <temario.h>
 
 namespace Ui {
 class Configuracion;
@@ -14,6 +15,7 @@ class Configuracion : public QDialog
 public:
     explicit Configuracion(QWidget *parent = nullptr);
     ~Configuracion();
+    Temario *temario();
 
 private slots:
 
@@ -23,6 +25,7 @@ private slots:
 
 private:
     Ui::Configuracion *ui;
+    Temario *m_temario;
 };
 
 #endif // CONFIGURACION_H

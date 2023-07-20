@@ -23,6 +23,8 @@ public:
     explicit Temario(QWidget *parent = nullptr);
     ~Temario();
 
+    QList<Pregunta *> randomizarPreguntas();
+
 private slots:
 
     void on_btnagregar_clicked();
@@ -46,7 +48,6 @@ private:
     QList <Pregunta*> m_listaPreguntas;
     void cargarPreguntas();
     void mostrarPreguntas(const QString &rArchivo);
-    QStack<Pregunta*> randomizarPreguntas();
     int mseleccion = -1;
 };
 
