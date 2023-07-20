@@ -1,12 +1,6 @@
 #include "temario.h"
 #include "qlineedit.h"
 #include "ui_temario.h"
-#include "QDebug"
-#include <QStack>
-#include <QTableWidget>
-#include <QMessageBox>
-#include <QDialog>
-#include <QFile>
 Temario::Temario(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Temario)
@@ -64,8 +58,8 @@ void Temario::on_btnguardar_clicked()
     QString folderpath = QCoreApplication::applicationDirPath();
     QString seleccionardireccion = folderpath + "/" + archivobin;
     QFile archivo(seleccionardireccion);
-    if (archivo.open(QFile::WriteOnly | QFile::Truncate)) {
-        QTextStream salida(&archivo);
+    if (archivo.open(QFile::WriteOnly)) {
+        QDataStream salida(&archivo);
         for (int i=0; i<filas; i++) {
             QTableWidgetItem *pregunta = ui->tbl_temario->item(i, PREGUNTA);
             QTableWidgetItem *respuesta = ui->tbl_temario->item(i, RESPUESTA);
@@ -91,7 +85,6 @@ void Temario::cargarPreguntas()
         while(!entrada.atEnd()){
             QString linea = entrada.readLine();
             QStringList datos = linea.split(";");
-            //Agregar a la tabla
             fila = ui->tbl_temario->rowCount();
             ui->tbl_temario->insertRow(fila);
             ui->tbl_temario->setItem(fila, PREGUNTA, new QTableWidgetItem(datos[PREGUNTA]));
@@ -99,6 +92,33 @@ void Temario::cargarPreguntas()
             m_listaPreguntas.append(new Pregunta(QString::number(m_listaPreguntas.size()+1),datos[PREGUNTA],datos[RESPUESTA]));
         }
         archivo.close();
+    }
+}
+
+void Temario::mostrarPreguntas(const QString &rArchivo){
+    QFile archivo(rArchivo);
+    if(!archivo.exists()){
+        QMessageBox::critical(this,"cargar temario","el temario no existe");
+        return;
+    }
+    ui->tbl_temario->clearContents();
+    ui->tbl_temario->setRowCount(0);
+    if(archivo.open(QIODevice::ReadOnly | QIODevice::Text)){
+        QTextStream direccion(&archivo);
+        int fila=0;
+        while (!direccion.atEnd()) {
+            QString linea= direccion.readLine();
+            QStringList datos= linea.split(";");
+            if(datos.size()==2){
+                ui->tbl_temario->insertRow(fila);
+                ui->tbl_temario->setItem(fila, PREGUNTA, new QTableWidgetItem(datos[0]));
+                ui->tbl_temario->setItem(fila, RESPUESTA, new QTableWidgetItem(datos[1]));
+                fila++;
+            }
+        }
+        archivo.close();
+    }else{
+        QMessageBox::critical(this,"cargar temario","No se pudo abrir el temario");
     }
 }
 
@@ -156,5 +176,43 @@ void Temario::on_btneliminar_clicked()
         return;
     }
     ui->tbl_temario->removeRow(fila);
+}
+
+
+void Temario::on_btnexportar_clicked()
+{
+    int filas = ui->tbl_temario->rowCount();
+    if (filas == 0) {
+        QMessageBox::warning(this, "Guardar temario", "No hay datos para guardar");
+        return;
+    }
+    QString selectedFilePath = QFileDialog::getSaveFileName(this, "Guardar temario", QDir::homePath(), "Archivos csv (*.csv)");
+    if (selectedFilePath.isEmpty()) {
+        QMessageBox::information(this, "Guardar temario", "Operación de exportar cancelada");
+            return;
+    }
+    QFile archivo(selectedFilePath);
+    QTextStream salida(&archivo);
+    if (archivo.open(QIODevice::WriteOnly)) {       
+        for (int i = 0; i < filas; i++) {
+            QTableWidgetItem *pregunta = ui->tbl_temario->item(i, PREGUNTA);
+            QTableWidgetItem *respuesta = ui->tbl_temario->item(i, RESPUESTA);
+            salida << pregunta->text() <<";"<< respuesta->text() << "\n";
+        }
+        archivo.close();
+        QMessageBox::information(this, "Guardar temario", "Preguntas guardadas exitosamente en el archivo csv");
+    } else {
+        QMessageBox::critical(this, "Guardar temario", "No se puede escribir en el archivo csv");
+    }
+}
+
+
+void Temario::on_btnimportar_clicked()
+{
+    QString direccionA = QFileDialog::getOpenFileName(this, "Seleccionar temario", QString(), "Archivos de texto (*.txt *.csv *.bin )");
+    if (!direccionA.isEmpty()) {
+        mostrarPreguntas(direccionA);
+        QMessageBox::information(this, "Cargar archivo", "Temario cargado exitosamente.");
+    }
 }
 

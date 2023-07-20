@@ -5,7 +5,10 @@
 #include <QFile>
 #include <QMessageBox>
 #include <ctime>
-#include <QFile>
+#include "QDebug"
+#include <QStack>
+#include <QTableWidget>
+#include "QFileDialog"
 
 #include "pregunta.h"
 #include "preguntasdialog.h"
@@ -30,6 +33,10 @@ private slots:
 
     void on_btneliminar_clicked();
 
+    void on_btnexportar_clicked();
+
+    void on_btnimportar_clicked();
+
 private:
     Ui::Temario *ui;
     const QString ARCHIVO = "temario.cvs";
@@ -38,6 +45,7 @@ private:
     };
     QList <Pregunta*> m_listaPreguntas;
     void cargarPreguntas();
+    void mostrarPreguntas(const QString &rArchivo);
     QStack<Pregunta*> randomizarPreguntas();
     int mseleccion = -1;
 };
