@@ -25,3 +25,14 @@ void Ficha::setImagen(const QPixmap &newImagen)
 {
     m_imagen = newImagen;
 }
+
+int Ficha::numCasillas() const
+{
+    return m_numCasillas;
+}
+
+void Ficha::setNumCasillas(int newNumCasillas)
+{
+    m_numCasillas = newNumCasillas;
+}
+

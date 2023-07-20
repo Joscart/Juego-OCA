@@ -6,7 +6,11 @@ Casilla::Casilla(QWidget *parent) :
     ui(new Ui::Casilla)
 {
     ui->setupUi(this);
-
+    LugarFichas.append(ui->lbl1);
+    LugarFichas.append(ui->lbl2);
+    LugarFichas.append(ui->lbl3);
+    LugarFichas.append(ui->lbl4);
+    mostrarFicha();
 }
 
 Casilla::Casilla(Tipo tipo) //Constructor añadido
@@ -21,19 +25,29 @@ Casilla::~Casilla()
 void Casilla::aniadirFicha(Ficha *newFicha)
 {
     m_Fichas.append(newFicha);
+    mostrarFicha();
 }
 
 void Casilla::eliminarFicha(Ficha *ficha)
 {
-    m_Fichas.removeOne(ficha);
+    for(int i=0;i<m_Fichas.size();i++){
+        if(m_Fichas[i]==ficha){
+            m_Fichas.removeOne(ficha);
+        }
+    }
+    mostrarFicha();
 }
 
 
 void Casilla::mostrarFicha()
 {
-    if(m_Fichas.size()>4)
-        return;
-
+    for(int i=0;i<4;i++){
+        if(i<m_Fichas.size()){
+            LugarFichas[i]->setPixmap(m_Fichas[i]->imagen());
+        }else{
+            LugarFichas[i]->setPixmap(QPixmap());
+        }
+    }
 
 }
 

@@ -3,6 +3,7 @@
 #include "ficha.h"
 //#include "preguntas.h"
 #include <QWidget>
+#include <QLabel>
 
 namespace Ui {
 class Casilla;
@@ -37,7 +38,7 @@ private:
     QVector<Ficha*> m_Fichas;
     void mostrarFicha();
     Tipo tipo; //Almacena tipo de casilla
-    QList <QWidget*> LugarFichas;
+    QList <QLabel*> LugarFichas;
 };
 
 #endif // CASILLA_H

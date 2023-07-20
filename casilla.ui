@@ -22,9 +22,6 @@
   <property name="styleSheet">
    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
-}
-QLabel{
-	color: rgb(0, 0, 0);
 }</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -71,12 +68,18 @@ QLabel{
       </property>
       <property name="maximumSize">
        <size>
-        <width>20</width>
-        <height>20</height>
+        <width>16777215</width>
+        <height>16777215</height>
        </size>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="lbl3">
@@ -96,12 +99,18 @@ QLabel{
       </property>
       <property name="maximumSize">
        <size>
-        <width>20</width>
-        <height>20</height>
+        <width>16777215</width>
+        <height>16777215</height>
        </size>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="lbl1">
@@ -109,7 +118,7 @@ QLabel{
        <rect>
         <x>30</x>
         <y>20</y>
-        <width>20</width>
+        <width>21</width>
         <height>20</height>
        </rect>
       </property>
@@ -121,12 +130,18 @@ QLabel{
       </property>
       <property name="maximumSize">
        <size>
-        <width>20</width>
-        <height>20</height>
+        <width>16777215</width>
+        <height>16777215</height>
        </size>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="lbl2">
@@ -146,12 +161,18 @@ QLabel{
       </property>
       <property name="maximumSize">
        <size>
-        <width>20</width>
-        <height>20</height>
+        <width>16777215</width>
+        <height>16777215</height>
        </size>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>

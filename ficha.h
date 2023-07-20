@@ -16,11 +16,15 @@ public:
     const QPixmap &imagen() const;
     void setImagen(const QPixmap &newImagen);
 
+    int numCasillas() const;
+    void setNumCasillas(int newNumCasillas);
+
 signals:
 
 private:
     QString m_NombreJugador;
     QPixmap m_imagen;
+    int m_numCasillas = 0;
 };
 
 #endif // FICHA_H

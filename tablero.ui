@@ -63,7 +63,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -90,7 +90,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -117,7 +117,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -144,7 +144,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -171,7 +171,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -198,7 +198,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -225,7 +225,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -252,7 +252,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -279,7 +279,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -306,7 +306,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -333,7 +333,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -360,7 +360,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -387,7 +387,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -414,7 +414,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -441,7 +441,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -468,7 +468,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -495,7 +495,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -522,7 +522,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -549,7 +549,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -576,7 +576,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -603,7 +603,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -630,7 +630,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -657,7 +657,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -684,7 +684,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -711,7 +711,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -738,7 +738,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -765,7 +765,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -792,7 +792,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -819,7 +819,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -846,7 +846,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -873,7 +873,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -900,7 +900,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -927,7 +927,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -954,7 +954,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -981,7 +981,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1008,7 +1008,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1035,7 +1035,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1062,7 +1062,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1089,7 +1089,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1116,7 +1116,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1143,7 +1143,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1170,7 +1170,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1197,7 +1197,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1224,7 +1224,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1251,7 +1251,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1278,7 +1278,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1305,7 +1305,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1332,7 +1332,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1359,7 +1359,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1386,7 +1386,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1413,7 +1413,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1440,7 +1440,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1467,7 +1467,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1494,7 +1494,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1521,7 +1521,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1548,7 +1548,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1575,7 +1575,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1602,7 +1602,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1629,7 +1629,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1656,7 +1656,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1683,7 +1683,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1710,7 +1710,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1737,7 +1737,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1764,7 +1764,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">QWidget{
+    <string notr="true">QFrame#frame{
 	border-image: url(:/Recursos/Imagenes/Casilla4.png);
 }</string>
    </property>
@@ -1781,7 +1781,6 @@
    <property name="font">
     <font>
      <pointsize>16</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
      <strikeout>false</strikeout>
     </font>
@@ -1805,7 +1804,6 @@
    <property name="font">
     <font>
      <pointsize>18</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
      <strikeout>false</strikeout>
     </font>

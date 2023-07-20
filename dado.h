@@ -17,8 +17,10 @@ public:
     explicit Dado(QWidget *parent = nullptr);
     ~Dado();
 
-
     int resultado() const;
+
+signals:
+    void resultadoChanged();
 
 private:
     Ui::Dado *ui;

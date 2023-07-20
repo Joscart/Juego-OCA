@@ -7,6 +7,21 @@ Tablero::Tablero(QWidget *parent) :
 {
     ui->setupUi(this);
     m_dado = new Dado(this);
+
+    QTimer *timer = m_timer;
+    //conect timer
+    connect(timer,&QTimer::timeout,[timer,this](){
+        if(actual==nullptr)
+            return;
+        if(++m_contadorAnimacion<m_dado->resultado()){
+            m_casillas[actual->numCasillas() - 1]->eliminarFicha(actual);
+            m_casillas[actual->numCasillas()]->aniadirFicha(actual);
+            actual->setNumCasillas(actual->numCasillas() + 1);
+        }else{
+            timer->stop();
+            cambiarTurno();
+        }
+    });
     m_formulario = new Formulario(this);
     cargarWidgets();
 
@@ -172,6 +187,42 @@ void Tablero::cargarWidgets()
     m_casillas.append(ui->Casilla_64);
 }
 
+void Tablero::moverFicha(int pasos)
+{
+    if(actual==nullptr)
+        return;
+
+    for(int i=0;i<pasos;i++){
+        m_casillas[actual->numCasillas()]->eliminarFicha(actual);
+        m_casillas[actual->numCasillas()+1]->aniadirFicha(actual);
+        actual->setNumCasillas(actual->numCasillas() + 1);
+    }
+    if(pasos<0){
+        for(int i=0;i>pasos;i--){
+            if(actual->numCasillas()<=0)
+                break;
+            actual->setNumCasillas(actual->numCasillas() - 1);
+            m_casillas[actual->numCasillas()]->aniadirFicha(actual);
+            m_casillas[actual->numCasillas()+1]->eliminarFicha(actual);
+
+        }
+    }
+    cambiarTurno();
+}
+
+
+void Tablero::cambiarTurno()
+{
+    if(m_jugadores.size()<0){
+        actual=nullptr;
+        return;
+    }
+    m_turno++;
+    if(m_turno>=m_jugadores.size())
+        m_turno=0;
+    actual = m_jugadores[m_turno];
+}
+
 Formulario *Tablero::formulario() const
 {
     return m_formulario;
@@ -182,6 +233,15 @@ void Tablero::addFicha(Ficha *newFicha)
     if(m_jugadores.size()>=4)
         m_jugadores.removeFirst();
     m_jugadores.append(newFicha);
+    m_casillas[0]->aniadirFicha(m_jugadores.last());
+    if(m_jugadores.size()==1)
+        actual = m_jugadores[0];
+}
+
+void Tablero::iniciarAnimacion()
+{
+    m_contadorAnimacion=-1;
+    m_timer->start(500);
 }
 
 Dado *Tablero::dado() const

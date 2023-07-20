@@ -9,7 +9,6 @@ MainWindow::MainWindow(QWidget *parent)
     //fondo azul areado
     //Por defult que inicie en una windows vacia
     ui->stackedWidget->setCurrentIndex(0);//widget vacio
-    m_tablero = new Tablero();
 }
 
 MainWindow::~MainWindow()
@@ -26,6 +25,7 @@ void MainWindow::on_actionSalir_triggered()
 void MainWindow::on_actionNuevo_Juego_triggered()
 {
     //Iniciar el widget del juego
+    m_tablero = new Tablero();
     ui->stackedWidget->setCurrentIndex(2);
     ui->horizontalLayout->replaceWidget(ui->Tablero,m_tablero);
     ui->verticalLayout->replaceWidget(ui->Dado,m_tablero->dado());
@@ -43,6 +43,19 @@ void MainWindow::on_actionNuevo_Juego_triggered()
                   "min-width: 300px;"
                   "min-height: 340px;"
                   "}");
+    //Datos Prueba
+    m_jugadores.append(new Jugador());
+    m_jugadores.append(new Jugador());
+    m_jugadores.append(new Jugador());
+    m_jugadores[0]->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha1.png"));
+    m_jugadores[1]->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha2.png"));
+    m_jugadores[2]->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha3.png"));
+    m_tablero->addFicha(m_jugadores[0]->ficha());
+    m_tablero->addFicha(m_jugadores[1]->ficha());
+    m_tablero->addFicha(m_jugadores[2]->ficha());
+    m_tablero->moverFicha(5);
+    m_tablero->moverFicha(-1);
+    m_tablero->moverFicha(6);
 }
 
 

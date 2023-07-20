@@ -59,6 +59,8 @@ QString preguntasdialog::getRespuesta() const
 
 void preguntasdialog::setRespuesta(const QString &newRespuesta)
 {
+    if(newRespuesta.isEmpty())
+        return;
     int index= ui->falsobutton->isChecked();
     if(index != -1){
         ui->falsobutton->setChecked(index);

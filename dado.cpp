@@ -23,11 +23,14 @@ Dado::Dado(QWidget *parent) :
     connect(timer,&QTimer::timeout,[timer,this](){
         if(++contadorAnimacion<6){
             ui->btnDado->setIcon(imagenes[contadorAnimacion]);
+            ui->btnDado->setEnabled(false);
         }else{
             timer->stop();
             contadorAnimacion = QRandomGenerator::global()->bounded(1,7) - 1;
             ui->btnDado->setIcon(imagenes[contadorAnimacion]);
             m_resultado = contadorAnimacion + 1;
+            emit resultadoChanged();
+            ui->btnDado->setEnabled(true);
         }
     });
 
