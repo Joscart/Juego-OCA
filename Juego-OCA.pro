@@ -19,6 +19,7 @@ SOURCES += \
     mainwindow.cpp \
     pregunta.cpp \
     preguntasdialog.cpp \
+    selectplayer.cpp \
     tablero.cpp \
     temario.cpp
 
@@ -32,6 +33,7 @@ HEADERS += \
     mainwindow.h \
     pregunta.h \
     preguntasdialog.h \
+    selectplayer.h \
     tablero.h \
     temario.h
 
@@ -42,6 +44,7 @@ FORMS += \
     formulario.ui \
     mainwindow.ui \
     preguntasdialog.ui \
+    selectplayer.ui \
     tablero.ui \
     temario.ui
 

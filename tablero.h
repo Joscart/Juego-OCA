@@ -36,6 +36,9 @@ public slots:
     void moverFicha(QString pasosText);
     void moverFichaA(int casillaDestino);
 
+signals:
+    void actualChanged(Ficha *actual);
+
 private:
     Ui::Tablero *ui;
     QList <Casilla*> m_casillas;

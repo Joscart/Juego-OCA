@@ -19,6 +19,8 @@ public:
 
     int resultado() const;
 
+    void bloquearDado();
+
 private:
     Ui::Dado *ui;
     QPixmap imagenes[6];

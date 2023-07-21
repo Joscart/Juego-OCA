@@ -47,4 +47,13 @@ int Dado::resultado() const
     return m_resultado;
 }
 
+void Dado::bloquearDado()
+{
+    if(ui->btnDado->isEnabled()){
+        ui->btnDado->setEnabled(true);
+    }else{
+        ui->btnDado->setEnabled(false);
+    }
+}
+
 

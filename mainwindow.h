@@ -5,6 +5,7 @@
 #include <tablero.h>
 #include <jugador.h>
 #include <temario.h>
+#include <selectplayer.h>
 #include <configuracion.h>
 #include <QDesktopServices>
 #include <QUrl>
@@ -32,9 +33,10 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    Tablero *m_tablero;
+    Tablero *m_tablero = nullptr;
     QList <Jugador*> m_jugadores;
     Configuracion m_config;
     Temario *m_preguntas;
+    SelectPlayer *m_fichas = nullptr;
 };
 #endif // MAINWINDOW_H

@@ -74,7 +74,7 @@
    <item>
     <widget class="QStackedWidget" name="stkPreguntar">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Preguntar">
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -181,7 +181,41 @@ QPushButton{
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="Status"/>
+     <widget class="QWidget" name="Turno">
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="lblImagenFicha">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblTurnoFicha">
+         <property name="text">
+          <string>Turno</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="Status">
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QLabel" name="lblPreguntar">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </item>
   </layout>

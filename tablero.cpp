@@ -9,8 +9,24 @@ Tablero::Tablero(QWidget *parent) :
     m_dado = new Dado(this);
 
     connect(m_dado,SIGNAL(windowTitleChanged(QString)),this,SLOT(moverFicha(QString)));
+
     m_formulario = new Formulario(this);
+    m_formulario->setJugadores(&m_jugadores);
+
+    connect(this, &Tablero::actualChanged, m_formulario, &Formulario::setFichaActual);
+
     cargarWidgets();
+
+    connect(m_formulario, &Formulario::respuesta, this, [this](bool aux) {
+        QString respuesta = aux ? "verdadero" : "falso";
+        if (m_formulario->actual()->respuesta() != respuesta) {
+            moverFicha(-1 * m_dado->resultado());
+        }else{
+            cambiarTurno();
+        }
+        m_dado->bloquearDado();
+        m_formulario->usarPregunta();
+    });
 
     //Sombras de letras
     int xOffset = 2;
@@ -260,10 +276,15 @@ void Tablero::moverFicha(QString pasosText)
 
             }
         }
+        if (actual->numCasillas() == m_casillaFinal) {
+            // La ficha ha llegado a la casilla final
+
+        }
         switch (m_casillas[actual->numCasillas()]->getTipo()) {
         case Casilla::Tipo::Normal:
             m_formulario->mostrarPregunta();
-            break;
+            m_dado->bloquearDado();
+            return;
         case Casilla::Tipo::Oca:
             for(int i=0;i<m_casillasOca.size();i++){
                 if(actual->numCasillas()==m_casillasOca[i]-1){
@@ -275,8 +296,17 @@ void Tablero::moverFicha(QString pasosText)
             }
             return;
         case Casilla::Tipo::Calavera:
+            moverFichaA(1);
             break;
         case Casilla::Tipo::Puente:
+            for(int i=0;i<m_casillasPuente.size();i++){
+                if(actual->numCasillas()==m_casillasPuente[i]-1){
+                    if(i==m_casillasPuente.size())
+                        i = 0;
+                    moverFichaA(m_casillasPuente[i+1]);
+                    break;
+                }
+            }
             break;
         }
     }
@@ -318,6 +348,7 @@ void Tablero::cambiarTurno()
     if(m_turno>=m_jugadores.size())
         m_turno=0;
     actual = m_jugadores[m_turno];
+    emit actualChanged(actual);
 }
 
 void Tablero::restaurarPreguntas()
@@ -337,9 +368,12 @@ void Tablero::addFicha(Ficha *newFicha)
         m_jugadores.removeFirst();
     m_jugadores.append(newFicha);
     m_casillas[0]->aniadirFicha(m_jugadores.last());
-    if(m_jugadores.size()==1)
+    if(m_jugadores.size()==1){
         actual = m_jugadores[0];
+        emit actualChanged(actual);
+    }
     m_turno=0;
+    m_formulario->actualizarJugadores();
 }
 
 Dado *Tablero::dado() const
