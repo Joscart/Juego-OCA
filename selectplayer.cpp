@@ -20,6 +20,8 @@ SelectPlayer::SelectPlayer(QWidget *parent) :
     for(int i=0;i<4;i++){
         m_lblImagenesFicha[i]->setPixmap(m_imagenesFicha[i]);
     }
+    connect(ui->btnCancelar,&QPushButton::clicked,this,&SelectPlayer::on_btnCancelar_clicked);
+    connect(ui->btnSiguiente,&QPushButton::clicked,this,&SelectPlayer::on_btnSiguiente_clicked);
 }
 
 SelectPlayer::~SelectPlayer()
@@ -36,5 +38,38 @@ void SelectPlayer::on_btnSiguiente_clicked()
 void SelectPlayer::on_btnCancelar_clicked()
 {
     emit cancelarPressed();
+}
+
+QList<Jugador *> SelectPlayer::jugadores()
+{
+    return m_jugadores;
+}
+
+void SelectPlayer::setJugadores(Jugador *newJugadores)
+{
+    if(m_jugadores.size()>=4)
+        m_jugadores.removeFirst();
+    m_jugadores.append(newJugadores);
+}
+
+void SelectPlayer::delJugadores(Jugador *jugador)
+{
+    for(int i=0;i<m_jugadores.size();i++){
+        if(m_jugadores[i]==jugador){
+            m_jugadores.removeOne(jugador);
+        }
+    }
+}
+
+
+void SelectPlayer::on_rbtnJugador_4_toggled(bool checked)
+{
+    if(checked){
+        setJugadores(new Jugador);
+        m_jugadores.last()->setNombre("Jugador_"+QString::number(m_jugadores.size()));
+        m_jugadores.last()->setFichaImagen(m_imagenesFicha[3]);
+    }else{
+
+    }
 }
 

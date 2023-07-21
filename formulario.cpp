@@ -75,12 +75,12 @@ void Formulario::setJugadores(QList<Ficha *> *newJugadores)
 
 void Formulario::actualizarJugadores()
 {
-    for(int i=0;i<4;i++){
-        if(i<m_jugadores->size()){
-            m_lbljugadores[i]->setText(m_jugadores->at(i)->NombreJugador());
-        }else{
-            m_lbljugadores[i]->setText("");
-        }
-    }
+//    for(int i=0;i<4;i++){
+//        if(i<m_jugadores->size()){
+//            m_lbljugadores[i]->setText(m_jugadores->at(i)->NombreJugador());
+//        }else{
+//            m_lbljugadores[i]->setText("");
+//        }
+//    }
 }
 

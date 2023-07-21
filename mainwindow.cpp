@@ -11,51 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->stackedWidget->setCurrentIndex(0);//widget vacio
     m_preguntas = m_config.temario();
     m_fichas = new SelectPlayer();
-    connect(m_fichas,&SelectPlayer::cancelarPressed,this,[this](){
-        ui->stackedWidget->setCurrentIndex(1);
-    });
-    connect(m_fichas,&SelectPlayer::siguientePressed,this,[this](){
-        ui->stackedWidget->setCurrentIndex(1);
-        //Iniciar el widget del juego
-        if (m_tablero != nullptr) {
-            Tablero *aux = new Tablero();
-            ui->horizontalLayout->removeWidget(m_tablero);
-            m_tablero->hide();
-            ui->horizontalLayout->insertWidget(0, aux);
-            ui->verticalLayout->removeWidget(m_tablero->dado());
-            m_tablero->dado()->hide();
-            ui->verticalLayout->insertWidget(2, aux->dado());
-            ui->verticalLayout->removeWidget(m_tablero->formulario());
-            m_tablero->formulario()->hide();
-            ui->verticalLayout->insertWidget(0, aux->formulario());
-            delete m_tablero;
-            m_tablero = aux;
-        } else {
-            m_tablero = new Tablero();
-            ui->horizontalLayout->replaceWidget(ui->wTablero, m_tablero);
-            ui->verticalLayout->replaceWidget(ui->wDado, m_tablero->dado());
-            ui->verticalLayout->replaceWidget(ui->wPregunta, m_tablero->formulario());
-        }
 
-        //ui->horizontalLayout->replaceWidget(ui->wTablero,m_tablero);
-        setStyleSheet("QWidget#wTablero{"
-                      "min-width: 880px;"
-                      "min-height: 680px;"
-                      "border-image: url(:/Recursos/Imagenes/Tablero2.png);"
-                      "}"
-                      "QWidget#wPregunta{"
-                      "min-width: 300px;"
-                      "min-height: 340px;"
-                      "}"
-                      "QWidget#wDado{"
-                      "min-width: 300px;"
-                      "min-height: 340px;"
-                      "}");
-        foreach (Jugador *actual, m_jugadores) {
-            m_tablero->addFicha(actual->ficha());
-        }
-        m_tablero->setPreguntas(m_preguntas->randomizarPreguntas());
-    });
 }
 
 MainWindow::~MainWindow()
@@ -82,8 +38,77 @@ void MainWindow::on_actionNuevo_Juego_triggered()
         m_fichas = aux1;
     } else {
         m_fichas = new SelectPlayer();
-        ui->verticalLayout->replaceWidget(ui->wSelecion, m_fichas);
+        ui->verticalLayout_6->replaceWidget(ui->wSelecion, m_fichas);
     }
+
+    //Datos de prueba
+    m_jugadores.append(new Jugador);
+    m_jugadores.last()->setNombre("Jugador_1");
+    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha1.png"));
+    m_jugadores.append(new Jugador);
+    m_jugadores.last()->setNombre("Jugador_2");
+    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha2.png"));
+    m_jugadores.append(new Jugador);
+    m_jugadores.last()->setNombre("Jugador_3");
+    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha3.png"));
+    m_jugadores.append(new Jugador);
+    m_jugadores.last()->setNombre("Jugador_4");
+    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha4.png"));
+
+    connect(m_fichas,&SelectPlayer::cancelarPressed,this,[this](){
+        ui->stackedWidget->setCurrentIndex(0);
+    });
+    connect(m_fichas,&SelectPlayer::siguientePressed,this,[this](){
+        ui->stackedWidget->setCurrentIndex(2);
+        //Iniciar el widget del juego
+        if (m_tablero != nullptr) {
+            Tablero *aux = new Tablero();
+            ui->horizontalLayout->removeWidget(m_tablero);
+            m_tablero->hide();
+            ui->horizontalLayout->insertWidget(0, aux);
+            ui->verticalLayout->removeWidget(m_tablero->dado());
+            m_tablero->dado()->hide();
+            ui->verticalLayout->insertWidget(2, aux->dado());
+            ui->verticalLayout->removeWidget(m_tablero->formulario());
+            m_tablero->formulario()->hide();
+            ui->verticalLayout->insertWidget(0, aux->formulario());
+            delete m_tablero;
+            m_tablero = aux;
+        } else {
+            m_tablero = new Tablero();
+            ui->horizontalLayout->removeWidget(ui->wTablero);
+            ui->wTablero->hide();
+            ui->horizontalLayout->insertWidget(0, m_tablero);
+            ui->verticalLayout->removeWidget(ui->wDado);
+            ui->wDado->hide();
+            ui->verticalLayout->insertWidget(2, m_tablero->dado());
+            ui->verticalLayout->removeWidget(ui->wPregunta);
+            ui->wPregunta->hide();
+            ui->verticalLayout->insertWidget(0, m_tablero->formulario());
+            delete ui->wTablero;
+            delete ui->wDado;
+            delete ui->wPregunta;
+        }
+
+        //ui->horizontalLayout->replaceWidget(ui->wTablero,m_tablero);
+        setStyleSheet("QWidget#wTablero{"
+                      "min-width: 880px;"
+                      "min-height: 680px;"
+                      "border-image: url(:/Recursos/Imagenes/Tablero2.png);"
+                      "}"
+                      "QWidget#wPregunta{"
+                      "min-width: 300px;"
+                      "min-height: 340px;"
+                      "}"
+                      "QWidget#wDado{"
+                      "min-width: 300px;"
+                      "min-height: 340px;"
+                      "}");
+        foreach (Jugador *actual, m_jugadores) {
+            m_tablero->addFicha(actual->ficha());
+        }
+        m_tablero->setPreguntas(m_preguntas->randomizarPreguntas());
+    });
 }
 
 
