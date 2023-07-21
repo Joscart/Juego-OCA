@@ -48,23 +48,18 @@ void Temario::on_btnguardar_clicked()
         QMessageBox::warning(this, "Guardar temario", "el temario no tiene suficientes preguntas");
         return;
     }
-    QString carpetaarchivo= ui->lnltematica->text();
 
-    if(carpetaarchivo.isEmpty()){
-        QMessageBox::warning(this,"Guardar temario","Debe ingresar un nombre al temario");
-        return;
-    }
-    QString archivobin=carpetaarchivo+".bin";
+    QString archivobin=ARCHIVO;
     QString folderpath = QCoreApplication::applicationDirPath();
     QString seleccionardireccion = folderpath + "/" + archivobin;
     QFile archivo(seleccionardireccion);
-    if (archivo.open(QFile::WriteOnly)) {
+    if (archivo.open(QFile::WriteOnly | QFile::Truncate)) {
         QDataStream salida(&archivo);
         for (int i=0; i<filas; i++) {
-            QTableWidgetItem *pregunta = ui->tbl_temario->item(i, PREGUNTA);
+            QTableWidgetItem *pregunta = ui->tbl_temario->item(i,PREGUNTA);
             QTableWidgetItem *respuesta = ui->tbl_temario->item(i, RESPUESTA);
 
-            salida << pregunta->text() << respuesta->text() << "\n";
+            salida << pregunta->text() <<";"<< respuesta->text()<<" " ;
         }
         archivo.close();
         QMessageBox::information(this,"Guardar temario","temario guardado");

@@ -39,7 +39,7 @@ private slots:
 
 private:
     Ui::Temario *ui;
-    const QString ARCHIVO = "temario.cvs";
+    const QString ARCHIVO = "temario.bin";
     enum columna{
         PREGUNTA, RESPUESTA
     };
