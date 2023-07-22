@@ -219,6 +219,9 @@ void Tablero::cargarWidgets()
                                              "}");
             }
         }
+        if(i+1==m_casillaFinal){
+            m_casillas[i]->setTipo(Casilla::Tipo::Final);
+        }
     }
 }
 
@@ -319,6 +322,9 @@ void Tablero::moverFicha(QString pasosText)
                 }
             }
             break;
+        case Casilla::Tipo::Final:
+            QMessageBox::information(this,"Fin del Juego",actual->NombreJugador()+" ha Ganado el Juego :D");
+            return;
         }
     }
 

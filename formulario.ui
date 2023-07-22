@@ -30,12 +30,17 @@
    <item>
     <widget class="QStackedWidget" name="stkPreguntar">
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="Preguntar">
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <widget class="QFrame" name="frame">
+         <property name="styleSheet">
+          <string notr="true">QFrame#frame{
+	border-image: url(:/Recursos/Imagenes/PantallaCarga.jpeg);
+}</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>

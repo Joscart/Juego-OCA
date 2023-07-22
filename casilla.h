@@ -24,7 +24,8 @@ public:
         Normal,
         Calavera,
         Oca,
-        Puente
+        Puente,
+        Final
     };
 
     // Esta es una función miembro constante llamada 'getTipo' que no toma argumentos.

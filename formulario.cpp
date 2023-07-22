@@ -87,7 +87,7 @@ void Formulario::correcto()
 void Formulario::incorrecto()
 {
     ui->stkPreguntar->setCurrentIndex(2);
-    ui->lblPreguntar->setPixmap(QPixmap(":/Recursos/Imagenes/OcaIncorrecto.png"));
+    ui->lblPreguntar->setPixmap(QPixmap(":/Recursos/Imagenes/OcaIncorrecto2.png"));
     delay(1000);
     ui->stkPreguntar->setCurrentIndex(1);
 }

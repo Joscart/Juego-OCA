@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QGraphicsDropShadowEffect>
 #include <QSoundEffect>
+#include <QMessageBox>
 #include <dado.h>
 #include <formulario.h>
 #include <casilla.h>
