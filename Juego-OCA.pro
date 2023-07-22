@@ -52,8 +52,8 @@ FORMS += \
     temario.ui
 
 TRANSLATIONS += \
-    Juego-OCA_es_419.ts\
-    Juego-OCA_en_US.ts
+    Juego-OCA_es.ts \
+    Juego-OCA_en.ts
 CONFIG += lrelease
 CONFIG += embed_translations
 

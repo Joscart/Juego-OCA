@@ -1,6 +1,7 @@
 #ifndef CONFIGURACION_H
 #define CONFIGURACION_H
 
+#include "idiomas.h"
 #include <QDialog>
 #include <temario.h>
 
@@ -16,6 +17,8 @@ public:
     explicit Configuracion(QWidget *parent = nullptr);
     ~Configuracion();
     Temario *temario();
+signals:
+    void idiomaCambiado(QString idioma);
 
 private slots:
 
@@ -26,6 +29,7 @@ private slots:
 private:
     Ui::Configuracion *ui;
     Temario *m_temario;
+    Idiomas *m_idiomas;
 };
 
 #endif // CONFIGURACION_H

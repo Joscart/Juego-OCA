@@ -19,9 +19,9 @@ void Idiomas::on_bttnAceptar_clicked()
      * 0 Es Español
      * 1 Es Ingles*/
     if(ui->cbIdiomas->currentIndex() == 0){
-        QLocale::setDefault(QLocale(QLocale::Spanish, QLocale::Spain));
+        emit idiomaCambiado((QLocale(QLocale::Spanish)).name());
     }else if(ui->cbIdiomas->currentIndex() == 1){
-        QLocale::setDefault(QLocale(QLocale::English, QLocale::UnitedStates));
+        emit idiomaCambiado((QLocale(QLocale::English)).name());
 
     }
 }

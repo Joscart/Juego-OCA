@@ -7,12 +7,16 @@ Configuracion::Configuracion(QWidget *parent) :
 {
     ui->setupUi(this);
     m_temario = new Temario;
+    m_idiomas = new Idiomas;
     ui->stkConfig->setCurrentIndex(0);
     ui->stkConfig->removeWidget(ui->stkConfig->currentWidget());
     ui->stkConfig->setCurrentIndex(0);
     ui->stkConfig->removeWidget(ui->stkConfig->currentWidget());
     ui->stkConfig->addWidget(m_temario);
-    ui->stkConfig->addWidget(new QWidget);
+    ui->stkConfig->addWidget(m_idiomas);
+    connect(m_idiomas,&Idiomas::idiomaCambiado,this,[this](QString idioma){
+        emit idiomaCambiado(idioma);
+    });
 }
 
 Configuracion::~Configuracion()

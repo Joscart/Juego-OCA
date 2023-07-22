@@ -135,6 +135,14 @@ void MainWindow::on_actionConfiguracion_triggered()
 {
     m_config.temario()->cargarPreguntas();
     m_config.exec();
+    ui->retranslateUi(this);
+    this->update();
+
+}
+
+Configuracion &MainWindow::config()
+{
+    return m_config;
 }
 
 void MainWindow::datatest()

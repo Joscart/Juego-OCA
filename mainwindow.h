@@ -22,6 +22,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    Configuracion &config();
+
 private slots:
     void on_actionSalir_triggered();
 

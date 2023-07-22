@@ -14,6 +14,8 @@ class Idiomas : public QDialog
 public:
     explicit Idiomas(QDialog *parent = nullptr);
     ~Idiomas();
+signals:
+    void idiomaCambiado(QString idioma);
 
 private slots:
     void on_bttnAceptar_clicked();
