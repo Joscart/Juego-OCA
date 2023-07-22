@@ -10,7 +10,6 @@ MainWindow::MainWindow(QWidget *parent)
     //Por defult que inicie en una windows vacia
     ui->stackedWidget->setCurrentIndex(0);//widget vacio
     m_preguntas = m_config.temario();
-    m_fichas = new SelectPlayer();
 
     //Datos de prueba
     m_jugadores.append(new Jugador);
@@ -43,19 +42,37 @@ void MainWindow::on_actionNuevo_Juego_triggered()
     //seleccionar jugadores
     ui->stackedWidget->setCurrentIndex(1);
     if (m_fichas != nullptr) {
+        if(m_tablero != nullptr){
+            ui->horizontalLayout->removeWidget(m_tablero);
+            m_tablero->hide();
+            ui->horizontalLayout->insertWidget(0, ui->wTablero);
+            ui->verticalLayout->removeWidget(m_tablero->dado());
+            m_tablero->dado()->hide();
+            ui->verticalLayout->insertWidget(2, ui->wDado);
+            ui->verticalLayout->removeWidget(m_tablero->formulario());
+            m_tablero->formulario()->hide();
+            ui->verticalLayout->insertWidget(0, ui->wPregunta);
+            delete m_tablero;
+            m_tablero = nullptr;
+        }
         SelectPlayer *aux1 = new SelectPlayer();
-        ui->verticalLayout_6->removeWidget(m_fichas);
+        ui->verticalLayout_5->removeWidget(m_fichas);
         m_fichas->hide();
-        ui->verticalLayout_6->insertWidget(0, aux1);
+        ui->verticalLayout_5->insertWidget(0, aux1);
         delete m_fichas;
         m_fichas = aux1;
     } else {
         m_fichas = new SelectPlayer();
-        ui->verticalLayout_6->replaceWidget(ui->wSelecion, m_fichas);
+        ui->verticalLayout_5->replaceWidget(ui->wSelecion, m_fichas);
     }
 
     connect(m_fichas,&SelectPlayer::cancelarPressed,this,[this](){
         ui->stackedWidget->setCurrentIndex(0);
+        ui->verticalLayout_5->removeWidget(m_fichas);
+        m_fichas->hide();
+        ui->verticalLayout_5->insertWidget(0, ui->wSelecion);
+        delete m_fichas;
+        m_fichas = nullptr;
     });
     connect(m_fichas,&SelectPlayer::siguientePressed,this,[this](){
         ui->stackedWidget->setCurrentIndex(2);
@@ -87,9 +104,6 @@ void MainWindow::on_actionNuevo_Juego_triggered()
             ui->verticalLayout->removeWidget(ui->wPregunta);
             ui->wPregunta->hide();
             ui->verticalLayout->insertWidget(0, m_tablero->formulario());
-            delete ui->wTablero;
-            delete ui->wDado;
-            delete ui->wPregunta;
             m_tablero->setObjectName("Tablero");
             m_tablero->formulario()->setObjectName("Formulario");
             m_tablero->dado()->setObjectName("Dado");
