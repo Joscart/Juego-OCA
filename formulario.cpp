@@ -5,14 +5,10 @@ Formulario::Formulario(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Formulario)
 {
-    ui->setupUi(this);
+    ui->setupUi(this); 
     ui->lblGanso->setMovie(new QMovie(":/Recursos/Videos/XOsX.gif"));
     ui->lblGanso->movie()->setScaledSize(QSize(60,50));
     ui->lblGanso->movie()->start();
-    m_lbljugadores.append(ui->lblJugador_1);
-    m_lbljugadores.append(ui->lblJugador_2);
-    m_lbljugadores.append(ui->lblJugador_3);
-    m_lbljugadores.append(ui->lblJugador_4);
     actualizarJugadores();
 }
 
@@ -80,6 +76,29 @@ void Formulario::on_btnFalso_clicked()
     emit respuesta(false);
 }
 
+void Formulario::correcto()
+{
+    ui->stkPreguntar->setCurrentIndex(2);
+    ui->lblPreguntar->setPixmap(QPixmap(":/Recursos/Imagenes/OcaCorrecto.png"));
+    delay(500);
+    ui->stkPreguntar->setCurrentIndex(1);
+}
+
+void Formulario::incorrecto()
+{
+    ui->stkPreguntar->setCurrentIndex(2);
+    ui->lblPreguntar->setPixmap(QPixmap(":/Recursos/Imagenes/OcaIncorrecto.png"));
+    delay(500);
+    ui->stkPreguntar->setCurrentIndex(1);
+}
+
+void Formulario::delay(int mSecs)
+{
+    QTime dieTime= QTime::currentTime().addMSecs(mSecs);
+    while (QTime::currentTime() < dieTime)
+        QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+}
+
 void Formulario::setFichaActual(Ficha *newFichaActual)
 {
     m_fichaActual = newFichaActual;
@@ -101,13 +120,5 @@ void Formulario::actualizarJugadores()
         return;
 
     ui->stkPreguntar->setCurrentIndex(1);
-
-    for(int i=0;i<4;i++){
-        if(i<m_jugadores->size()){
-            m_lbljugadores[i]->setText(m_jugadores->at(i)->NombreJugador());
-        }else{
-            m_lbljugadores[i]->setText("");
-        }
-    }
 }
 

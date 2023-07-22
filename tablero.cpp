@@ -3,7 +3,8 @@
 
 Tablero::Tablero(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Tablero)
+    ui(new Ui::Tablero),
+    m_soundTap(this)
 {
     ui->setupUi(this);
     m_dado = new Dado(this);
@@ -20,13 +21,17 @@ Tablero::Tablero(QWidget *parent) :
     connect(m_formulario, &Formulario::respuesta, this, [this](bool aux) {
         QString respuesta = aux ? "verdadero" : "falso";
         if (m_formulario->actual()->respuesta() != respuesta) {
+            m_formulario->incorrecto();
             moverFicha(-1 * m_dado->resultado());
         }else{
+            m_formulario->correcto();
             cambiarTurno();
         }
-        m_dado->bloquearDado();
         m_formulario->usarPregunta();
     });
+
+    m_soundTap.setSource(QUrl(":/Recursos/Audio/Recording.wav"));
+    m_soundTap.setVolume(1.0);
 
     //Sombras de letras
     int xOffset = 2;
@@ -194,7 +199,7 @@ void Tablero::cargarWidgets()
             if(i+1==casilla){
                 m_casillas[i]->setTipo(Casilla::Tipo::Oca);
                 m_casillas[i]->setStyleSheet("QFrame#frame{"
-                                             "border-image: url(:/Recursos/Imagenes/Casilla3.png);"
+                                             "border-image: url(:/Recursos/Imagenes/CasillaOca2.png);"
                                              "}");
             }
         }
@@ -210,7 +215,7 @@ void Tablero::cargarWidgets()
             if(i+1==casilla){
                 m_casillas[i]->setTipo(Casilla::Tipo::Calavera);
                 m_casillas[i]->setStyleSheet("QFrame#frame{"
-                                             "border-image: url(:/Recursos/Imagenes/Casilla2.png);"
+                                             "border-image: url(:/Recursos/Imagenes/CasillaCalavera3.png);"
                                              "}");
             }
         }
@@ -229,6 +234,7 @@ void Tablero::moverFicha(int pasos)
         m_casillas[actual->numCasillas()]->eliminarFicha(actual);
         m_casillas[actual->numCasillas()+1]->aniadirFicha(actual);
         actual->setNumCasillas(actual->numCasillas() + 1);
+        m_soundTap.play();
     }
     if(pasos<0){
         for(int i=0;i>pasos;i--){
@@ -238,7 +244,7 @@ void Tablero::moverFicha(int pasos)
             actual->setNumCasillas(actual->numCasillas() - 1);
             m_casillas[actual->numCasillas()]->aniadirFicha(actual);
             m_casillas[actual->numCasillas()+1]->eliminarFicha(actual);
-
+            m_soundTap.play();
         }
     }
     m_formulario->mostrarPregunta();
@@ -264,6 +270,7 @@ void Tablero::moverFicha(QString pasosText)
             m_casillas[actual->numCasillas()]->eliminarFicha(actual);
             m_casillas[actual->numCasillas()+1]->aniadirFicha(actual);
             actual->setNumCasillas(actual->numCasillas() + 1);
+            m_soundTap.play();
         }
         if(pasos<0){
             for(int i=0;i>pasos;i--){
@@ -273,6 +280,7 @@ void Tablero::moverFicha(QString pasosText)
                 actual->setNumCasillas(actual->numCasillas() - 1);
                 m_casillas[actual->numCasillas()]->aniadirFicha(actual);
                 m_casillas[actual->numCasillas()+1]->eliminarFicha(actual);
+                m_soundTap.play();
 
             }
         }
@@ -280,10 +288,12 @@ void Tablero::moverFicha(QString pasosText)
             // La ficha ha llegado a la casilla final
 
         }
+
+
+
         switch (m_casillas[actual->numCasillas()]->getTipo()) {
         case Casilla::Tipo::Normal:
             m_formulario->mostrarPregunta();
-            m_dado->bloquearDado();
             return;
         case Casilla::Tipo::Oca:
             for(int i=0;i<m_casillasOca.size();i++){
@@ -291,6 +301,7 @@ void Tablero::moverFicha(QString pasosText)
                     if(i==m_casillasOca.size()-1)
                         i = -1;
                     moverFichaA(m_casillasOca[i+1]);
+                    m_dado->bloquearDado();
                     break;
                 }
             }
@@ -323,6 +334,7 @@ void Tablero::moverFichaA(int casillaDestino)
     m_casillas[actual->numCasillas()]->eliminarFicha(actual);
     m_casillas[casillaDestino-1]->aniadirFicha(actual);
     actual->setNumCasillas(casillaDestino-1);
+    m_soundTap.play();
 }
 
 QList<Pregunta *> Tablero::preguntas()
@@ -349,6 +361,7 @@ void Tablero::cambiarTurno()
         m_turno=0;
     actual = m_jugadores[m_turno];
     emit actualChanged(actual);
+    m_dado->bloquearDado();
 }
 
 void Tablero::restaurarPreguntas()

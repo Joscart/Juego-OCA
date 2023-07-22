@@ -34,5 +34,31 @@
         <file>Recursos/Imagenes/Portal.jpeg</file>
         <file>Recursos/Imagenes/Portal.png</file>
         <file>Recursos/Videos/XOsX.gif</file>
+        <file>Recursos/Imagenes/CasillaCalavera.png</file>
+        <file>Recursos/Imagenes/CasillaCalaveraCompleta.png</file>
+        <file>Recursos/Imagenes/CasillaOca.png</file>
+        <file>Recursos/Imagenes/CasillaOcaCompleta.png</file>
+        <file>Recursos/Imagenes/GotaLagrima.png</file>
+        <file>Recursos/Imagenes/OcaCaminando.png</file>
+        <file>Recursos/Imagenes/OcaCorrecto.png</file>
+        <file>Recursos/Imagenes/OcaCorrecto2.jpg</file>
+        <file>Recursos/Imagenes/OcaCorrecto2.png</file>
+        <file>Recursos/Imagenes/OcaCorrecto3.jpg</file>
+        <file>Recursos/Imagenes/OcaCorrecto4.jpg</file>
+        <file>Recursos/Imagenes/OcaCorrecto5.jpg</file>
+        <file>Recursos/Imagenes/OcaIncorrecto.png</file>
+        <file>Recursos/Imagenes/OcaIncorrecto2.png</file>
+        <file>Recursos/Imagenes/OcaPeque.png</file>
+        <file>Recursos/Imagenes/OcaVolando.png</file>
+        <file>Recursos/Preguntas/temario.bin</file>
+        <file>Recursos/Imagenes/CasillaCalavera2.jpeg</file>
+        <file>Recursos/Imagenes/CasillaCalavera2.png</file>
+        <file>Recursos/Imagenes/CasillaCalavera3.jpeg</file>
+        <file>Recursos/Imagenes/CasillaCalavera3.png</file>
+        <file>Recursos/Imagenes/CasillaOca2.jpeg</file>
+        <file>Recursos/Imagenes/CasillaOca2.png</file>
+        <file>Recursos/Imagenes/CasillaOca3.jpeg</file>
+        <file>Recursos/Imagenes/CasillaOca3.png</file>
+        <file>Recursos/Audio/Recording.wav</file>
     </qresource>
 </RCC>

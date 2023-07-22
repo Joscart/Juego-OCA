@@ -38,6 +38,10 @@ signals:
 public slots:
     void setFichaActual(Ficha *newFichaActual);
 
+    void correcto();
+
+    void incorrecto();
+
 private slots:
     void on_btnVerdadero_clicked();
 
@@ -48,8 +52,8 @@ private:
     QList<Pregunta*> *m_preguntas;
     Pregunta *m_actual = nullptr;
     QList <Ficha*> *m_jugadores = nullptr;
-    QList <QLabel*> m_lbljugadores;
     Ficha *m_fichaActual;
+    void delay(int mSecs);
 };
 
 #endif // FORMULARIO_H

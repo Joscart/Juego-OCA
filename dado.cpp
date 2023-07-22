@@ -31,7 +31,6 @@ Dado::Dado(QWidget *parent) :
             m_resultado = contadorAnimacion + 1;
             this->setWindowTitle("");
             this->setWindowTitle(QString::number(m_resultado));
-            ui->btnDado->setEnabled(true);
         }
     });
 
@@ -49,11 +48,7 @@ int Dado::resultado() const
 
 void Dado::bloquearDado()
 {
-    if(ui->btnDado->isEnabled()){
-        ui->btnDado->setEnabled(true);
-    }else{
-        ui->btnDado->setEnabled(false);
-    }
+    ui->btnDado->setEnabled(true);
 }
 
 

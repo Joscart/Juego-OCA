@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>356</width>
+    <width>400</width>
     <height>332</height>
    </rect>
   </property>
@@ -63,7 +63,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="Inicio">
        <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -227,7 +227,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>356</width>
+     <width>400</width>
      <height>23</height>
     </rect>
    </property>

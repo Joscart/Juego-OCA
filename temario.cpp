@@ -71,8 +71,9 @@ void Temario::on_btnguardar_clicked()
 void Temario::cargarPreguntas()
 {
     QFile archivo(ARCHIVO);
-    if (!archivo.exists())
-        return;
+    if (!archivo.exists()){
+        archivo.setFileName(":/Recursos/Preguntas/temario.bin");
+    }
 
     if (archivo.open(QFile::ReadOnly)) {
         QDataStream entrada(&archivo);

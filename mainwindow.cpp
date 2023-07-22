@@ -12,6 +12,19 @@ MainWindow::MainWindow(QWidget *parent)
     m_preguntas = m_config.temario();
     m_fichas = new SelectPlayer();
 
+    //Datos de prueba
+    m_jugadores.append(new Jugador);
+    m_jugadores.last()->setNombre("Jugador_1");
+    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha1.png"));
+    m_jugadores.append(new Jugador);
+    m_jugadores.last()->setNombre("Jugador_2");
+    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha2.png"));
+    m_jugadores.append(new Jugador);
+    m_jugadores.last()->setNombre("Jugador_3");
+    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha3.png"));
+    m_jugadores.append(new Jugador);
+    m_jugadores.last()->setNombre("Jugador_4");
+    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha4.png"));
 }
 
 MainWindow::~MainWindow()
@@ -40,20 +53,6 @@ void MainWindow::on_actionNuevo_Juego_triggered()
         m_fichas = new SelectPlayer();
         ui->verticalLayout_6->replaceWidget(ui->wSelecion, m_fichas);
     }
-
-    //Datos de prueba
-    m_jugadores.append(new Jugador);
-    m_jugadores.last()->setNombre("Jugador_1");
-    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha1.png"));
-    m_jugadores.append(new Jugador);
-    m_jugadores.last()->setNombre("Jugador_2");
-    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha2.png"));
-    m_jugadores.append(new Jugador);
-    m_jugadores.last()->setNombre("Jugador_3");
-    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha3.png"));
-    m_jugadores.append(new Jugador);
-    m_jugadores.last()->setNombre("Jugador_4");
-    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha4.png"));
 
     connect(m_fichas,&SelectPlayer::cancelarPressed,this,[this](){
         ui->stackedWidget->setCurrentIndex(0);
