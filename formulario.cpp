@@ -29,8 +29,10 @@ void Formulario::setPreguntas(QList<Pregunta *> *newPreguntas)
 
 void Formulario::usarPregunta()
 {
-    if(m_preguntas->size()<0)
+    if(m_preguntas->size()<0){
+        m_actual = nullptr;
         return;
+    }
     if(m_preguntas->size()==1){
         m_actual = nullptr;
         m_preguntas->pop_back();
@@ -44,7 +46,22 @@ void Formulario::mostrarPregunta()
 {
     if(m_actual==nullptr)
         return;
-    ui->lblPregunta->setText(m_actual->pregunta());
+    ui->stkPreguntar->setCurrentIndex(0);
+    if(m_actual->pregunta().length()<30){
+        ui->lblPregunta->setText(m_actual->pregunta());
+    }else{
+        QString aux = m_actual->pregunta();
+        aux = aux.trimmed();
+        QStringList palabras_pregunta = aux.split(" ");
+        aux = "";
+        for(int i=0;i<palabras_pregunta.size();i++){
+            aux += palabras_pregunta[i] + " ";
+            if((i+1)%2==0)
+                aux += "\n";
+        }
+        ui->lblPregunta->setText(aux);
+    }
+
 }
 
 Pregunta *Formulario::actual() const
@@ -66,6 +83,9 @@ void Formulario::on_btnFalso_clicked()
 void Formulario::setFichaActual(Ficha *newFichaActual)
 {
     m_fichaActual = newFichaActual;
+    ui->lblTurnoFicha->setText("Turno:\n" + m_fichaActual->NombreJugador());
+    ui->lblImagenFicha->setPixmap(m_fichaActual->imagen());
+    ui->stkPreguntar->setCurrentIndex(1);
 }
 
 void Formulario::setJugadores(QList<Ficha *> *newJugadores)
@@ -75,12 +95,19 @@ void Formulario::setJugadores(QList<Ficha *> *newJugadores)
 
 void Formulario::actualizarJugadores()
 {
-//    for(int i=0;i<4;i++){
-//        if(i<m_jugadores->size()){
-//            m_lbljugadores[i]->setText(m_jugadores->at(i)->NombreJugador());
-//        }else{
-//            m_lbljugadores[i]->setText("");
-//        }
-//    }
+    if(m_jugadores==nullptr)
+        return;
+    if(m_actual==nullptr)
+        return;
+
+    ui->stkPreguntar->setCurrentIndex(1);
+
+    for(int i=0;i<4;i++){
+        if(i<m_jugadores->size()){
+            m_lbljugadores[i]->setText(m_jugadores->at(i)->NombreJugador());
+        }else{
+            m_lbljugadores[i]->setText("");
+        }
+    }
 }
 

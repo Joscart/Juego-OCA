@@ -47,7 +47,7 @@ private:
     Ui::Formulario *ui;
     QList<Pregunta*> *m_preguntas;
     Pregunta *m_actual = nullptr;
-    QList <Ficha*> *m_jugadores;
+    QList <Ficha*> *m_jugadores = nullptr;
     QList <QLabel*> m_lbljugadores;
     Ficha *m_fichaActual;
 };

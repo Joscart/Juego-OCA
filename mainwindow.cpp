@@ -74,6 +74,9 @@ void MainWindow::on_actionNuevo_Juego_triggered()
             ui->verticalLayout->insertWidget(0, aux->formulario());
             delete m_tablero;
             m_tablero = aux;
+            m_tablero->setObjectName("Tablero");
+            m_tablero->formulario()->setObjectName("Formulario");
+            m_tablero->dado()->setObjectName("Dado");
         } else {
             m_tablero = new Tablero();
             ui->horizontalLayout->removeWidget(ui->wTablero);
@@ -88,19 +91,22 @@ void MainWindow::on_actionNuevo_Juego_triggered()
             delete ui->wTablero;
             delete ui->wDado;
             delete ui->wPregunta;
+            m_tablero->setObjectName("Tablero");
+            m_tablero->formulario()->setObjectName("Formulario");
+            m_tablero->dado()->setObjectName("Dado");
         }
 
         //ui->horizontalLayout->replaceWidget(ui->wTablero,m_tablero);
-        setStyleSheet("QWidget#wTablero{"
+        setStyleSheet("QWidget#Tablero{"
                       "min-width: 880px;"
                       "min-height: 680px;"
                       "border-image: url(:/Recursos/Imagenes/Tablero2.png);"
                       "}"
-                      "QWidget#wPregunta{"
+                      "QWidget#Formulario{"
                       "min-width: 300px;"
                       "min-height: 340px;"
                       "}"
-                      "QWidget#wDado{"
+                      "QWidget#Dado{"
                       "min-width: 300px;"
                       "min-height: 340px;"
                       "}");

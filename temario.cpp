@@ -59,7 +59,7 @@ void Temario::on_btnguardar_clicked()
             QTableWidgetItem *pregunta = ui->tbl_temario->item(i,PREGUNTA);
             QTableWidgetItem *respuesta = ui->tbl_temario->item(i, RESPUESTA);
 
-            salida << pregunta->text() <<";"<< respuesta->text()<<" " ;
+            salida << pregunta->text() << respuesta->text();
         }
         archivo.close();
         QMessageBox::information(this,"Guardar temario","temario guardado");
@@ -75,11 +75,13 @@ void Temario::cargarPreguntas()
         return;
 
     if (archivo.open(QFile::ReadOnly)) {
-        QTextStream entrada(&archivo);
+        QDataStream entrada(&archivo);
         int fila;
         while(!entrada.atEnd()){
-            QString linea = entrada.readLine();
-            QStringList datos = linea.split(";");
+            QStringList datos;
+            datos.append("");
+            datos.append("");
+            entrada >> datos[PREGUNTA] >> datos[RESPUESTA];
             fila = ui->tbl_temario->rowCount();
             ui->tbl_temario->insertRow(fila);
             ui->tbl_temario->setItem(fila, PREGUNTA, new QTableWidgetItem(datos[PREGUNTA]));

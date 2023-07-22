@@ -288,8 +288,8 @@ void Tablero::moverFicha(QString pasosText)
         case Casilla::Tipo::Oca:
             for(int i=0;i<m_casillasOca.size();i++){
                 if(actual->numCasillas()==m_casillasOca[i]-1){
-                    if(i==m_casillasOca.size())
-                        i = 0;
+                    if(i==m_casillasOca.size()-1)
+                        i = -1;
                     moverFichaA(m_casillasOca[i+1]);
                     break;
                 }
@@ -301,8 +301,8 @@ void Tablero::moverFicha(QString pasosText)
         case Casilla::Tipo::Puente:
             for(int i=0;i<m_casillasPuente.size();i++){
                 if(actual->numCasillas()==m_casillasPuente[i]-1){
-                    if(i==m_casillasPuente.size())
-                        i = 0;
+                    if(i==m_casillasPuente.size()-1)
+                        i = -1;
                     moverFichaA(m_casillasPuente[i+1]);
                     break;
                 }
