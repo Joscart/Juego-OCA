@@ -3,6 +3,12 @@
 
 #include <QMainWindow>
 #include <tablero.h>
+#include <jugador.h>
+#include <temario.h>
+#include <selectplayer.h>
+#include <configuracion.h>
+#include <QDesktopServices>
+#include <QUrl>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,8 +27,17 @@ private slots:
 
     void on_actionNuevo_Juego_triggered();
 
+    void on_btnEasterEgg_clicked();
+
+    void on_actionConfiguracion_triggered();
+
 private:
     Ui::MainWindow *ui;
-    Tablero *m_tablero;
+    Tablero *m_tablero = nullptr;
+    QList <Jugador*> m_jugadores;
+    Configuracion m_config;
+    Temario *m_preguntas;
+    SelectPlayer *m_fichas = nullptr;
+    void datatest();
 };
 #endif // MAINWINDOW_H

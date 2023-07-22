@@ -2,6 +2,7 @@
 #define FICHA_H
 
 #include <QObject>
+#include <QPixmap>
 
 class Ficha : public QObject
 {
@@ -9,13 +10,21 @@ class Ficha : public QObject
 public:
     explicit Ficha(QObject *parent = nullptr);
 
-    const QString &urlFicha() const;
-    void setUrlFicha(const QString &newUrlFicha);
+    const QString &NombreJugador() const;
+    void setNombreJugador(const QString &newNombreJugador);
+
+    const QPixmap &imagen() const;
+    void setImagen(const QPixmap &newImagen);
+
+    int numCasillas() const;
+    void setNumCasillas(int newNumCasillas);
 
 signals:
 
 private:
-    QString m_urlFicha;
+    QString m_NombreJugador;
+    QPixmap m_imagen;
+    int m_numCasillas = 0;
 };
 
 #endif // FICHA_H

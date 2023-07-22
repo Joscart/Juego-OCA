@@ -6,10 +6,12 @@ Casilla::Casilla(QWidget *parent) :
     ui(new Ui::Casilla)
 {
     ui->setupUi(this);
-}
-
-Casilla::Casilla(Tipo tipo) //Constructor añadido
-    : tipo(tipo) {
+    LugarFichas.append(ui->lbl1);
+    LugarFichas.append(ui->lbl2);
+    LugarFichas.append(ui->lbl3);
+    LugarFichas.append(ui->lbl4);
+    mostrarFicha();
+    setTipo(Tipo::Normal);
 }
 
 Casilla::~Casilla()
@@ -19,25 +21,36 @@ Casilla::~Casilla()
 
 void Casilla::aniadirFicha(Ficha *newFicha)
 {
-    Fichas.append(newFicha);
+    m_Fichas.append(newFicha);
+    mostrarFicha();
 }
 
 void Casilla::eliminarFicha(Ficha *ficha)
 {
-    Fichas.removeOne(ficha);
+    for(int i=0;i<m_Fichas.size();i++){
+        if(m_Fichas[i]==ficha){
+            m_Fichas.removeOne(ficha);
+        }
+    }
+    mostrarFicha();
 }
 
 
 void Casilla::mostrarFicha()
 {
-    if(Fichas.size()>4)
-        return;
-
-    QString style = "QWidget#Casilla{border-image: url(:/Recursos/Imagenes/Casilla.jpeg);}\n";
-    for (int i=0;i<Fichas.size();i++) {
-        style += "QLabel#lbl"+QString::number(i+1)+"{border-image: url("+Fichas[i]->urlFicha()+");}\n";
+    for(int i=0;i<4;i++){
+        if(i<m_Fichas.size()){
+            LugarFichas[i]->setPixmap(m_Fichas[i]->imagen());
+        }else{
+            LugarFichas[i]->setPixmap(QPixmap());
+        }
     }
-    setStyleSheet(style);
+
+}
+
+void Casilla::setTipo(Tipo newTipo)
+{
+    tipo = newTipo;
 }
 
 Casilla::Tipo Casilla::getTipo() const
@@ -45,7 +58,7 @@ Casilla::Tipo Casilla::getTipo() const
     return tipo;
 }
 
-void Casilla::casilllAccion(int casilla)
+void Casilla::casillaAccion(int casilla)
 {
 if(casilla==0){
     //pregunta

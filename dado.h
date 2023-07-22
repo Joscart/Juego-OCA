@@ -2,6 +2,7 @@
 #define DADO_H
 
 #include <QWidget>
+#include <QDateTime>
 #include <QTimer>
 #include <QRandomGenerator>
 
@@ -17,8 +18,9 @@ public:
     explicit Dado(QWidget *parent = nullptr);
     ~Dado();
 
-
     int resultado() const;
+
+    void bloquearDado();
 
 private:
     Ui::Dado *ui;

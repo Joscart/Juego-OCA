@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,32 +10,46 @@ CONFIG += c++11
 
 SOURCES += \
     casilla.cpp \
+    configuracion.cpp \
     dado.cpp \
     ficha.cpp \
     formulario.cpp \
     idiomas.cpp \
+    jugador.cpp \
     main.cpp \
     mainwindow.cpp \
     pregunta.cpp \
-    tablero.cpp
+    preguntasdialog.cpp \
+    selectplayer.cpp \
+    tablero.cpp \
+    temario.cpp
 
 HEADERS += \
     casilla.h \
+    configuracion.h \
     dado.h \
     ficha.h \
     formulario.h \
     idiomas.h \
+    jugador.h \
     mainwindow.h \
     pregunta.h \
-    tablero.h
+    preguntasdialog.h \
+    selectplayer.h \
+    tablero.h \
+    temario.h
 
 FORMS += \
     casilla.ui \
+    configuracion.ui \
     dado.ui \
     formulario.ui \
     idiomas.ui \
     mainwindow.ui \
-    tablero.ui
+    preguntasdialog.ui \
+    selectplayer.ui \
+    tablero.ui \
+    temario.ui
 
 TRANSLATIONS += \
     Juego-OCA_es_419.ts\
@@ -50,3 +64,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     Recursos.qrc
+

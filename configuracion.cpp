@@ -1,0 +1,38 @@
+#include "configuracion.h"
+#include "ui_configuracion.h"
+
+Configuracion::Configuracion(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::Configuracion)
+{
+    ui->setupUi(this);
+    m_temario = new Temario;
+    ui->stkConfig->setCurrentIndex(0);
+    ui->stkConfig->removeWidget(ui->stkConfig->currentWidget());
+    ui->stkConfig->setCurrentIndex(0);
+    ui->stkConfig->removeWidget(ui->stkConfig->currentWidget());
+    ui->stkConfig->addWidget(m_temario);
+    ui->stkConfig->addWidget(new QWidget);
+}
+
+Configuracion::~Configuracion()
+{
+    delete ui;
+}
+
+Temario *Configuracion::temario()
+{
+    return m_temario;
+}
+
+void Configuracion::on_btnOpcion_1_clicked()
+{
+    ui->stkConfig->setCurrentIndex(0);
+}
+
+
+void Configuracion::on_btnOpcion_2_clicked()
+{
+    ui->stkConfig->setCurrentIndex(1);
+}
+
