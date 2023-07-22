@@ -240,7 +240,7 @@ void Tablero::moverFicha(int pasos)
         for(int i=0;i>pasos;i--){
             if(actual->numCasillas()<=0)
                 break;
-            delay(m_speed);
+            delay(m_speed+100);
             actual->setNumCasillas(actual->numCasillas() - 1);
             m_casillas[actual->numCasillas()]->aniadirFicha(actual);
             m_casillas[actual->numCasillas()+1]->eliminarFicha(actual);
@@ -276,7 +276,7 @@ void Tablero::moverFicha(QString pasosText)
             for(int i=0;i>pasos;i--){
                 if(actual->numCasillas()<=0)
                     break;
-                delay(m_speed);
+                delay(m_speed+100);
                 actual->setNumCasillas(actual->numCasillas() - 1);
                 m_casillas[actual->numCasillas()]->aniadirFicha(actual);
                 m_casillas[actual->numCasillas()+1]->eliminarFicha(actual);

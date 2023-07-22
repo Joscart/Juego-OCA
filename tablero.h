@@ -52,7 +52,7 @@ private:
     void cambiarTurno();
     void restaurarPreguntas();
     int m_turno = -1;
-    int m_speed = 250;
+    int m_speed = 300;
     Dado *m_dado;
     Formulario *m_formulario;
     QSoundEffect m_soundTap;
