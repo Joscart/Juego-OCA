@@ -31,6 +31,13 @@ SelectPlayer::~SelectPlayer()
 
 void SelectPlayer::on_btnSiguiente_clicked()
 {
+    if(!ui->rbtnJugador_1->isChecked() and
+        !ui->rbtnJugador_2->isChecked() and
+        !ui->rbtnJugador_3->isChecked() and
+        !ui->rbtnJugador_4->isChecked()){
+        QMessageBox::warning(this, tr("Nuevo Juego"), tr("Necesita seleccionar almenos 1 ficha"));
+        return;
+    }
     emit siguientePressed();
 }
 

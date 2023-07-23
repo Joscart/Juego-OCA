@@ -2,6 +2,7 @@
 #define SELECTPLAYER_H
 
 #include <jugador.h>
+#include <QMessageBox>
 #include <QSound>
 #include <QWidget>
 #include <QLabel>
