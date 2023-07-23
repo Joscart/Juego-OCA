@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QLabel>
 #include <QGraphicsDropShadowEffect>
-#include <QSoundEffect>
+#include <QSound>
 #include <QMessageBox>
 #include <dado.h>
 #include <formulario.h>
@@ -56,7 +56,6 @@ private:
     int m_speed = 300;
     Dado *m_dado;
     Formulario *m_formulario;
-    QSoundEffect m_soundTap;
     void delay(int mSecs);
     QList <int> m_casillasOca = {
         1,5,9,14,18,23,27,32,36,41,45,51,54,59,63

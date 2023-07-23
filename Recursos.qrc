@@ -60,5 +60,6 @@
         <file>Recursos/Imagenes/CasillaOca3.jpeg</file>
         <file>Recursos/Imagenes/CasillaOca3.png</file>
         <file>Recursos/Audio/Recording.wav</file>
+        <file>Recursos/Audio/SoundTap.wav</file>
     </qresource>
 </RCC>

@@ -3,8 +3,7 @@
 
 Tablero::Tablero(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Tablero),
-    m_soundTap(this)
+    ui(new Ui::Tablero)
 {
     ui->setupUi(this);
     m_dado = new Dado(this);
@@ -30,8 +29,6 @@ Tablero::Tablero(QWidget *parent) :
         m_formulario->usarPregunta();
     });
 
-    m_soundTap.setSource(QUrl(":/Recursos/Audio/Recording.wav"));
-    m_soundTap.setVolume(1.0);
 
     //Sombras de letras
     int xOffset = 2;
@@ -237,7 +234,7 @@ void Tablero::moverFicha(int pasos)
         m_casillas[actual->numCasillas()]->eliminarFicha(actual);
         m_casillas[actual->numCasillas()+1]->aniadirFicha(actual);
         actual->setNumCasillas(actual->numCasillas() + 1);
-        m_soundTap.play();
+        QSound::play(":/Recursos/Audio/SoundTap.wav");
     }
     if(pasos<0){
         for(int i=0;i>pasos;i--){
@@ -247,7 +244,7 @@ void Tablero::moverFicha(int pasos)
             actual->setNumCasillas(actual->numCasillas() - 1);
             m_casillas[actual->numCasillas()]->aniadirFicha(actual);
             m_casillas[actual->numCasillas()+1]->eliminarFicha(actual);
-            m_soundTap.play();
+            QSound::play(":/Recursos/Audio/SoundTap.wav");
         }
     }
     m_formulario->mostrarPregunta();
@@ -273,7 +270,7 @@ void Tablero::moverFicha(QString pasosText)
             m_casillas[actual->numCasillas()]->eliminarFicha(actual);
             m_casillas[actual->numCasillas()+1]->aniadirFicha(actual);
             actual->setNumCasillas(actual->numCasillas() + 1);
-            m_soundTap.play();
+            QSound::play(":/Recursos/Audio/SoundTap.wav");
         }
         if(pasos<0){
             for(int i=0;i>pasos;i--){
@@ -283,8 +280,7 @@ void Tablero::moverFicha(QString pasosText)
                 actual->setNumCasillas(actual->numCasillas() - 1);
                 m_casillas[actual->numCasillas()]->aniadirFicha(actual);
                 m_casillas[actual->numCasillas()+1]->eliminarFicha(actual);
-                m_soundTap.play();
-
+                QSound::play(":/Recursos/Audio/SoundTap.wav");
             }
         }
         if (actual->numCasillas() == m_casillaFinal) {
@@ -340,7 +336,7 @@ void Tablero::moverFichaA(int casillaDestino)
     m_casillas[actual->numCasillas()]->eliminarFicha(actual);
     m_casillas[casillaDestino-1]->aniadirFicha(actual);
     actual->setNumCasillas(casillaDestino-1);
-    m_soundTap.play();
+    QSound::play(":/Recursos/Audio/SoundTap.wav");
 }
 
 QList<Pregunta *> Tablero::preguntas()
