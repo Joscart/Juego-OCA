@@ -25,6 +25,8 @@ public:
 
     QList<Pregunta *> randomizarPreguntas();
 
+    void cargarPreguntas();
+
 private slots:
 
     void on_btnagregar_clicked();
@@ -46,7 +48,6 @@ private:
         PREGUNTA, RESPUESTA
     };
     QList <Pregunta*> m_listaPreguntas;
-    void cargarPreguntas();
     void mostrarPreguntas(const QString &rArchivo);
     int mseleccion = -1;
 };

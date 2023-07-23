@@ -49,10 +49,7 @@ void Temario::on_btnguardar_clicked()
         return;
     }
 
-    QString archivobin=ARCHIVO;
-    QString folderpath = QCoreApplication::applicationDirPath();
-    QString seleccionardireccion = folderpath + "/" + archivobin;
-    QFile archivo(seleccionardireccion);
+    QFile archivo(ARCHIVO);
     if (archivo.open(QFile::WriteOnly | QFile::Truncate)) {
         QDataStream salida(&archivo);
         for (int i=0; i<filas; i++) {
@@ -71,10 +68,15 @@ void Temario::on_btnguardar_clicked()
 void Temario::cargarPreguntas()
 {
     QFile archivo(ARCHIVO);
-    if (!archivo.exists()){
+
+    if (!(archivo.exists())){
         archivo.setFileName(":/Recursos/Preguntas/temario.bin");
     }
 
+    m_listaPreguntas.clear();
+
+    ui->tbl_temario->clearContents();
+    ui->tbl_temario->setRowCount(0);
     if (archivo.open(QFile::ReadOnly)) {
         QDataStream entrada(&archivo);
         int fila;
@@ -173,6 +175,12 @@ void Temario::on_btneliminar_clicked()
     if (fila < 0) {
         return;
     }
+    ui->tbl_temario->setCurrentCell(fila,PREGUNTA);
+    for(int i=0;i<m_listaPreguntas.size();i++){
+        if(m_listaPreguntas[i]->pregunta()==ui->tbl_temario->currentItem()->text()){
+            m_listaPreguntas.removeAt(i);
+        }
+    }
     ui->tbl_temario->removeRow(fila);
 }
 
@@ -202,6 +210,7 @@ void Temario::on_btnexportar_clicked()
     } else {
         QMessageBox::critical(this, "Guardar temario", "No se puede escribir en el archivo csv");
     }
+    cargarPreguntas();
 }
 
 

@@ -140,6 +140,7 @@ void MainWindow::on_btnEasterEgg_clicked()
 
 void MainWindow::on_actionConfiguracion_triggered()
 {
+    m_config.temario()->cargarPreguntas();
     m_config.exec();
 }
 
