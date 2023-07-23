@@ -14,7 +14,7 @@
     <message>
         <location filename="configuracion.ui" line="14"/>
         <source>Configuracion</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion</translation>
     </message>
 </context>
 <context>
@@ -35,17 +35,23 @@
     <message>
         <location filename="formulario.ui" line="108"/>
         <source>Verdadero</source>
-        <translation type="unfinished"></translation>
+        <translation>Verdadero</translation>
     </message>
     <message>
         <location filename="formulario.ui" line="115"/>
         <source>Falso</source>
-        <translation type="unfinished"></translation>
+        <translation>Falso</translation>
     </message>
     <message>
         <location filename="formulario.ui" line="202"/>
         <source>Turno</source>
-        <translation type="unfinished"></translation>
+        <translation>Turno</translation>
+    </message>
+    <message>
+        <location filename="formulario.cpp" line="105"/>
+        <source>Turno:
+</source>
+        <translation>Turno:</translation>
     </message>
 </context>
 <context>
@@ -58,22 +64,22 @@
     <message>
         <location filename="idiomas.ui" line="31"/>
         <source>Elija un Idioma</source>
-        <translation type="unfinished"></translation>
+        <translation>Elija un Idioma</translation>
     </message>
     <message>
         <location filename="idiomas.ui" line="39"/>
         <source>Español</source>
-        <translation type="unfinished"></translation>
+        <translation>Español</translation>
     </message>
     <message>
         <location filename="idiomas.ui" line="44"/>
         <source>Ingles</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingles</translation>
     </message>
     <message>
         <location filename="idiomas.ui" line="54"/>
         <source>Aceptar</source>
-        <translation type="unfinished"></translation>
+        <translation>Aceptar</translation>
     </message>
 </context>
 <context>
@@ -86,37 +92,42 @@
     <message>
         <location filename="mainwindow.ui" line="249"/>
         <source>Juego</source>
-        <translation type="unfinished"></translation>
+        <translation>Juego</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="257"/>
         <source>Ayuda</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayuda</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="267"/>
         <source>Nuevo Juego</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuevo Juego</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="272"/>
         <source>Configuracion</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuracion</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="277"/>
         <source>Salir</source>
-        <translation type="unfinished"></translation>
+        <translation>Salir</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="282"/>
         <source>Instrucciones</source>
-        <translation type="unfinished"></translation>
+        <translation>Instrucciones</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="287"/>
         <source>Acerca de</source>
-        <translation type="unfinished"></translation>
+        <translation>Acerca de</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="129"/>
+        <source>Disfruta el show :D</source>
+        <translation>Disfruta el espectáculo :D</translation>
     </message>
 </context>
 <context>
@@ -129,12 +140,17 @@
     <message>
         <location filename="selectplayer.ui" line="215"/>
         <source>Cancelar</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="selectplayer.ui" line="222"/>
         <source>Siguiente</source>
-        <translation type="unfinished"></translation>
+        <translation>Siguiente</translation>
+    </message>
+    <message>
+        <location filename="selectplayer.cpp" line="69"/>
+        <source>Jugador_</source>
+        <translation>Jugador</translation>
     </message>
 </context>
 <context>
@@ -142,7 +158,7 @@
     <message>
         <location filename="tablero.ui" line="34"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="tablero.ui" line="1809"/>
@@ -214,12 +230,22 @@
     <message>
         <location filename="tablero.ui" line="2585"/>
         <source>META</source>
-        <translation type="unfinished"></translation>
+        <translation>META</translation>
     </message>
     <message>
         <location filename="tablero.ui" line="3208"/>
         <source>INICIO</source>
-        <translation type="unfinished"></translation>
+        <translation>INICIO</translation>
+    </message>
+    <message>
+        <location filename="tablero.cpp" line="326"/>
+        <source>Fin del Juego</source>
+        <translation>Fin de juego</translation>
+    </message>
+    <message>
+        <location filename="tablero.cpp" line="326"/>
+        <source> ha Ganado el Juego :D</source>
+        <translation>Has Ganado el Juego :D</translation>
     </message>
 </context>
 <context>
@@ -232,32 +258,156 @@
     <message>
         <location filename="temario.ui" line="32"/>
         <source>exportar</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar</translation>
     </message>
     <message>
         <location filename="temario.ui" line="42"/>
         <source>guardar</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar</translation>
     </message>
     <message>
         <location filename="temario.ui" line="49"/>
         <source>editar</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar</translation>
     </message>
     <message>
         <location filename="temario.ui" line="69"/>
         <source>importar</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar</translation>
     </message>
     <message>
         <location filename="temario.ui" line="76"/>
         <source>agregar</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar</translation>
     </message>
     <message>
         <location filename="temario.ui" line="83"/>
         <source>eliminar</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="8"/>
+        <source>TEMARIO</source>
+        <translation>TEMARIO</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="11"/>
+        <source>pregunta</source>
+        <translation>Pregunta</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="11"/>
+        <source>respuesta</source>
+        <translation>Respuesta</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="29"/>
+        <source>agregar pregunta</source>
+        <translation>Agregar Pregunta</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="47"/>
+        <location filename="temario.cpp" line="61"/>
+        <location filename="temario.cpp" line="63"/>
+        <location filename="temario.cpp" line="195"/>
+        <location filename="temario.cpp" line="198"/>
+        <location filename="temario.cpp" line="200"/>
+        <location filename="temario.cpp" line="212"/>
+        <location filename="temario.cpp" line="214"/>
+        <source>Guardar temario</source>
+        <translation>Guardar Temario</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="47"/>
+        <source>el temario no tiene suficientes preguntas</source>
+        <translation>Faltan preguntas en el temario</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="61"/>
+        <source>temario guardado</source>
+        <translation>Temario Guardado</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="63"/>
+        <source>No se puede escribir sobre </source>
+        <translation>No se puede sobrescribir</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="100"/>
+        <location filename="temario.cpp" line="124"/>
+        <source>cargar temario</source>
+        <translation>Cargar Temario</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="100"/>
+        <source>el temario no existe</source>
+        <translation>Cargar Temario</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="124"/>
+        <source>No se pudo abrir el temario</source>
+        <translatorcomment>Syllabus inaccessible</translatorcomment>
+        <translation>Temario inaccesible</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="154"/>
+        <source>Editar Pregunta</source>
+        <translation>Edit Question</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="168"/>
+        <source>editor de preguntas</source>
+        <translation>Editor de Preguntas</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="168"/>
+        <source>pregunta actualizada</source>
+        <translation>Pregunta actualizada</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="195"/>
+        <source>No hay datos para guardar</source>
+        <translation>No hay datos para guardar</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="198"/>
+        <source>Archivos csv</source>
+        <translation>Archivos CSV</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="200"/>
+        <source>Operación de exportar cancelada</source>
+        <translation>Operación de exportación cancelada</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="212"/>
+        <source>Preguntas guardadas exitosamente en el archivo csv</source>
+        <translation>Preguntas guardadas con éxito en archivo CSV</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="214"/>
+        <source>No se puede escribir en el archivo csv</source>
+        <translation>No se puede escribir en CSV</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="222"/>
+        <source>Seleccionar temario</source>
+        <translation>Seleccionar Temario</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="222"/>
+        <source>Archivos de texto</source>
+        <translation>Archivos de Texto</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="225"/>
+        <source>Cargar archivo</source>
+        <translation>Cargar Archivo</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="225"/>
+        <source>Temario cargado exitosamente.</source>
+        <translation>Temario cargado con éxito</translation>
     </message>
 </context>
 <context>
@@ -270,22 +420,32 @@
     <message>
         <location filename="preguntasdialog.ui" line="23"/>
         <source>pregunta</source>
-        <translation type="unfinished"></translation>
+        <translation>Pregunta</translation>
     </message>
     <message>
         <location filename="preguntasdialog.ui" line="40"/>
         <source>respuesta</source>
-        <translation type="unfinished"></translation>
+        <translation>Respuesta</translation>
     </message>
     <message>
         <location filename="preguntasdialog.ui" line="46"/>
         <source>verdadero</source>
-        <translation type="unfinished"></translation>
+        <translation>Verdadero</translation>
     </message>
     <message>
         <location filename="preguntasdialog.ui" line="56"/>
         <source>falso</source>
-        <translation type="unfinished"></translation>
+        <translation>Falso</translation>
+    </message>
+    <message>
+        <location filename="preguntasdialog.cpp" line="26"/>
+        <source>ingresar pregunta</source>
+        <translation>Ingresar Pregunta</translation>
+    </message>
+    <message>
+        <location filename="preguntasdialog.cpp" line="26"/>
+        <source>campo de pregunta vacio</source>
+        <translation>Campo de pregunta vacio</translation>
     </message>
 </context>
 </TS>

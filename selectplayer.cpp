@@ -66,7 +66,7 @@ void SelectPlayer::on_rbtnJugador_4_toggled(bool checked)
 {
     if(checked){
         setJugadores(new Jugador);
-        m_jugadores.last()->setNombre("Jugador_"+QString::number(m_jugadores.size()));
+        m_jugadores.last()->setNombre(tr("Jugador_")+QString::number(m_jugadores.size()));
         m_jugadores.last()->setFichaImagen(m_imagenesFicha[3]);
     }else{
 

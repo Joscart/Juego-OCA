@@ -323,7 +323,7 @@ void Tablero::moverFicha(QString pasosText)
             }
             break;
         case Casilla::Tipo::Final:
-            QMessageBox::information(this,"Fin del Juego",actual->NombreJugador()+" ha Ganado el Juego :D");
+            QMessageBox::information(this,tr("Fin del Juego"),actual->NombreJugador()+tr(" ha Ganado el Juego :D"));
             return;
         }
     }

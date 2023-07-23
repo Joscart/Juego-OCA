@@ -126,7 +126,7 @@ void MainWindow::on_actionNuevo_Juego_triggered()
 
 void MainWindow::on_btnEasterEgg_clicked()
 {
-    ui->lblEasterEgg->setText("Disfruta el show :D");
+    ui->lblEasterEgg->setText(tr("Disfruta el show :D"));
     QDesktopServices::openUrl(QUrl("https://www.youtube.com/watch?v=7YZCUpnaTfg&ab_channel=DontSubscribeToMe"));
 }
 
