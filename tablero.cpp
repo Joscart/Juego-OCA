@@ -20,9 +20,12 @@ Tablero::Tablero(QWidget *parent) :
     connect(m_formulario, &Formulario::respuesta, this, [this](bool aux) {
         QString respuesta = aux ? "verdadero" : "falso";
         if (m_formulario->actual()->respuesta() != respuesta) {
+            QSound::play(":/Recursos/Audio/SoundIncorrecto.wav");
             m_formulario->incorrecto();
             moverFicha(-1 * m_dado->resultado());
+            return;
         }else{
+            QSound::play(":/Recursos/Audio/SoundCorrecto.wav");
             m_formulario->correcto();
             cambiarTurno();
         }
@@ -276,7 +279,7 @@ void Tablero::moverFicha(QString pasosText)
             for(int i=0;i>pasos;i--){
                 if(actual->numCasillas()<=0)
                     break;
-                delay(m_speed+100);
+                delay(m_speed+150);
                 actual->setNumCasillas(actual->numCasillas() - 1);
                 m_casillas[actual->numCasillas()]->aniadirFicha(actual);
                 m_casillas[actual->numCasillas()+1]->eliminarFicha(actual);
@@ -293,12 +296,19 @@ void Tablero::moverFicha(QString pasosText)
         switch (m_casillas[actual->numCasillas()]->getTipo()) {
         case Casilla::Tipo::Normal:
             m_formulario->mostrarPregunta();
+            QSound::play(":/Recursos/Audio/SoundPregunta.wav");
             return;
         case Casilla::Tipo::Oca:
             for(int i=0;i<m_casillasOca.size();i++){
                 if(actual->numCasillas()==m_casillasOca[i]-1){
                     if(i==m_casillasOca.size()-1)
                         i = -1;
+                    if(actual->numCasillas()==m_casillasOca.last()-1){
+                        m_dado->bloquearDado();
+                        break;
+                    }
+
+                    QSound::play(":/Recursos/Audio/SoundOca2.wav");
                     moverFichaA(m_casillasOca[i+1]);
                     m_dado->bloquearDado();
                     break;
@@ -307,6 +317,7 @@ void Tablero::moverFicha(QString pasosText)
             return;
         case Casilla::Tipo::Calavera:
             moverFichaA(1);
+            QSound::play(":/Recursos/Audio/SoundCalavera.wav");
             break;
         case Casilla::Tipo::Puente:
             for(int i=0;i<m_casillasPuente.size();i++){
@@ -314,14 +325,18 @@ void Tablero::moverFicha(QString pasosText)
                     if(i==m_casillasPuente.size()-1)
                         i = -1;
                     moverFichaA(m_casillasPuente[i+1]);
+                    QSound::play(":/Recursos/Audio/SoundPortal.wav");
                     break;
                 }
             }
             break;
         case Casilla::Tipo::Final:
+            QSound::play(":/Recursos/Audio/SoundCorrecto.wav");
             QMessageBox::information(this,"Fin del Juego",actual->NombreJugador()+" ha Ganado el Juego :D");
             return;
         }
+    }else{
+        QSound::play(":/Recursos/Audio/SoundIncorrecto2.wav");
     }
 
     cambiarTurno();

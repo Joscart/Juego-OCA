@@ -27,6 +27,7 @@ void MainWindow::on_actionNuevo_Juego_triggered()
 {
     //seleccionar jugadores
     ui->stackedWidget->setCurrentIndex(1);
+    m_jugadores.clear();
     if (m_fichas != nullptr) {
         if(m_tablero != nullptr){
             ui->horizontalLayout->removeWidget(m_tablero);
@@ -100,7 +101,8 @@ void MainWindow::on_actionNuevo_Juego_triggered()
         }
 
         //datatest
-        datatest();
+        //datatest();
+        m_jugadores = m_fichas->jugadores();
 
         //ui->horizontalLayout->replaceWidget(ui->wTablero,m_tablero);
         setStyleSheet("QWidget#Tablero{"
@@ -154,4 +156,14 @@ void MainWindow::datatest()
     m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha4.png"));
 }
 
+void MainWindow::on_actionPantalla_Completa_toggled(bool arg1)
+{
+    if(arg1){
+        //maximizar ventana
+        setWindowState(Qt::WindowFullScreen);
+    }else{
+        //maximizar ventana
+        setWindowState(Qt::WindowNoState);
+    }
+}
 

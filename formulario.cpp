@@ -25,7 +25,7 @@ void Formulario::setPreguntas(QList<Pregunta *> *newPreguntas)
 
 void Formulario::usarPregunta()
 {
-    if(m_preguntas->size()<0){
+    if(m_preguntas->size()<0 and m_preguntas->isEmpty()){
         m_actual = nullptr;
         return;
     }

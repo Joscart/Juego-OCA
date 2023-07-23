@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QDateTime>
 #include <QTimer>
+#include <QSound>
 #include <QRandomGenerator>
 
 namespace Ui {

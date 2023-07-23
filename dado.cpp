@@ -17,6 +17,7 @@ Dado::Dado(QWidget *parent) :
         contadorAnimacion = -1;
         m_resultado = -1;
         timer->start(200);//Tiempo que dura la animacion del dado
+        QSound::play(":/Recursos/Audio/SoundDado.wav");
     });
     ui->btnDado->setIcon(QPixmap(":/Recursos/Imagenes/Dice1.png"));
     ui->btnDado->setIconSize(QSize(250,250));

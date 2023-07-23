@@ -2,6 +2,7 @@
 #define SELECTPLAYER_H
 
 #include <jugador.h>
+#include <QSound>
 #include <QWidget>
 #include <QLabel>
 
@@ -17,7 +18,7 @@ public:
     explicit SelectPlayer(QWidget *parent = nullptr);
     ~SelectPlayer();
 
-    QList<Jugador *> jugadores();
+    QList<Jugador *> &jugadores();
     void setJugadores(Jugador *newJugadores);
     void delJugadores(Jugador *Jugador);
 
@@ -27,6 +28,12 @@ private slots:
     void on_btnCancelar_clicked();
 
     void on_rbtnJugador_4_toggled(bool checked);
+
+    void on_rbtnJugador_3_toggled(bool checked);
+
+    void on_rbtnJugador_2_toggled(bool checked);
+
+    void on_rbtnJugador_1_toggled(bool checked);
 
 signals:
     void siguientePressed();

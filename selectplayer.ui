@@ -167,28 +167,28 @@
      <item>
       <widget class="QLabel" name="lblJugador_1">
        <property name="text">
-        <string/>
+        <string>Jugador_1</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="lblJugador_2">
        <property name="text">
-        <string/>
+        <string>Jugador_2</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="lblJugador_3">
        <property name="text">
-        <string/>
+        <string>Jugador_3</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="lblJugador_4">
        <property name="text">
-        <string/>
+        <string>Jugador_4</string>
        </property>
       </widget>
      </item>

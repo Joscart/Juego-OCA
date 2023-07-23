@@ -241,7 +241,7 @@
      <x>0</x>
      <y>0</y>
      <width>400</width>
-     <height>23</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuJuego">
@@ -251,6 +251,7 @@
     <addaction name="actionNuevo_Juego"/>
     <addaction name="actionConfiguracion"/>
     <addaction name="actionSalir"/>
+    <addaction name="actionPantalla_Completa"/>
    </widget>
    <widget class="QMenu" name="menuAyuda">
     <property name="title">
@@ -266,25 +267,48 @@
    <property name="text">
     <string>Nuevo Juego</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
   </action>
   <action name="actionConfiguracion">
    <property name="text">
     <string>Configuracion</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+C</string>
    </property>
   </action>
   <action name="actionSalir">
    <property name="text">
     <string>Salir</string>
    </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
   </action>
   <action name="actionInstrucciones">
    <property name="text">
     <string>Instrucciones</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
   </action>
   <action name="actionAcerca_de">
    <property name="text">
     <string>Acerca de</string>
+   </property>
+  </action>
+  <action name="actionPantalla_Completa">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Pantalla Completa</string>
+   </property>
+   <property name="shortcut">
+    <string>F11</string>
    </property>
   </action>
  </widget>

@@ -3190,7 +3190,7 @@ border-image: url(:/Recursos/Imagenes/Tablero2.png);
        <rect>
         <x>190</x>
         <y>91</y>
-        <width>74</width>
+        <width>121</width>
         <height>29</height>
        </rect>
       </property>

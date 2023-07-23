@@ -61,5 +61,40 @@
         <file>Recursos/Imagenes/CasillaOca3.png</file>
         <file>Recursos/Audio/Recording.wav</file>
         <file>Recursos/Audio/SoundTap.wav</file>
+        <file>Recursos/Audio/SoundAlerta.mp3</file>
+        <file>Recursos/Audio/SoundAlerta.wav</file>
+        <file>Recursos/Audio/SoundCalavera.mp3</file>
+        <file>Recursos/Audio/SoundCalavera.wav</file>
+        <file>Recursos/Audio/SoundCalavera2.mp3</file>
+        <file>Recursos/Audio/SoundCalavera2.wav</file>
+        <file>Recursos/Audio/SoundCorrecto.mp3</file>
+        <file>Recursos/Audio/SoundCorrecto.wav</file>
+        <file>Recursos/Audio/SoundIncorrecto.mp3</file>
+        <file>Recursos/Audio/SoundIncorrecto.wav</file>
+        <file>Recursos/Audio/SoundIncorrecto2.mp3</file>
+        <file>Recursos/Audio/SoundIncorrecto2.wav</file>
+        <file>Recursos/Audio/SoundOca.mp3</file>
+        <file>Recursos/Audio/SoundOca.wav</file>
+        <file>Recursos/Audio/SoundPortal.mp3</file>
+        <file>Recursos/Audio/SoundPortal.wav</file>
+        <file>Recursos/Audio/SoundPortal2.mp3</file>
+        <file>Recursos/Audio/SoundPortal2.wav</file>
+        <file>Recursos/Audio/SoundPregunta.mp3</file>
+        <file>Recursos/Audio/SoundPregunta.wav</file>
+        <file>Recursos/Audio/SoundPregunta2.mp3</file>
+        <file>Recursos/Audio/SoundPregunta2.wav</file>
+        <file>Recursos/Audio/SoundPregunta3.mp3</file>
+        <file>Recursos/Audio/SoundPregunta3.wav</file>
+        <file>Recursos/Audio/SoundTap.mp3</file>
+        <file>Recursos/Audio/SoundDado.mp3</file>
+        <file>Recursos/Audio/SoundDado.wav</file>
+        <file>Recursos/Audio/SoundDado2.mp3</file>
+        <file>Recursos/Audio/SoundDado2.wav</file>
+        <file>Recursos/Audio/SoundDado3.mp3</file>
+        <file>Recursos/Audio/SoundDado3.wav</file>
+        <file>Recursos/Audio/SoundDado4.mp3</file>
+        <file>Recursos/Audio/SoundDado4.wav</file>
+        <file>Recursos/Audio/SoundOca2.mp3</file>
+        <file>Recursos/Audio/SoundOca2.wav</file>
     </qresource>
 </RCC>

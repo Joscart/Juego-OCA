@@ -8,6 +8,7 @@
 #include <selectplayer.h>
 #include <configuracion.h>
 #include <QDesktopServices>
+#include <QSound>
 #include <QUrl>
 
 QT_BEGIN_NAMESPACE
@@ -30,6 +31,8 @@ private slots:
     void on_btnEasterEgg_clicked();
 
     void on_actionConfiguracion_triggered();
+
+    void on_actionPantalla_Completa_toggled(bool arg1);
 
 private:
     Ui::MainWindow *ui;
