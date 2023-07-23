@@ -23,7 +23,7 @@ void preguntasdialog::on_buttonBox_accepted()
 
     QString pregunta = ui->lnlpregunta->text();
     if(pregunta.isEmpty()){
-        QMessageBox::warning(this,"ingresar pregunta", "campo de pregunta vacio");
+        QMessageBox::warning(this,tr("ingresar pregunta"), tr("campo de pregunta vacio"));
             return;
     }
 

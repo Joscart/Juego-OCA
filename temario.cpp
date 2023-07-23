@@ -1,15 +1,14 @@
 #include "temario.h"
-#include "qlineedit.h"
 #include "ui_temario.h"
 Temario::Temario(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Temario)
 {
     ui->setupUi(this);
-    setWindowTitle("TEMARIO");
+    setWindowTitle(tr("TEMARIO"));
     ui->tbl_temario->setColumnCount(2);
     QStringList titulo;
-    titulo <<"pregunta" <<"respuesta";
+    titulo <<tr("pregunta") <<tr("respuesta");
     ui->tbl_temario->setHorizontalHeaderLabels(titulo);
     ui->tbl_temario->setColumnWidth(PREGUNTA,641);
     ui->tbl_temario->setColumnWidth(RESPUESTA,90);
@@ -27,7 +26,7 @@ Temario::~Temario()
 void Temario::on_btnagregar_clicked()
 {
     preguntasdialog pd(this);
-    pd.setWindowTitle("agregar pregunta");
+    pd.setWindowTitle(tr("agregar pregunta"));
     int res=pd.exec();
     if(res==QDialog::Rejected){
         return;
@@ -45,7 +44,7 @@ void Temario::on_btnguardar_clicked()
 {
     int filas = ui->tbl_temario->rowCount();
     if(filas== 0 ){
-        QMessageBox::warning(this, "Guardar temario", "el temario no tiene suficientes preguntas");
+        QMessageBox::warning(this, tr("Guardar temario"), tr("el temario no tiene suficientes preguntas"));
         return;
     }
 
@@ -59,9 +58,9 @@ void Temario::on_btnguardar_clicked()
             salida << pregunta->text() << respuesta->text();
         }
         archivo.close();
-        QMessageBox::information(this,"Guardar temario","temario guardado");
+        QMessageBox::information(this,tr("Guardar temario"),tr("temario guardado"));
     }else{
-        QMessageBox::critical(this,"Guardar temario", "No se puede escribir sobre " + ARCHIVO);
+        QMessageBox::critical(this,tr("Guardar temario"), tr("No se puede escribir sobre ") + ARCHIVO);
     }
 }
 
@@ -98,7 +97,7 @@ void Temario::cargarPreguntas()
 void Temario::mostrarPreguntas(const QString &rArchivo){
     QFile archivo(rArchivo);
     if(!archivo.exists()){
-        QMessageBox::critical(this,"cargar temario","el temario no existe");
+        QMessageBox::critical(this,tr("cargar temario"),tr("el temario no existe"));
         return;
     }
 
@@ -122,7 +121,7 @@ void Temario::mostrarPreguntas(const QString &rArchivo){
         }
         archivo.close();
     }else{
-        QMessageBox::critical(this,"cargar temario","No se pudo abrir el temario");
+        QMessageBox::critical(this,tr("cargar temario"),tr("No se pudo abrir el temario"));
     }
 }
 
@@ -152,7 +151,7 @@ void Temario::on_btneditar_clicked()
         QString respuestanueva = respuestaN->text();
 
         preguntasdialog pd(this);
-        pd.setWindowTitle("Editar Pregunta");
+        pd.setWindowTitle(tr("Editar Pregunta"));
         pd.setPregunta(preguntanueva);
         pd.setRespuesta(respuestanueva);
 
@@ -166,7 +165,7 @@ void Temario::on_btneditar_clicked()
         preguntaN->setText(preguntaF);
         respuestaN->setText(respuestaF);
 
-        QMessageBox::information(this,"editor de preguntas","pregunta actualizada");
+        QMessageBox::information(this,tr("editor de preguntas"),tr("pregunta actualizada"));
 
     }
 
@@ -193,12 +192,12 @@ void Temario::on_btnexportar_clicked()
 {
     int filas = ui->tbl_temario->rowCount();
     if (filas == 0) {
-        QMessageBox::warning(this, "Guardar temario", "No hay datos para guardar");
+        QMessageBox::warning(this, tr("Guardar temario"), tr("No hay datos para guardar"));
         return;
     }
-    QString selectedFilePath = QFileDialog::getSaveFileName(this, "Guardar temario", QDir::homePath() + "/temario.csv", "Archivos csv (*.csv)");
+    QString selectedFilePath = QFileDialog::getSaveFileName(this, tr("Guardar temario"), QDir::homePath() + "/temario.csv", tr("Archivos csv") + " (*.csv)");
     if (selectedFilePath.isEmpty()) {
-        QMessageBox::information(this, "Guardar temario", "Operación de exportar cancelada");
+        QMessageBox::information(this, tr("Guardar temario"), tr("Operación de exportar cancelada"));
             return;
     }
     QFile archivo(selectedFilePath);
@@ -210,9 +209,9 @@ void Temario::on_btnexportar_clicked()
             salida << pregunta->text() <<";"<< respuesta->text() << "\n";
         }
         archivo.close();
-        QMessageBox::information(this, "Guardar temario", "Preguntas guardadas exitosamente en el archivo csv");
+        QMessageBox::information(this, tr("Guardar temario"), tr("Preguntas guardadas exitosamente en el archivo csv"));
     } else {
-        QMessageBox::critical(this, "Guardar temario", "No se puede escribir en el archivo csv");
+        QMessageBox::critical(this, tr("Guardar temario"), tr("No se puede escribir en el archivo csv"));
     }
     cargarPreguntas();
 }
@@ -220,10 +219,10 @@ void Temario::on_btnexportar_clicked()
 
 void Temario::on_btnimportar_clicked()
 {
-    QString direccionA = QFileDialog::getOpenFileName(this, "Seleccionar temario", QString(), "Archivos de texto ( *.csv )");
+    QString direccionA = QFileDialog::getOpenFileName(this, tr("Seleccionar temario"), QString(), tr("Archivos de texto") + "( *.csv )");
     if (!direccionA.isEmpty()) {
         mostrarPreguntas(direccionA);
-        QMessageBox::information(this, "Cargar archivo", "Temario cargado exitosamente.");
+        QMessageBox::information(this, tr("Cargar archivo"), tr("Temario cargado exitosamente."));
     }
 }
 

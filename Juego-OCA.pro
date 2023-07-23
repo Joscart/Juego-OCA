@@ -14,6 +14,7 @@ SOURCES += \
     dado.cpp \
     ficha.cpp \
     formulario.cpp \
+    idiomas.cpp \
     jugador.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -29,6 +30,7 @@ HEADERS += \
     dado.h \
     ficha.h \
     formulario.h \
+    idiomas.h \
     jugador.h \
     mainwindow.h \
     pregunta.h \
@@ -42,6 +44,7 @@ FORMS += \
     configuracion.ui \
     dado.ui \
     formulario.ui \
+    idiomas.ui \
     mainwindow.ui \
     preguntasdialog.ui \
     selectplayer.ui \
@@ -49,7 +52,8 @@ FORMS += \
     temario.ui
 
 TRANSLATIONS += \
-    Juego-OCA_es_419.ts
+    Juego-OCA_es.ts \
+    Juego-OCA_en.ts
 CONFIG += lrelease
 CONFIG += embed_translations
 

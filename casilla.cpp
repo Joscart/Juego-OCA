@@ -58,20 +58,6 @@ Casilla::Tipo Casilla::getTipo() const
     return tipo;
 }
 
-void Casilla::casillaAccion(int casilla)
-{
-if(casilla==0){
-    //pregunta
-}else if (casilla==1){
-
-}else if(casilla==2){
-
-}else if(casilla==3){
-
-}else if(casilla==4){
-
-}
-}
 
 int Casilla::casillaEncontrada()
 {

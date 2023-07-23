@@ -81,6 +81,9 @@
    </item>
    <item>
     <widget class="QStackedWidget" name="stkConfig">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
      <widget class="Temario" name="Opcion_1"/>
      <widget class="QWidget" name="Opcion_2"/>
     </widget>

@@ -102,7 +102,7 @@ void Formulario::delay(int mSecs)
 void Formulario::setFichaActual(Ficha *newFichaActual)
 {
     m_fichaActual = newFichaActual;
-    ui->lblTurnoFicha->setText("Turno:\n" + m_fichaActual->NombreJugador());
+    ui->lblTurnoFicha->setText(tr("Turno:\n" )+ m_fichaActual->NombreJugador());
     ui->lblImagenFicha->setPixmap(m_fichaActual->imagen());
     ui->stkPreguntar->setCurrentIndex(1);
 }
