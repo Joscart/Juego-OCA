@@ -38,5 +38,6 @@ private:
     Configuracion m_config;
     Temario *m_preguntas;
     SelectPlayer *m_fichas = nullptr;
+    void datatest();
 };
 #endif // MAINWINDOW_H

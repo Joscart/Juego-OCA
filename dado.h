@@ -2,6 +2,7 @@
 #define DADO_H
 
 #include <QWidget>
+#include <QDateTime>
 #include <QTimer>
 #include <QRandomGenerator>
 

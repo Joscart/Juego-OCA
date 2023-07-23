@@ -10,20 +10,6 @@ MainWindow::MainWindow(QWidget *parent)
     //Por defult que inicie en una windows vacia
     ui->stackedWidget->setCurrentIndex(0);//widget vacio
     m_preguntas = m_config.temario();
-
-    //Datos de prueba
-    m_jugadores.append(new Jugador);
-    m_jugadores.last()->setNombre("Jugador_1");
-    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha1.png"));
-    m_jugadores.append(new Jugador);
-    m_jugadores.last()->setNombre("Jugador_2");
-    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha2.png"));
-    m_jugadores.append(new Jugador);
-    m_jugadores.last()->setNombre("Jugador_3");
-    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha3.png"));
-    m_jugadores.append(new Jugador);
-    m_jugadores.last()->setNombre("Jugador_4");
-    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha4.png"));
 }
 
 MainWindow::~MainWindow()
@@ -93,6 +79,10 @@ void MainWindow::on_actionNuevo_Juego_triggered()
             m_tablero->setObjectName("Tablero");
             m_tablero->formulario()->setObjectName("Formulario");
             m_tablero->dado()->setObjectName("Dado");
+
+            qDeleteAll(m_jugadores);
+            m_jugadores.clear();
+
         } else {
             m_tablero = new Tablero();
             ui->horizontalLayout->removeWidget(ui->wTablero);
@@ -108,6 +98,9 @@ void MainWindow::on_actionNuevo_Juego_triggered()
             m_tablero->formulario()->setObjectName("Formulario");
             m_tablero->dado()->setObjectName("Dado");
         }
+
+        //datatest
+        datatest();
 
         //ui->horizontalLayout->replaceWidget(ui->wTablero,m_tablero);
         setStyleSheet("QWidget#Tablero{"
@@ -142,6 +135,23 @@ void MainWindow::on_actionConfiguracion_triggered()
 {
     m_config.temario()->cargarPreguntas();
     m_config.exec();
+}
+
+void MainWindow::datatest()
+{
+    //Datos de prueba
+    m_jugadores.append(new Jugador);
+    m_jugadores.last()->setNombre("Jugador_1");
+    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha1.png"));
+    m_jugadores.append(new Jugador);
+    m_jugadores.last()->setNombre("Jugador_2");
+    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha2.png"));
+    m_jugadores.append(new Jugador);
+    m_jugadores.last()->setNombre("Jugador_3");
+    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha3.png"));
+    m_jugadores.append(new Jugador);
+    m_jugadores.last()->setNombre("Jugador_4");
+    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha4.png"));
 }
 
 

@@ -101,6 +101,9 @@ void Temario::mostrarPreguntas(const QString &rArchivo){
         QMessageBox::critical(this,"cargar temario","el temario no existe");
         return;
     }
+
+    m_listaPreguntas.clear();
+
     ui->tbl_temario->clearContents();
     ui->tbl_temario->setRowCount(0);
     if(archivo.open(QIODevice::ReadOnly | QIODevice::Text)){
@@ -111,8 +114,9 @@ void Temario::mostrarPreguntas(const QString &rArchivo){
             QStringList datos= linea.split(";");
             if(datos.size()==2){
                 ui->tbl_temario->insertRow(fila);
-                ui->tbl_temario->setItem(fila, PREGUNTA, new QTableWidgetItem(datos[0]));
-                ui->tbl_temario->setItem(fila, RESPUESTA, new QTableWidgetItem(datos[1]));
+                ui->tbl_temario->setItem(fila, PREGUNTA, new QTableWidgetItem(datos[PREGUNTA]));
+                ui->tbl_temario->setItem(fila, RESPUESTA, new QTableWidgetItem(datos[RESPUESTA]));
+                m_listaPreguntas.append(new Pregunta(QString::number(m_listaPreguntas.size()+1),datos[PREGUNTA],datos[RESPUESTA]));
                 fila++;
             }
         }
@@ -192,7 +196,7 @@ void Temario::on_btnexportar_clicked()
         QMessageBox::warning(this, "Guardar temario", "No hay datos para guardar");
         return;
     }
-    QString selectedFilePath = QFileDialog::getSaveFileName(this, "Guardar temario", QDir::homePath(), "Archivos csv (*.csv)");
+    QString selectedFilePath = QFileDialog::getSaveFileName(this, "Guardar temario", QDir::homePath() + "/temario.csv", "Archivos csv (*.csv)");
     if (selectedFilePath.isEmpty()) {
         QMessageBox::information(this, "Guardar temario", "Operación de exportar cancelada");
             return;
@@ -216,7 +220,7 @@ void Temario::on_btnexportar_clicked()
 
 void Temario::on_btnimportar_clicked()
 {
-    QString direccionA = QFileDialog::getOpenFileName(this, "Seleccionar temario", QString(), "Archivos de texto (*.txt *.csv *.bin )");
+    QString direccionA = QFileDialog::getOpenFileName(this, "Seleccionar temario", QString(), "Archivos de texto ( *.csv )");
     if (!direccionA.isEmpty()) {
         mostrarPreguntas(direccionA);
         QMessageBox::information(this, "Cargar archivo", "Temario cargado exitosamente.");

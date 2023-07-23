@@ -6,6 +6,7 @@ Dado::Dado(QWidget *parent) :
     ui(new Ui::Dado)
 {
     ui->setupUi(this);
+    QRandomGenerator random(static_cast<quint32>(QDateTime::currentMSecsSinceEpoch() & 0xFFFFFFFF));
     //set imagenes
     for(int i=0;i<6;i++){
         imagenes[i] = QPixmap(":/Recursos/Imagenes/Dice"+QString::number(i+1)+".png");
@@ -20,13 +21,13 @@ Dado::Dado(QWidget *parent) :
     ui->btnDado->setIcon(QPixmap(":/Recursos/Imagenes/Dice1.png"));
     ui->btnDado->setIconSize(QSize(250,250));
     //conect timer
-    connect(timer,&QTimer::timeout,[timer,this](){
+    connect(timer,&QTimer::timeout,[timer,random,this](){
         if(++contadorAnimacion<6){
             ui->btnDado->setIcon(imagenes[contadorAnimacion]);
             ui->btnDado->setEnabled(false);
         }else{
             timer->stop();
-            contadorAnimacion = QRandomGenerator::global()->bounded(1,7) - 1;
+            contadorAnimacion = random.global()->bounded(1,7) - 1;
             ui->btnDado->setIcon(imagenes[contadorAnimacion]);
             m_resultado = contadorAnimacion + 1;
             this->setWindowTitle("");
