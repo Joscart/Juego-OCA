@@ -7,7 +7,7 @@ Formulario::Formulario(QWidget *parent) :
 {
     ui->setupUi(this); 
     ui->lblGanso->setMovie(new QMovie(":/Recursos/Videos/XOsX.gif"));
-    ui->lblGanso->movie()->setScaledSize(QSize(60,50));
+    ui->lblGanso->movie()->setScaledSize(QSize(100,100));
     ui->lblGanso->movie()->start();
     actualizarJugadores();
 }

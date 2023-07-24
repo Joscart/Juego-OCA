@@ -19,7 +19,8 @@ public:
     Temario *temario();
 signals:
     void idiomaCambiado(QString idioma);
-
+public slots:
+    void cerrarVentana() { this->close(); }
 private slots:
 
     void on_btnOpcion_1_clicked();
@@ -30,6 +31,8 @@ private:
     Ui::Configuracion *ui;
     Temario *m_temario;
     Idiomas *m_idiomas;
+public:
+    Idiomas *idiomas() { return m_idiomas; }
 };
 
 #endif // CONFIGURACION_H

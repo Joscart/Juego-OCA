@@ -26,7 +26,7 @@ public:
     QList<Pregunta *> randomizarPreguntas();
 
     void cargarPreguntas();
-
+    void retranslateUi();
 private slots:
 
     void on_btnagregar_clicked();

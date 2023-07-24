@@ -71,3 +71,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     Recursos.qrc
 
+DISTFILES += \
+    Recursos/Imagenes/IconoIdioma.png \
+    Recursos/Imagenes/IconoPregunta.png
+

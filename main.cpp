@@ -26,10 +26,17 @@ int main(int argc, char *argv[])
     b.close();
 
     MainWindow w;
-    QObject::connect(&w.config(),&Configuracion::idiomaCambiado,[&translator, &a](QString idioma){
+    QObject::connect(w.config().idiomas(), &Idiomas::cerrarConfiguracion, [&w]() {
+        w.config().cerrarVentana(); // Cierra la ventana de configuración.
+    });
+
+    QObject::connect(&w.config(),&Configuracion::idiomaCambiado,[&translator, &a, &w](QString idioma){
         const QString baseName = "Juego-OCA_" + idioma;
         if (translator.load(":/i18n/" + baseName)) {
             a.installTranslator(&translator);
+
+            w.config().idiomas()->retranslateUi(); // Llama a retranslateUi en Idiomas.
+            w.config().temario()->retranslateUi();
         };
     });
     w.show();

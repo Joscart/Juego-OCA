@@ -13,6 +13,16 @@ Idiomas::~Idiomas()
     delete ui;
 }
 
+void Idiomas::retranslateUi() {
+    // Traducir y establecer el texto del primer ítem
+    ui->cbIdiomas->setItemText(0, QApplication::translate("Idiomas", "Español", nullptr));
+    // Traducir y establecer el texto del segundo ítem
+    ui->cbIdiomas->setItemText(1, QApplication::translate("Idiomas", "Ingles", nullptr));
+    ui->bttnAceptar->setText(QApplication::translate("Idiomas", "Aceptar", nullptr));
+    ui->label->setText(QApplication::translate("Idiomas", "Idiomas", nullptr));
+
+}
+
 void Idiomas::on_bttnAceptar_clicked()
 {
     /*
@@ -24,6 +34,6 @@ void Idiomas::on_bttnAceptar_clicked()
         emit idiomaCambiado((QLocale(QLocale::English)).name());
 
     }
-    close();
+    emit cerrarConfiguracion();
 }
 

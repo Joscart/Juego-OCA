@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Configuracion</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="Recursos.qrc">
+    <normaloff>:/Recursos/Imagenes/Ficha3.png</normaloff>:/Recursos/Imagenes/Ficha3.png</iconset>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -36,6 +40,19 @@
        <property name="text">
         <string/>
        </property>
+       <property name="icon">
+        <iconset resource="Recursos.qrc">
+         <normaloff>:/Recursos/Imagenes/IconoPregunta.png</normaloff>:/Recursos/Imagenes/IconoPregunta.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>65</width>
+         <height>65</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
       </widget>
      </item>
      <item>
@@ -54,6 +71,19 @@
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="Recursos.qrc">
+         <normaloff>:/Recursos/Imagenes/IconoIdioma.png</normaloff>:/Recursos/Imagenes/IconoIdioma.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>70</width>
+         <height>70</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -98,6 +128,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="Recursos.qrc"/>
+ </resources>
  <connections/>
 </ui>
