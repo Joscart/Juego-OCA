@@ -16,6 +16,7 @@ Configuracion::Configuracion(QWidget *parent) :
     ui->stkConfig->addWidget(m_idiomas);
     connect(m_idiomas,&Idiomas::idiomaCambiado,this,[this](QString idioma){
         emit idiomaCambiado(idioma);
+        ui->retranslateUi(this);
     });
 }
 

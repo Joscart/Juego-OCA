@@ -24,5 +24,6 @@ void Idiomas::on_bttnAceptar_clicked()
         emit idiomaCambiado((QLocale(QLocale::English)).name());
 
     }
+    close();
 }
 

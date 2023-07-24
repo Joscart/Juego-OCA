@@ -1,7 +1,10 @@
 #include "mainwindow.h"
+#include "inicio.h"
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
+
+void delay(int mSecs);
 
 int main(int argc, char *argv[])
 {
@@ -17,6 +20,11 @@ int main(int argc, char *argv[])
         }
     }
 
+    Inicio b;
+    b.show();
+    delay(2000);
+    b.close();
+
     MainWindow w;
     QObject::connect(&w.config(),&Configuracion::idiomaCambiado,[&translator, &a](QString idioma){
         const QString baseName = "Juego-OCA_" + idioma;
@@ -26,4 +34,11 @@ int main(int argc, char *argv[])
     });
     w.show();
     return a.exec();
+}
+
+void delay(int mSecs)
+{
+    QTime dieTime= QTime::currentTime().addMSecs(mSecs);
+    while (QTime::currentTime() < dieTime)
+        QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 }

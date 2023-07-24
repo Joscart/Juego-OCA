@@ -3,10 +3,14 @@
 
 Tablero::Tablero(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Tablero)
+    ui(new Ui::Tablero),m_music(this)
 {
     ui->setupUi(this);
     m_dado = new Dado(this);
+    m_music.setSource(QUrl::fromLocalFile(":/Recursos/Audio/MusicLoop.wav"));
+    m_music.setLoopCount(QSoundEffect::Infinite);
+    m_music.setVolume(0.25f);
+    m_music.play();
 
     connect(m_dado,SIGNAL(windowTitleChanged(QString)),this,SLOT(moverFicha(QString)));
 
@@ -333,6 +337,7 @@ void Tablero::moverFicha(QString pasosText)
         case Casilla::Tipo::Final:
             QSound::play(":/Recursos/Audio/SoundCorrecto.wav");
             QMessageBox::information(this,tr("Fin del Juego"),actual->NombreJugador()+tr(" ha Ganado el Juego :D"));
+            m_music.stop();
             return;
         }
     }else{
