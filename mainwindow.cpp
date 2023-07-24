@@ -180,7 +180,14 @@ void MainWindow::on_actionPantalla_Completa_toggled(bool arg1)
 
 void MainWindow::on_actionInstrucciones_triggered()
 {
-    QDesktopServices::openUrl(QUrl::fromLocalFile(":/Recursos/Preguntas/Reglas_Juego_Oca.pdf"));
+
+    QString filePath = QApplication::applicationDirPath() + "/Reglas_Juego_Oca.pdf";
+    if(QFile::exists(filePath)) {
+        // El archivo existe, trata de abrirlo
+        QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
+    } else {
+        // El archivo no existe, haz algo aquí
+    }
 }
 
 

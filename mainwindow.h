@@ -11,6 +11,8 @@
 #include <QDesktopServices>
 #include <QSound>
 #include <QUrl>
+#include <QTemporaryDir>
+#include <QFile>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
