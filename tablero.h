@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QLabel>
 #include <QGraphicsDropShadowEffect>
-#include <QSound>
+#include <QSoundEffect>
 #include <QMessageBox>
 #include <dado.h>
 #include <formulario.h>
@@ -48,6 +48,7 @@ private:
     QList <Ficha*> m_jugadores;
     QList <Pregunta*> m_preguntas;
     QList <Pregunta*> m_preguntasBase;
+    QSoundEffect m_music;
     Ficha *actual = nullptr;
     void cargarWidgets();
     void cambiarTurno();

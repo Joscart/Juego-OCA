@@ -14,14 +14,18 @@ class Idiomas : public QDialog
 public:
     explicit Idiomas(QDialog *parent = nullptr);
     ~Idiomas();
+    Idiomas& idiomas();
+    void retranslateUi();
 signals:
     void idiomaCambiado(QString idioma);
+     void cerrarConfiguracion();
 
 private slots:
     void on_bttnAceptar_clicked();
 
 private:
     Ui::Idiomas *ui;
+
 };
 
 #endif // IDIOMAS_H

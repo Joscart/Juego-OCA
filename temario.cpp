@@ -198,11 +198,11 @@ void Temario::on_btnexportar_clicked()
     QString selectedFilePath = QFileDialog::getSaveFileName(this, tr("Guardar temario"), QDir::homePath() + "/temario.csv", tr("Archivos csv") + " (*.csv)");
     if (selectedFilePath.isEmpty()) {
         QMessageBox::information(this, tr("Guardar temario"), tr("Operación de exportar cancelada"));
-            return;
+        return;
     }
     QFile archivo(selectedFilePath);
     QTextStream salida(&archivo);
-    if (archivo.open(QIODevice::WriteOnly)) {       
+    if (archivo.open(QIODevice::WriteOnly)) {
         for (int i = 0; i < filas; i++) {
             QTableWidgetItem *pregunta = ui->tbl_temario->item(i, PREGUNTA);
             QTableWidgetItem *respuesta = ui->tbl_temario->item(i, RESPUESTA);
@@ -224,5 +224,17 @@ void Temario::on_btnimportar_clicked()
         mostrarPreguntas(direccionA);
         QMessageBox::information(this, tr("Cargar archivo"), tr("Temario cargado exitosamente."));
     }
+}
+void Temario::retranslateUi() {
+    ui->tbl_temario->setHorizontalHeaderLabels({QApplication::translate("Temario", "Pregunta", nullptr), QApplication::translate("Temario", "Respuesta", nullptr)});
+
+    ui->btnexportar->setText(QApplication::translate("Temario", "Exportar", nullptr));
+    ui->btnimportar->setText(QApplication::translate("Temario", "Importar", nullptr));
+    ui->btnagregar->setText(QApplication::translate("Temario", "Agregar", nullptr));
+    ui->btneditar->setText(QApplication::translate("Temario", "Editar", nullptr));
+    ui->btneliminar->setText(QApplication::translate("Temario", "Eliminar", nullptr));
+    ui->btnguardar->setText(QApplication::translate("Temario", "Guardar", nullptr));
+
+
 }
 

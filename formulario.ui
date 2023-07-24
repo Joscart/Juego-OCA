@@ -38,7 +38,7 @@
         <widget class="QFrame" name="frame">
          <property name="styleSheet">
           <string notr="true">QFrame#frame{
-	border-image: url(:/Recursos/Imagenes/PantallaCarga.jpeg);
+	border-image: url(:/Recursos/Imagenes/Prado.jfif);
 }</string>
          </property>
          <property name="frameShape">
@@ -70,7 +70,7 @@
 }
 
 QPushButton{
-	background-color: rgb(127, 127, 128);
+	background-color: rgb(215, 255, 255);
 	color: rgb(36, 31, 49);
 }</string>
               </property>

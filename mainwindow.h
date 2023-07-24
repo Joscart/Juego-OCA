@@ -7,6 +7,7 @@
 #include <temario.h>
 #include <selectplayer.h>
 #include <configuracion.h>
+#include <acercade.h>
 #include <QDesktopServices>
 #include <QSound>
 #include <QUrl>
@@ -35,6 +36,10 @@ private slots:
     void on_actionConfiguracion_triggered();
 
     void on_actionPantalla_Completa_toggled(bool arg1);
+
+    void on_actionInstrucciones_triggered();
+
+    void on_actionAcerca_de_triggered();
 
 private:
     Ui::MainWindow *ui;

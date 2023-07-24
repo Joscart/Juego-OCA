@@ -96,5 +96,11 @@
         <file>Recursos/Audio/SoundDado4.wav</file>
         <file>Recursos/Audio/SoundOca2.mp3</file>
         <file>Recursos/Audio/SoundOca2.wav</file>
+        <file>Recursos/Imagenes/Prado.jfif</file>
+        <file>Recursos/Audio/MusicLoop.mp3</file>
+        <file>Recursos/Audio/MusicLoop.wav</file>
+        <file>Recursos/Preguntas/Reglas_Juego_Oca.pdf</file>
+        <file>Recursos/Imagenes/IconoIdioma.png</file>
+        <file>Recursos/Imagenes/IconoPregunta.png</file>
     </qresource>
 </RCC>

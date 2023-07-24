@@ -2,11 +2,84 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="en_US">
 <context>
+    <name>AcercaDe</name>
+    <message>
+        <location filename="acercade.ui" line="14"/>
+        <source>Acerca De</source>
+        <translation>About</translation>
+    </message>
+    <message>
+        <location filename="acercade.ui" line="48"/>
+        <source>Autores:</source>
+        <translation>Authors:</translation>
+    </message>
+    <message>
+        <location filename="acercade.ui" line="55"/>
+        <source>Roger Negrete</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="acercade.ui" line="65"/>
+        <source>Jose Guallasamin</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="acercade.ui" line="75"/>
+        <source>Carlos Astudillo</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="acercade.ui" line="90"/>
+        <source>Idea Original de:</source>
+        <translation>Original Idea by:</translation>
+    </message>
+    <message>
+        <location filename="acercade.ui" line="97"/>
+        <source>PhiloGame</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="acercade.ui" line="112"/>
+        <source>Contactenos:</source>
+        <translation>Contact Us:</translation>
+    </message>
+    <message>
+        <location filename="acercade.ui" line="119"/>
+        <source>rnegretec@est.ups.edu.ec</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="acercade.ui" line="129"/>
+        <source>jguallasaminc@est.ups.edu.ec</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="acercade.ui" line="139"/>
+        <source>castudillov1@est.ups.edu.ec</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="acercade.ui" line="154"/>
+        <source>Ver mas:</source>
+        <translation>See More:</translation>
+    </message>
+    <message>
+        <location filename="acercade.ui" line="161"/>
+        <source>&lt;a href=&quot;https://github.com/Joscart/Juego-OCA&quot;&gt;Github&lt;/a&gt;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="acercade.ui" line="180"/>
+        <source>&lt;a href=&quot;https://stevenegrete12.wixsite.com/oca-sabidur-a&quot;&gt;Website&lt;/a&gt;</source>
+        <translation></translation>
+    </message>
+</context>
+<context>
     <name>Casilla</name>
     <message>
         <location filename="casilla.ui" line="20"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Settings</translation>
     </message>
 </context>
 <context>
@@ -22,7 +95,7 @@
     <message>
         <location filename="dado.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Settings</translation>
     </message>
 </context>
 <context>
@@ -30,7 +103,7 @@
     <message>
         <location filename="formulario.ui" line="21"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="formulario.ui" line="108"/>
@@ -59,7 +132,7 @@
     <message>
         <location filename="idiomas.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Settings</translation>
     </message>
     <message>
         <location filename="idiomas.ui" line="31"/>
@@ -68,18 +141,39 @@
     </message>
     <message>
         <location filename="idiomas.ui" line="39"/>
+        <location filename="idiomas.cpp" line="18"/>
         <source>Español</source>
         <translation>Spanish</translation>
     </message>
     <message>
         <location filename="idiomas.ui" line="44"/>
+        <location filename="idiomas.cpp" line="20"/>
         <source>Ingles</source>
         <translation>English</translation>
     </message>
     <message>
         <location filename="idiomas.ui" line="54"/>
+        <location filename="idiomas.cpp" line="21"/>
         <source>Aceptar</source>
         <translation>Acept</translation>
+    </message>
+    <message>
+        <location filename="idiomas.cpp" line="22"/>
+        <source>Idiomas</source>
+        <translation>Language</translation>
+    </message>
+</context>
+<context>
+    <name>Inicio</name>
+    <message>
+        <location filename="inicio.ui" line="17"/>
+        <source>Form</source>
+        <translation>Settings</translation>
+    </message>
+    <message>
+        <location filename="inicio.ui" line="65"/>
+        <source>Oca Acualera: Viaje Colorido</source>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -95,37 +189,67 @@
         <translation>Game</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="257"/>
+        <location filename="mainwindow.ui" line="258"/>
         <source>Ayuda</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="267"/>
+        <location filename="mainwindow.ui" line="268"/>
         <source>Nuevo Juego</source>
         <translation>New Game</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="272"/>
+        <location filename="mainwindow.ui" line="271"/>
+        <source>Ctrl+N</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="276"/>
         <source>Configuracion</source>
         <translation>Settings</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="277"/>
+        <location filename="mainwindow.ui" line="279"/>
+        <source>Ctrl+Alt+C</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="284"/>
         <source>Salir</source>
         <translation>Exit</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="282"/>
+        <location filename="mainwindow.ui" line="287"/>
+        <source>Esc</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="292"/>
         <source>Instrucciones</source>
         <translation>Instructions</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="287"/>
+        <location filename="mainwindow.ui" line="295"/>
+        <source>Ctrl+I</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="300"/>
         <source>Acerca de</source>
         <translation>About</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="129"/>
+        <location filename="mainwindow.ui" line="308"/>
+        <source>Pantalla Completa</source>
+        <translation>Full Screen</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="311"/>
+        <source>F11</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="133"/>
         <source>Disfruta el show :D</source>
         <translation>Enjoy the show :D</translation>
     </message>
@@ -135,22 +259,59 @@
     <message>
         <location filename="selectplayer.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Settings</translation>
     </message>
     <message>
-        <location filename="selectplayer.ui" line="215"/>
+        <location filename="selectplayer.ui" line="126"/>
+        <location filename="selectplayer.cpp" line="133"/>
+        <location filename="selectplayer.cpp" line="139"/>
+        <source>Jugador_1</source>
+        <translation>Player_1</translation>
+    </message>
+    <message>
+        <location filename="selectplayer.ui" line="133"/>
+        <location filename="selectplayer.cpp" line="114"/>
+        <location filename="selectplayer.cpp" line="120"/>
+        <source>Jugador_2</source>
+        <translation>Player_2</translation>
+    </message>
+    <message>
+        <location filename="selectplayer.ui" line="140"/>
+        <location filename="selectplayer.cpp" line="95"/>
+        <location filename="selectplayer.cpp" line="101"/>
+        <source>Jugador_3</source>
+        <translation>Player_3</translation>
+    </message>
+    <message>
+        <location filename="selectplayer.ui" line="147"/>
+        <location filename="selectplayer.cpp" line="76"/>
+        <location filename="selectplayer.cpp" line="82"/>
+        <source>Jugador_4</source>
+        <translation>Player_4</translation>
+    </message>
+    <message>
+        <location filename="selectplayer.ui" line="226"/>
         <source>Cancelar</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="selectplayer.ui" line="222"/>
+        <location filename="selectplayer.ui" line="233"/>
         <source>Siguiente</source>
         <translation>Next</translation>
     </message>
     <message>
-        <location filename="selectplayer.cpp" line="69"/>
         <source>Jugador_</source>
-        <translation>Player</translation>
+        <translation type="vanished">Player</translation>
+    </message>
+    <message>
+        <location filename="selectplayer.cpp" line="38"/>
+        <source>Nuevo Juego</source>
+        <translation>New Game</translation>
+    </message>
+    <message>
+        <location filename="selectplayer.cpp" line="38"/>
+        <source>Necesita seleccionar almenos 1 ficha</source>
+        <translation>You need to select at least 1 chip</translation>
     </message>
 </context>
 <context>
@@ -158,7 +319,7 @@
     <message>
         <location filename="tablero.ui" line="34"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Settings</translation>
     </message>
     <message>
         <location filename="tablero.ui" line="1809"/>
@@ -225,7 +386,7 @@
         <location filename="tablero.ui" line="3380"/>
         <location filename="tablero.ui" line="3405"/>
         <source>num</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="tablero.ui" line="2585"/>
@@ -238,12 +399,12 @@
         <translation>START</translation>
     </message>
     <message>
-        <location filename="tablero.cpp" line="326"/>
+        <location filename="tablero.cpp" line="339"/>
         <source>Fin del Juego</source>
         <translation>End of the game</translation>
     </message>
     <message>
-        <location filename="tablero.cpp" line="326"/>
+        <location filename="tablero.cpp" line="339"/>
         <source> ha Ganado el Juego :D</source>
         <translation>You have won the game :D</translation>
     </message>
@@ -253,7 +414,7 @@
     <message>
         <location filename="temario.ui" line="26"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="temario.ui" line="32"/>
@@ -408,13 +569,53 @@
         <source>Temario cargado exitosamente.</source>
         <translation>Syllabus successfully loaded</translation>
     </message>
+    <message>
+        <location filename="temario.cpp" line="241"/>
+        <source>Pregunta</source>
+        <translation>Question</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="243"/>
+        <source>Respuesta</source>
+        <translation>Answer</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="248"/>
+        <source>Exportar</source>
+        <translation>Export</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="249"/>
+        <source>Importar</source>
+        <translation>Import</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="250"/>
+        <source>Agregar</source>
+        <translation>Add</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="251"/>
+        <source>Editar</source>
+        <translation>Edit</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="252"/>
+        <source>Eliminar</source>
+        <translation>Remove</translation>
+    </message>
+    <message>
+        <location filename="temario.cpp" line="253"/>
+        <source>Guardar</source>
+        <translation>Save</translation>
+    </message>
 </context>
 <context>
     <name>preguntasdialog</name>
     <message>
         <location filename="preguntasdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="preguntasdialog.ui" line="23"/>

@@ -7,7 +7,7 @@ Formulario::Formulario(QWidget *parent) :
 {
     ui->setupUi(this); 
     ui->lblGanso->setMovie(new QMovie(":/Recursos/Videos/XOsX.gif"));
-    ui->lblGanso->movie()->setScaledSize(QSize(60,50));
+    ui->lblGanso->movie()->setScaledSize(QSize(100,100));
     ui->lblGanso->movie()->start();
     actualizarJugadores();
 }
@@ -50,9 +50,9 @@ void Formulario::mostrarPregunta()
         aux = aux.trimmed();
         QStringList palabras_pregunta = aux.split(" ");
         aux = "";
-        for(int i=0;i<palabras_pregunta.size();i++){
-            aux += palabras_pregunta[i] + " ";
-            if((i+1)%2==0)
+        for(int i=1;i<palabras_pregunta.size()+1;i++){
+            aux += palabras_pregunta[i-1] + " ";
+            if(i%6==0)
                 aux += "\n";
         }
         ui->lblPregunta->setText(aux);

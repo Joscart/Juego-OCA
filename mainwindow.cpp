@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "acercade.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -7,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     //fondo azul areado
+    setWindowState(Qt::WindowMaximized);
     //Por defult que inicie en una windows vacia
     ui->stackedWidget->setCurrentIndex(0);//widget vacio
     m_preguntas = m_config.temario();
@@ -173,5 +175,18 @@ void MainWindow::on_actionPantalla_Completa_toggled(bool arg1)
         //maximizar ventana
         setWindowState(Qt::WindowNoState);
     }
+}
+
+
+void MainWindow::on_actionInstrucciones_triggered()
+{
+    QDesktopServices::openUrl(QUrl::fromLocalFile(":/Recursos/Preguntas/Reglas_Juego_Oca.pdf"));
+}
+
+
+void MainWindow::on_actionAcerca_de_triggered()
+{
+    AcercaDe a;
+    a.exec();
 }
 
