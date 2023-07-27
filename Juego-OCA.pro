@@ -5,6 +5,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Oca-Acuarela
 TEMPLATE = app
 
+RC_FILE = OcaGame.rc
+
 CONFIG += c++11
 
 # You can make your code fail to compile if it uses deprecated APIs.
@@ -75,8 +77,4 @@ RC_ICONS = mi_icono.ico
 
 RESOURCES += \
     Recursos.qrc
-
-DISTFILES += \
-    Recursos/Imagenes/IconoIdioma.png \
-    Recursos/Imagenes/IconoPregunta.png
 
