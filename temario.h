@@ -9,7 +9,7 @@
 #include <QStack>
 #include <QTableWidget>
 #include "QFileDialog"
-
+#include <QStandardPaths>
 #include "pregunta.h"
 #include "preguntasdialog.h"
 
@@ -43,7 +43,8 @@ private slots:
 
 private:
     Ui::Temario *ui;
-    const QString ARCHIVO = "temario.bin";
+    QString ruta = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
+    const QString ARCHIVO = ruta+ "/temario.bin";
     enum columna{
         PREGUNTA, RESPUESTA
     };
