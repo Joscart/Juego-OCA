@@ -12,13 +12,15 @@ SelectPlayer::SelectPlayer(QWidget *parent) :
     m_imagenesFicha.append(QPixmap(":/Recursos/Imagenes/Ficha3.png"));
     m_imagenesFicha.append(QPixmap(":/Recursos/Imagenes/Ficha4.png"));
     //set lbl
-    m_lblImagenesFicha.append(ui->lblImagenFicha_1);
-    m_lblImagenesFicha.append(ui->lblImagenFicha_2);
-    m_lblImagenesFicha.append(ui->lblImagenFicha_3);
-    m_lblImagenesFicha.append(ui->lblImagenFicha_4);
+    m_lblImagenesFicha.append(ui->rbtnJugador_1);
+    m_lblImagenesFicha.append(ui->rbtnJugador_2);
+    m_lblImagenesFicha.append(ui->rbtnJugador_3);
+    m_lblImagenesFicha.append(ui->rbtnJugador_4);
     //set imagenes
     for(int i=0;i<4;i++){
-        m_lblImagenesFicha[i]->setPixmap(m_imagenesFicha[i]);
+        QIcon ButtonIcon(m_imagenesFicha[i]);
+           m_lblImagenesFicha[i]->setIcon(ButtonIcon);
+           m_lblImagenesFicha[i]->setIconSize(QSize(80, 80)); // Ajusta el tamaño según sea necesario
     }
     connect(ui->btnCancelar,&QPushButton::clicked,this,&SelectPlayer::on_btnCancelar_clicked);
     connect(ui->btnSiguiente,&QPushButton::clicked,this,&SelectPlayer::on_btnSiguiente_clicked);
@@ -31,10 +33,11 @@ SelectPlayer::~SelectPlayer()
 
 void SelectPlayer::on_btnSiguiente_clicked()
 {
-    if(!ui->rbtnJugador_1->isChecked() and
-        !ui->rbtnJugador_2->isChecked() and
-        !ui->rbtnJugador_3->isChecked() and
-        !ui->rbtnJugador_4->isChecked()){
+    if(ui->lineEditJugador_1->text().isEmpty() &&
+        ui->lineEditJugador_2->text().isEmpty() &&
+        ui->lineEditJugador_3->text().isEmpty() &&
+        ui->lineEditJugador_4->text().isEmpty()){
+
         QMessageBox::warning(this, tr("Nuevo Juego"), tr("Necesita seleccionar almenos 1 ficha"));
         return;
     }
@@ -69,74 +72,128 @@ void SelectPlayer::delJugadores(Jugador *jugador)
 }
 
 
-void SelectPlayer::on_rbtnJugador_4_toggled(bool checked)
+
+
+void SelectPlayer::on_rbtnJugador_1_clicked()
 {
-    if(checked){
-        Jugador *aux = new Jugador();
-        aux->setNombre(tr("Jugador_4"));
-        aux->setFichaImagen(m_imagenesFicha[3]);
-        setJugadores(aux);
-        QSound::play(":/Recursos/Audio/SoundPregunta2.wav");
-    }else{
-        foreach(Jugador *actual,m_jugadores){
-            if(actual->nombre()==tr("Jugador_4")){
-                delJugadores(actual);
-                QSound::play(":/Recursos/Audio/SoundAlerta.wav");
-            }
-        }
-    }
+    ui->lineEditJugador_1->setFocus();
 }
 
 
-void SelectPlayer::on_rbtnJugador_3_toggled(bool checked)
+void SelectPlayer::on_rbtnJugador_2_clicked()
 {
-    if(checked){
-        Jugador *aux = new Jugador();
-        aux->setNombre(tr("Jugador_3"));
-        aux->setFichaImagen(m_imagenesFicha[2]);
-        setJugadores(aux);
-        QSound::play(":/Recursos/Audio/SoundPregunta2.wav");
-    }else{
-        foreach(Jugador *actual,m_jugadores){
-            if(actual->nombre()==tr("Jugador_3")){
-                delJugadores(actual);
-                QSound::play(":/Recursos/Audio/SoundAlerta.wav");
-            }
-        }
-    }
+    ui->lineEditJugador_2->setFocus();
 }
 
 
-void SelectPlayer::on_rbtnJugador_2_toggled(bool checked)
+void SelectPlayer::on_rbtnJugador_3_clicked()
 {
-    if(checked){
-        Jugador *aux = new Jugador();
-        aux->setNombre(tr("Jugador_2"));
-        aux->setFichaImagen(m_imagenesFicha[1]);
-        setJugadores(aux);
-        QSound::play(":/Recursos/Audio/SoundPregunta2.wav");
-    }else{
-        foreach(Jugador *actual,m_jugadores){
-            if(actual->nombre()==tr("Jugador_2")){
-                delJugadores(actual);
-                QSound::play(":/Recursos/Audio/SoundAlerta.wav");
-            }
-        }
-    }
+    ui->lineEditJugador_3->setFocus();
 }
 
 
-void SelectPlayer::on_rbtnJugador_1_toggled(bool checked)
+void SelectPlayer::on_rbtnJugador_4_clicked()
 {
-    if(checked){
+    ui->lineEditJugador_4->setFocus();
+}
+
+
+void SelectPlayer::on_lineEditJugador_1_textChanged(const QString &arg1)
+{
+    if(!arg1.isEmpty()){
+        foreach(Jugador *actual,m_jugadores){
+            if(actual->numJugador()==1){
+                delJugadores(actual);
+
+            }
+        }
         Jugador *aux = new Jugador();
-        aux->setNombre(tr("Jugador_1"));
+        aux->setNombre(arg1);
         aux->setFichaImagen(m_imagenesFicha[0]);
+        aux->setNumJugador(1);
         setJugadores(aux);
         QSound::play(":/Recursos/Audio/SoundPregunta2.wav");
     }else{
         foreach(Jugador *actual,m_jugadores){
-            if(actual->nombre()==tr("Jugador_1")){
+            if(actual->numJugador()==1){
+                delJugadores(actual);
+                QSound::play(":/Recursos/Audio/SoundAlerta.wav");
+            }
+        }
+    }
+}
+
+
+void SelectPlayer::on_lineEditJugador_2_textChanged(const QString &arg1)
+{
+    if(!arg1.isEmpty()){
+        foreach(Jugador *actual,m_jugadores){
+            if(actual->numJugador()==2){
+                delJugadores(actual);
+
+            }
+        }
+        Jugador *aux = new Jugador();
+        aux->setNombre(arg1);
+        aux->setFichaImagen(m_imagenesFicha[1]);
+        aux->setNumJugador(2);
+        setJugadores(aux);
+        QSound::play(":/Recursos/Audio/SoundPregunta2.wav");
+    }else{
+        foreach(Jugador *actual,m_jugadores){
+            if(actual->numJugador()==2){
+                delJugadores(actual);
+                QSound::play(":/Recursos/Audio/SoundAlerta.wav");
+            }
+        }
+    }
+}
+
+
+void SelectPlayer::on_lineEditJugador_3_textChanged(const QString &arg1)
+{
+    if(!arg1.isEmpty()){
+        foreach(Jugador *actual,m_jugadores){
+            if(actual->numJugador()==3){
+                delJugadores(actual);
+
+            }
+        }
+        Jugador *aux = new Jugador();
+        aux->setNombre(arg1);
+        aux->setFichaImagen(m_imagenesFicha[2]);
+        aux->setNumJugador(3);
+        setJugadores(aux);
+        QSound::play(":/Recursos/Audio/SoundPregunta2.wav");
+    }else{
+        foreach(Jugador *actual,m_jugadores){
+            if(actual->numJugador()==3){
+                delJugadores(actual);
+                QSound::play(":/Recursos/Audio/SoundAlerta.wav");
+            }
+        }
+    }
+}
+
+
+void SelectPlayer::on_lineEditJugador_4_textChanged(const QString &arg1)
+{
+    if(!arg1.isEmpty()){
+        foreach(Jugador *actual,m_jugadores){
+            if(actual->numJugador()==4){
+                delJugadores(actual);
+
+            }
+        }
+        Jugador *aux = new Jugador();
+        aux->setNombre(arg1);
+        aux->setFichaImagen(m_imagenesFicha[3]);
+        aux->setNumJugador(4);
+        setJugadores(aux);
+        QSound::play(":/Recursos/Audio/SoundPregunta2.wav");
+    }else{
+        foreach(Jugador *actual,m_jugadores){
+            if(actual->numJugador()==4){
                 delJugadores(actual);
                 QSound::play(":/Recursos/Audio/SoundAlerta.wav");
             }

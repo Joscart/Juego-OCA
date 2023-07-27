@@ -21,12 +21,16 @@ public:
     int puntaje() const;
     void setPuntaje(int newPuntaje);
 
+    int numJugador() const;
+    void setNumJugador(int newNumJugador);
+
 signals:
 
 private:
     QString m_nombre;
     Ficha *m_ficha;
     int m_puntaje;
+    int m_numJugador;
 };
 
 #endif // JUGADOR_H

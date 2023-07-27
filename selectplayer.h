@@ -1,6 +1,7 @@
 #ifndef SELECTPLAYER_H
 #define SELECTPLAYER_H
 
+#include "qabstractbutton.h"
 #include <jugador.h>
 #include <QMessageBox>
 #include <QSound>
@@ -28,13 +29,21 @@ private slots:
 
     void on_btnCancelar_clicked();
 
-    void on_rbtnJugador_4_toggled(bool checked);
+    void on_rbtnJugador_1_clicked();
 
-    void on_rbtnJugador_3_toggled(bool checked);
+    void on_rbtnJugador_2_clicked();
 
-    void on_rbtnJugador_2_toggled(bool checked);
+    void on_rbtnJugador_3_clicked();
 
-    void on_rbtnJugador_1_toggled(bool checked);
+    void on_rbtnJugador_4_clicked();
+
+    void on_lineEditJugador_1_textChanged(const QString &arg1);
+
+    void on_lineEditJugador_2_textChanged(const QString &arg1);
+
+    void on_lineEditJugador_3_textChanged(const QString &arg1);
+
+    void on_lineEditJugador_4_textChanged(const QString &arg1);
 
 signals:
     void siguientePressed();
@@ -44,7 +53,7 @@ signals:
 private:
     Ui::SelectPlayer *ui;
     QList<QPixmap> m_imagenesFicha;
-    QList<QLabel*> m_lblImagenesFicha;
+    QList<QPushButton*> m_lblImagenesFicha;
     QList<Jugador*> m_jugadores;
 };
 

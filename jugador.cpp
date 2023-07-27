@@ -41,3 +41,13 @@ void Jugador::setPuntaje(int newPuntaje)
 {
     m_puntaje = newPuntaje;
 }
+
+int Jugador::numJugador() const
+{
+    return m_numJugador;
+}
+
+void Jugador::setNumJugador(int newNumJugador)
+{
+    m_numJugador = newNumJugador;
+}
