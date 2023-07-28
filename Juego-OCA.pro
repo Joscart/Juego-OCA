@@ -2,10 +2,10 @@ QT       += core gui multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+RC_ICONS = mi_icono.ico
+
 TARGET = Oca-Acuarela
 TEMPLATE = app
-
-RC_FILE = OcaGame.rc
 
 CONFIG += c++11
 
@@ -73,7 +73,6 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-RC_ICONS = mi_icono.ico
 
 RESOURCES += \
     Recursos.qrc
