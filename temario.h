@@ -43,8 +43,7 @@ private slots:
 
 private:
     Ui::Temario *ui;
-    QString ruta = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
-    const QString ARCHIVO = ruta + "/temario.bin";
+     QString ARCHIVO;
     enum columna{
         PREGUNTA, RESPUESTA
     };

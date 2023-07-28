@@ -2,7 +2,8 @@
 #include "ui_temario.h"
 Temario::Temario(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::Temario)
+    ui(new Ui::Temario),
+    ARCHIVO(QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + "/temario.bin")
 {
     ui->setupUi(this);
     setWindowTitle(tr("TEMARIO"));
@@ -12,7 +13,12 @@ Temario::Temario(QWidget *parent) :
     ui->tbl_temario->setHorizontalHeaderLabels(titulo);
     ui->tbl_temario->setColumnWidth(PREGUNTA,641);
     ui->tbl_temario->setColumnWidth(RESPUESTA,90);
-
+    // Crear el directorio si no existe
+       QString ruta = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
+       QDir dir;
+       if (!dir.exists(ruta)) {
+           dir.mkpath(ruta);
+       }
     cargarPreguntas();
 }
 
@@ -51,18 +57,30 @@ void Temario::on_btnguardar_clicked()
     QFile archivo(ARCHIVO);
     if (archivo.open(QFile::WriteOnly | QFile::Truncate)) {
         QDataStream salida(&archivo);
+        salida.setVersion(QDataStream::Qt_5_15); // o la versión de Qt que estás utilizando
+
         for (int i=0; i<filas; i++) {
             QTableWidgetItem *pregunta = ui->tbl_temario->item(i,PREGUNTA);
             QTableWidgetItem *respuesta = ui->tbl_temario->item(i, RESPUESTA);
 
+            if (!pregunta || !respuesta) {
+                // Manejar o informar el error aquí
+                continue;
+            }
+
             salida << pregunta->text() << respuesta->text();
         }
         archivo.close();
-        QMessageBox::information(this,tr("Guardar temario"),tr("temario guardado"));
-    }else{
-        QMessageBox::critical(this,tr("Guardar temario"), tr("No se puede escribir sobre ") + ARCHIVO);
+        if (salida.status() != QDataStream::Ok) {
+            QMessageBox::critical(this, tr("Guardar temario"), tr("Error al escribir en ") + ARCHIVO);
+        } else {
+            QMessageBox::information(this,tr("Guardar temario"),tr("Temario guardado"));
+        }
+    } else {
+        QMessageBox::critical(this,tr("Guardar temario"), tr("No se puede abrir para escritura ") + ARCHIVO);
     }
 }
+
 
 void Temario::cargarPreguntas()
 {
