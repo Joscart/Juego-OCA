@@ -20,7 +20,7 @@ SelectPlayer::SelectPlayer(QWidget *parent) :
     for(int i=0;i<4;i++){
         QIcon ButtonIcon(m_imagenesFicha[i]);
            m_lblImagenesFicha[i]->setIcon(ButtonIcon);
-           m_lblImagenesFicha[i]->setIconSize(QSize(80, 80)); // Ajusta el tamaño según sea necesario
+           m_lblImagenesFicha[i]->setIconSize(QSize(250, 250)); // Ajusta el tamaño según sea necesario
     }
     connect(ui->btnCancelar,&QPushButton::clicked,this,&SelectPlayer::on_btnCancelar_clicked);
     connect(ui->btnSiguiente,&QPushButton::clicked,this,&SelectPlayer::on_btnSiguiente_clicked);

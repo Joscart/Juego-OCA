@@ -107,19 +107,6 @@ void MainWindow::on_actionNuevo_Juego_triggered()
         m_jugadores = m_fichas->jugadores();
 
         //ui->horizontalLayout->replaceWidget(ui->wTablero,m_tablero);
-        setStyleSheet("QWidget#Tablero{"
-                      "min-width: 880px;"
-                      "min-height: 680px;"
-                      "border-image: url(:/Recursos/Imagenes/Tablero2.png);"
-                      "}"
-                      "QWidget#Formulario{"
-                      "min-width: 300px;"
-                      "min-height: 340px;"
-                      "}"
-                      "QWidget#Dado{"
-                      "min-width: 300px;"
-                      "min-height: 340px;"
-                      "}");
         foreach (Jugador *actual, m_jugadores) {
             m_tablero->addFicha(actual->ficha());
         }

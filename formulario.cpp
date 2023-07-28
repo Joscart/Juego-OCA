@@ -43,20 +43,7 @@ void Formulario::mostrarPregunta()
     if(m_actual==nullptr)
         return;
     ui->stkPreguntar->setCurrentIndex(0);
-    if(m_actual->pregunta().length()<30){
-        ui->lblPregunta->setText(m_actual->pregunta());
-    }else{
-        QString aux = m_actual->pregunta();
-        aux = aux.trimmed();
-        QStringList palabras_pregunta = aux.split(" ");
-        aux = "";
-        for(int i=1;i<palabras_pregunta.size()+1;i++){
-            aux += palabras_pregunta[i-1] + " ";
-            if(i%6==0)
-                aux += "\n";
-        }
-        ui->lblPregunta->setText(aux);
-    }
+    ui->lblPregunta->setText(m_actual->pregunta());
 
 }
 
