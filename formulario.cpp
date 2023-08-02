@@ -8,7 +8,10 @@ Formulario::Formulario(QWidget *parent) :
     ui->setupUi(this); 
     ui->lblGanso->setMovie(new QMovie(":/Recursos/Videos/XOsX.gif"));
     ui->lblGanso->movie()->setScaledSize(QSize(100,100));
+    ui->lblFlecha->setMovie(new QMovie(":Recursos/Imagenes/arrow.gif"));
+    ui->lblFlecha->movie()->setScaledSize(QSize(100,100));
     ui->lblGanso->movie()->start();
+    ui->lblFlecha->movie()->start();
     actualizarJugadores();
 }
 

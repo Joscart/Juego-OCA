@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>336</width>
+    <width>451</width>
     <height>329</height>
    </rect>
   </property>
@@ -36,7 +36,7 @@
    <item>
     <widget class="QStackedWidget" name="stkPreguntar">
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="Preguntar">
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -121,7 +121,7 @@ QPushButton{
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>250</width>
+                    <width>365</width>
                     <height>72</height>
                    </rect>
                   </property>
@@ -282,6 +282,16 @@ border-radius: 0px;</string>
          </property>
          <property name="text">
           <string>Turno</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblFlecha">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
