@@ -1,16 +1,17 @@
 #include "mainwindow.h"
-#include "acercade.h"
 #include "ui_mainwindow.h"
+
+#include <QDesktopServices>
+#include <QFile>
+#include <QUrl>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //fondo azul areado
     setWindowState(Qt::WindowMaximized);
-    //Por defult que inicie en una windows vacia
-    ui->stackedWidget->setCurrentIndex(0);//widget vacio
+    ui->stackedWidget->setCurrentIndex(0);
     m_preguntas = m_config.temario();
 }
 
@@ -27,11 +28,11 @@ void MainWindow::on_actionSalir_triggered()
 
 void MainWindow::on_actionNuevo_Juego_triggered()
 {
-    //seleccionar jugadores
     ui->stackedWidget->setCurrentIndex(1);
     m_jugadores.clear();
+
     if (m_fichas != nullptr) {
-        if(m_tablero != nullptr){
+        if (m_tablero != nullptr) {
             ui->horizontalLayout->removeWidget(m_tablero);
             m_tablero->hide();
             ui->horizontalLayout->insertWidget(0, ui->wTablero);
@@ -44,18 +45,19 @@ void MainWindow::on_actionNuevo_Juego_triggered()
             delete m_tablero;
             m_tablero = nullptr;
         }
-        SelectPlayer *aux1 = new SelectPlayer();
+
+        auto *nuevoSelector = new SelectPlayer();
         ui->verticalLayout_5->removeWidget(m_fichas);
         m_fichas->hide();
-        ui->verticalLayout_5->insertWidget(0, aux1);
+        ui->verticalLayout_5->insertWidget(0, nuevoSelector);
         delete m_fichas;
-        m_fichas = aux1;
+        m_fichas = nuevoSelector;
     } else {
         m_fichas = new SelectPlayer();
         ui->verticalLayout_5->replaceWidget(ui->wSelecion, m_fichas);
     }
 
-    connect(m_fichas,&SelectPlayer::cancelarPressed,this,[this](){
+    connect(m_fichas, &SelectPlayer::cancelarPressed, this, [this]() {
         ui->stackedWidget->setCurrentIndex(0);
         ui->verticalLayout_5->removeWidget(m_fichas);
         m_fichas->hide();
@@ -63,29 +65,29 @@ void MainWindow::on_actionNuevo_Juego_triggered()
         delete m_fichas;
         m_fichas = nullptr;
     });
-    connect(m_fichas,&SelectPlayer::siguientePressed,this,[this](){
+
+    connect(m_fichas, &SelectPlayer::siguientePressed, this, [this]() {
         ui->stackedWidget->setCurrentIndex(2);
-        //Iniciar el widget del juego
+
         if (m_tablero != nullptr) {
-            Tablero *aux = new Tablero();
+            auto *nuevoTablero = new Tablero();
             ui->horizontalLayout->removeWidget(m_tablero);
             m_tablero->hide();
-            ui->horizontalLayout->insertWidget(0, aux);
+            ui->horizontalLayout->insertWidget(0, nuevoTablero);
             ui->verticalLayout->removeWidget(m_tablero->dado());
             m_tablero->dado()->hide();
-            ui->verticalLayout->insertWidget(2, aux->dado());
+            ui->verticalLayout->insertWidget(2, nuevoTablero->dado());
             ui->verticalLayout->removeWidget(m_tablero->formulario());
             m_tablero->formulario()->hide();
-            ui->verticalLayout->insertWidget(0, aux->formulario());
+            ui->verticalLayout->insertWidget(0, nuevoTablero->formulario());
             delete m_tablero;
-            m_tablero = aux;
-            m_tablero->setObjectName("Tablero");
-            m_tablero->formulario()->setObjectName("Formulario");
-            m_tablero->dado()->setObjectName("Dado");
+            m_tablero = nuevoTablero;
+            m_tablero->setObjectName(QStringLiteral("Tablero"));
+            m_tablero->formulario()->setObjectName(QStringLiteral("Formulario"));
+            m_tablero->dado()->setObjectName(QStringLiteral("Dado"));
 
             qDeleteAll(m_jugadores);
             m_jugadores.clear();
-
         } else {
             m_tablero = new Tablero();
             ui->horizontalLayout->removeWidget(ui->wTablero);
@@ -97,18 +99,15 @@ void MainWindow::on_actionNuevo_Juego_triggered()
             ui->verticalLayout->removeWidget(ui->wPregunta);
             ui->wPregunta->hide();
             ui->verticalLayout->insertWidget(0, m_tablero->formulario());
-            m_tablero->setObjectName("Tablero");
-            m_tablero->formulario()->setObjectName("Formulario");
-            m_tablero->dado()->setObjectName("Dado");
+            m_tablero->setObjectName(QStringLiteral("Tablero"));
+            m_tablero->formulario()->setObjectName(QStringLiteral("Formulario"));
+            m_tablero->dado()->setObjectName(QStringLiteral("Dado"));
         }
 
-        //datatest
-        //datatest();
         m_jugadores = m_fichas->jugadores();
 
-        //ui->horizontalLayout->replaceWidget(ui->wTablero,m_tablero);
-        foreach (Jugador *actual, m_jugadores) {
-            m_tablero->addFicha(actual->ficha());
+        for (Jugador *jugador : m_jugadores) {
+            m_tablero->addFicha(jugador->ficha());
         }
         m_tablero->setPreguntas(m_preguntas->randomizarPreguntas());
     });
@@ -136,51 +135,37 @@ Configuracion &MainWindow::config()
     return m_config;
 }
 
-void MainWindow::datatest()
+void MainWindow::crearDatosDePrueba()
 {
-    //Datos de prueba
-    m_jugadores.append(new Jugador);
-    m_jugadores.last()->setNombre("Jugador_1");
-    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha1.png"));
-    m_jugadores.append(new Jugador);
-    m_jugadores.last()->setNombre("Jugador_2");
-    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha2.png"));
-    m_jugadores.append(new Jugador);
-    m_jugadores.last()->setNombre("Jugador_3");
-    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha3.png"));
-    m_jugadores.append(new Jugador);
-    m_jugadores.last()->setNombre("Jugador_4");
-    m_jugadores.last()->setFichaImagen(QPixmap(":/Recursos/Imagenes/Ficha4.png"));
-}
-
-void MainWindow::on_actionPantalla_Completa_toggled(bool arg1)
-{
-    if(arg1){
-        //maximizar ventana
-        setWindowState(Qt::WindowFullScreen);
-    }else{
-        //maximizar ventana
-        setWindowState(Qt::WindowNoState);
+    const QStringList nombres = {
+        QStringLiteral("Jugador_1"), QStringLiteral("Jugador_2"),
+        QStringLiteral("Jugador_3"), QStringLiteral("Jugador_4")
+    };
+    for (int i = 0; i < nombres.size(); ++i) {
+        auto *jugador = new Jugador(this);
+        jugador->setNombre(nombres[i]);
+        jugador->setFichaImagen(
+            QPixmap(QStringLiteral(":/Recursos/Imagenes/Ficha%1.png").arg(i + 1)));
+        m_jugadores.append(jugador);
     }
 }
 
+void MainWindow::on_actionPantalla_Completa_toggled(bool checked)
+{
+    setWindowState(checked ? Qt::WindowFullScreen : Qt::WindowNoState);
+}
 
 void MainWindow::on_actionInstrucciones_triggered()
 {
-
-    QString filePath = QApplication::applicationDirPath() + "/Reglas_Juego_Oca.pdf";
-    if(QFile::exists(filePath)) {
-        // El archivo existe, trata de abrirlo
+    const QString filePath = QApplication::applicationDirPath() + "/Reglas_Juego_Oca.pdf";
+    if (QFile::exists(filePath)) {
         QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
-    } else {
-        // El archivo no existe, haz algo aquí
     }
 }
 
-
 void MainWindow::on_actionAcerca_de_triggered()
 {
-    AcercaDe a;
-    a.exec();
+    AcercaDe dialog;
+    dialog.exec();
 }
 

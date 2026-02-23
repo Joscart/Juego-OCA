@@ -1,13 +1,12 @@
-#ifndef PREGUNTASDIALOG_H
-#define PREGUNTASDIALOG_H
+#pragma once
 
 #include <QDialog>
-#include <pregunta.h>
-#include <QMessageBox>
-#include <QWidget>
-namespace Ui {
-class preguntasdialog;
-}
+
+#include "pregunta.h"
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class preguntasdialog; }
+QT_END_NAMESPACE
 
 class preguntasdialog : public QDialog
 {
@@ -15,26 +14,21 @@ class preguntasdialog : public QDialog
 
 public:
     explicit preguntasdialog(QWidget *parent = nullptr);
-    ~preguntasdialog();
+    ~preguntasdialog() override;
+
     Pregunta *preguntas() const;
 
-    QString pregunta;
-    QString respuesta;
-
     QString getPregunta() const;
-    void setPregunta(const QString &newPregunta);
+    void setPregunta(const QString &texto);
 
     QString getRespuesta() const;
-    void setRespuesta(const QString &newRespuesta);
+    void setRespuesta(const QString &texto);
 
 private slots:
     void on_buttonBox_accepted();
-
     void on_buttonBox_rejected();
 
 private:
     Ui::preguntasdialog *ui;
-    Pregunta *m_preguntas;
+    Pregunta *m_preguntas = nullptr;
 };
-
-#endif // PREGUNTASDIALOG_H

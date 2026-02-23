@@ -1,19 +1,13 @@
-#ifndef TEMARIO_H
-#define TEMARIO_H
+#pragma once
 
 #include <QDialog>
-#include <QFile>
-#include <QMessageBox>
-#include <ctime>
-#include "QDebug"
-#include <QStack>
 #include <QTableWidget>
-#include "QFileDialog"
-#include <QStandardPaths>
-#include "pregunta.h"
-#include "preguntasdialog.h"
 
-namespace Ui {class Temario;}
+#include "pregunta.h"
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class Temario; }
+QT_END_NAMESPACE
 
 class Temario : public QDialog
 {
@@ -21,35 +15,29 @@ class Temario : public QDialog
 
 public:
     explicit Temario(QWidget *parent = nullptr);
-    ~Temario();
+    ~Temario() override;
 
     QList<Pregunta *> randomizarPreguntas();
-
     void cargarPreguntas();
     void retranslateUi();
+
 private slots:
-
     void on_btnagregar_clicked();
-
     void on_btnguardar_clicked();
-
     void on_btneditar_clicked();
-
     void on_btneliminar_clicked();
-
     void on_btnexportar_clicked();
-
     void on_btnimportar_clicked();
 
 private:
-    Ui::Temario *ui;
-     QString ARCHIVO;
-    enum columna{
-        PREGUNTA, RESPUESTA
+    enum Columna {
+        Pregunta_Col,
+        Respuesta_Col
     };
-    QList <Pregunta*> m_listaPreguntas;
-    void mostrarPreguntas(const QString &rArchivo);
-    int mseleccion = -1;
-};
 
-#endif // TEMARIO_H
+    Ui::Temario *ui;
+    QString m_archivoRuta;
+    QList<Pregunta *> m_listaPreguntas;
+
+    void mostrarPreguntas(const QString &rutaArchivo);
+};

@@ -1,12 +1,12 @@
 #include "jugador.h"
 
 Jugador::Jugador(QObject *parent)
-    : QObject{parent}
+    : QObject(parent)
 {
-    m_ficha = new Ficha();
+    m_ficha = new Ficha(this);
 }
 
-void Jugador::setFichaImagen(QPixmap imagen)
+void Jugador::setFichaImagen(const QPixmap &imagen)
 {
     m_ficha->setImagen(imagen);
 }
@@ -16,10 +16,10 @@ const QString &Jugador::nombre() const
     return m_nombre;
 }
 
-void Jugador::setNombre(const QString &newNombre)
+void Jugador::setNombre(const QString &nuevoNombre)
 {
-    m_nombre = newNombre;
-    m_ficha->setNombreJugador(newNombre);
+    m_nombre = nuevoNombre;
+    m_ficha->setNombreJugador(nuevoNombre);
 }
 
 Ficha *Jugador::ficha() const
@@ -27,19 +27,14 @@ Ficha *Jugador::ficha() const
     return m_ficha;
 }
 
-void Jugador::setFicha(Ficha *newFicha)
-{
-    m_ficha = newFicha;
-}
-
 int Jugador::puntaje() const
 {
     return m_puntaje;
 }
 
-void Jugador::setPuntaje(int newPuntaje)
+void Jugador::setPuntaje(int nuevoPuntaje)
 {
-    m_puntaje = newPuntaje;
+    m_puntaje = nuevoPuntaje;
 }
 
 int Jugador::numJugador() const
@@ -47,7 +42,7 @@ int Jugador::numJugador() const
     return m_numJugador;
 }
 
-void Jugador::setNumJugador(int newNumJugador)
+void Jugador::setNumJugador(int nuevoNum)
 {
-    m_numJugador = newNumJugador;
+    m_numJugador = nuevoNum;
 }

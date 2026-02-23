@@ -1,15 +1,15 @@
-#ifndef FORMULARIO_H
-#define FORMULARIO_H
+#pragma once
 
 #include <QWidget>
 #include <QMovie>
 #include <QLabel>
-#include <pregunta.h>
-#include <ficha.h>
 
-namespace Ui {
-class Formulario;
-}
+#include "pregunta.h"
+#include "ficha.h"
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class Formulario; }
+QT_END_NAMESPACE
 
 class Formulario : public QWidget
 {
@@ -17,43 +17,35 @@ class Formulario : public QWidget
 
 public:
     explicit Formulario(QWidget *parent = nullptr);
-    ~Formulario();
+    ~Formulario() override;
 
-    void setPreguntas(QList<Pregunta *> *newPreguntas);
-
+    void setPreguntas(QList<Pregunta *> *nuevasPreguntas);
     void usarPregunta();
-
     void mostrarPregunta();
 
     Pregunta *actual() const;
 
-    void setJugadores(QList<Ficha *> *newJugadores);
-
+    void setJugadores(QList<Ficha *> *jugadores);
     void actualizarJugadores();
 
 signals:
-
-    void respuesta(bool);
+    void respuesta(bool esVerdadero);
 
 public slots:
-    void setFichaActual(Ficha *newFichaActual);
-
+    void setFichaActual(Ficha *ficha);
     void correcto();
-
     void incorrecto();
 
 private slots:
     void on_btnVerdadero_clicked();
-
     void on_btnFalso_clicked();
 
 private:
     Ui::Formulario *ui;
-    QList<Pregunta*> *m_preguntas;
+    QList<Pregunta *> *m_preguntas = nullptr;
     Pregunta *m_actual = nullptr;
-    QList <Ficha*> *m_jugadores = nullptr;
-    Ficha *m_fichaActual;
+    QList<Ficha *> *m_jugadores = nullptr;
+    Ficha *m_fichaActual = nullptr;
+
     void delay(int mSecs);
 };
-
-#endif // FORMULARIO_H

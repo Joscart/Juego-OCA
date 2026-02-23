@@ -1,36 +1,31 @@
-#ifndef JUGADOR_H
-#define JUGADOR_H
+#pragma once
 
 #include <QObject>
-#include <ficha.h>
+#include "ficha.h"
 
 class Jugador : public QObject
 {
     Q_OBJECT
+
 public:
     explicit Jugador(QObject *parent = nullptr);
 
-    void setFichaImagen(QPixmap imagen);
+    void setFichaImagen(const QPixmap &imagen);
 
     const QString &nombre() const;
-    void setNombre(const QString &newNombre);
+    void setNombre(const QString &nuevoNombre);
 
     Ficha *ficha() const;
-    void setFicha(Ficha *newFicha);
 
     int puntaje() const;
-    void setPuntaje(int newPuntaje);
+    void setPuntaje(int nuevoPuntaje);
 
     int numJugador() const;
-    void setNumJugador(int newNumJugador);
-
-signals:
+    void setNumJugador(int nuevoNum);
 
 private:
     QString m_nombre;
-    Ficha *m_ficha;
-    int m_puntaje;
-    int m_numJugador;
+    Ficha *m_ficha = nullptr;
+    int m_puntaje = 0;
+    int m_numJugador = 0;
 };
-
-#endif // JUGADOR_H

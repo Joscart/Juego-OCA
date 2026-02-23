@@ -1,19 +1,18 @@
 #include "ficha.h"
 
 Ficha::Ficha(QObject *parent)
-    : QObject{parent}
+    : QObject(parent)
 {
-
 }
 
-const QString &Ficha::NombreJugador() const
+const QString &Ficha::nombreJugador() const
 {
-    return m_NombreJugador;
+    return m_nombreJugador;
 }
 
-void Ficha::setNombreJugador(const QString &newNombreJugador)
+void Ficha::setNombreJugador(const QString &nombre)
 {
-    m_NombreJugador = newNombreJugador;
+    m_nombreJugador = nombre;
 }
 
 const QPixmap &Ficha::imagen() const
@@ -21,9 +20,9 @@ const QPixmap &Ficha::imagen() const
     return m_imagen;
 }
 
-void Ficha::setImagen(const QPixmap &newImagen)
+void Ficha::setImagen(const QPixmap &nuevaImagen)
 {
-    m_imagen = newImagen;
+    m_imagen = nuevaImagen;
 }
 
 int Ficha::numCasillas() const
@@ -31,8 +30,8 @@ int Ficha::numCasillas() const
     return m_numCasillas;
 }
 
-void Ficha::setNumCasillas(int newNumCasillas)
+void Ficha::setNumCasillas(int cantidad)
 {
-    m_numCasillas = newNumCasillas;
+    m_numCasillas = cantidad;
 }
 

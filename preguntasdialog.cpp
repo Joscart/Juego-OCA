@@ -1,9 +1,11 @@
 #include "preguntasdialog.h"
 #include "ui_preguntasdialog.h"
 
-preguntasdialog::preguntasdialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::preguntasdialog)
+#include <QMessageBox>
+
+preguntasdialog::preguntasdialog(QWidget *parent)
+    : QDialog(parent)
+    , ui(new Ui::preguntasdialog)
 {
     ui->setupUi(this);
 }
@@ -15,56 +17,31 @@ preguntasdialog::~preguntasdialog()
 
 void preguntasdialog::on_buttonBox_accepted()
 {
-    QString respuesta;
-    QString indice;
-    /*for(int i=0;i<20;i++){
-
-    }*/
-
-    QString pregunta = ui->lnlpregunta->text();
-    if(pregunta.isEmpty()){
-        QMessageBox::warning(this,tr("ingresar pregunta"), tr("campo de pregunta vacio"));
-            return;
+    const QString textoPregunta = ui->lnlpregunta->text();
+    if (textoPregunta.isEmpty()) {
+        QMessageBox::warning(this, tr("Ingresar pregunta"), tr("Campo de pregunta vac\u00edo"));
+        return;
     }
 
-    if(ui->verdaderoButton->isChecked()){
-        respuesta="verdadero";
-    }else if(ui->falsobutton->isChecked()){
-        respuesta="falso";
+    QString textoRespuesta;
+    if (ui->verdaderoButton->isChecked()) {
+        textoRespuesta = QStringLiteral("verdadero");
+    } else if (ui->falsobutton->isChecked()) {
+        textoRespuesta = QStringLiteral("falso");
     }
-    this->m_preguntas = new Pregunta(indice,pregunta,respuesta);
+
+    m_preguntas = new Pregunta(QString(), textoPregunta, textoRespuesta);
     accept();
 }
-
 
 void preguntasdialog::on_buttonBox_rejected()
 {
     reject();
 }
+
 Pregunta *preguntasdialog::preguntas() const
 {
     return m_preguntas;
-}
-
-QString preguntasdialog::getRespuesta() const
-{
-    QString respuesta;
-    if(ui->verdaderoButton->isChecked()){
-        respuesta= "verdadero";
-    }else if(ui->falsobutton->isChecked()){
-        respuesta= "falso";
-    }
-    return respuesta;
-}
-
-void preguntasdialog::setRespuesta(const QString &newRespuesta)
-{
-    if(newRespuesta.isEmpty())
-        return;
-    int index= ui->falsobutton->isChecked();
-    if(index != -1){
-        ui->falsobutton->setChecked(index);
-    }
 }
 
 QString preguntasdialog::getPregunta() const
@@ -72,8 +49,27 @@ QString preguntasdialog::getPregunta() const
     return ui->lnlpregunta->text();
 }
 
-void preguntasdialog::setPregunta(const QString &newPregunta)
+void preguntasdialog::setPregunta(const QString &texto)
 {
-    ui->lnlpregunta->setText(newPregunta);
+    ui->lnlpregunta->setText(texto);
 }
 
+QString preguntasdialog::getRespuesta() const
+{
+    if (ui->verdaderoButton->isChecked()) {
+        return QStringLiteral("verdadero");
+    }
+    if (ui->falsobutton->isChecked()) {
+        return QStringLiteral("falso");
+    }
+    return QString();
+}
+
+void preguntasdialog::setRespuesta(const QString &texto)
+{
+    if (texto == QStringLiteral("verdadero")) {
+        ui->verdaderoButton->setChecked(true);
+    } else if (texto == QStringLiteral("falso")) {
+        ui->falsobutton->setChecked(true);
+    }
+}

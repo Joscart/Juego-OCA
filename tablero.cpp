@@ -1,18 +1,24 @@
 #include "tablero.h"
 #include "ui_tablero.h"
+#include "soundplayer.h"
 
-Tablero::Tablero(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Tablero),m_music(this)
+#include <QElapsedTimer>
+
+Tablero::Tablero(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::Tablero)
+    , m_music(this)
 {
     ui->setupUi(this);
     m_dado = new Dado(this);
-    m_music.setSource(QUrl::fromLocalFile(":/Recursos/Audio/MusicLoop.wav"));
+
+    m_music.setSource(QUrl(QStringLiteral("qrc:/Recursos/Audio/MusicLoop.wav")));
     m_music.setLoopCount(QSoundEffect::Infinite);
-    m_music.setVolume(0.25f);
+    m_music.setVolume(0.25);
     m_music.play();
 
-    connect(m_dado,SIGNAL(windowTitleChanged(QString)),this,SLOT(moverFicha(QString)));
+    // Conexión del dado: usar señal propia en vez del hack de windowTitle
+    connect(m_dado, &Dado::resultadoObtenido, this, &Tablero::procesarTirada);
 
     m_formulario = new Formulario(this);
     m_formulario->setJugadores(&m_jugadores);
@@ -21,44 +27,43 @@ Tablero::Tablero(QWidget *parent) :
 
     cargarWidgets();
 
-    connect(m_formulario, &Formulario::respuesta, this, [this](bool aux) {
-        QString respuesta = aux ? "verdadero" : "falso";
-        if (m_formulario->actual()->respuesta() != respuesta) {
-            QSound::play(":/Recursos/Audio/SoundIncorrecto.wav");
+    connect(m_formulario, &Formulario::respuesta, this, [this](bool esVerdadero) {
+        const QString respuestaUsuario = esVerdadero ? QStringLiteral("verdadero")
+                                                     : QStringLiteral("falso");
+        if (m_formulario->actual()->respuesta() != respuestaUsuario) {
+            SoundPlayer::play(QStringLiteral(":/Recursos/Audio/SoundIncorrecto.wav"));
             m_formulario->incorrecto();
             moverFicha(-1 * m_dado->resultado());
             return;
-        }else{
-            QSound::play(":/Recursos/Audio/SoundCorrecto.wav");
-            m_formulario->correcto();
-            cambiarTurno();
         }
+        SoundPlayer::play(QStringLiteral(":/Recursos/Audio/SoundCorrecto.wav"));
+        m_formulario->correcto();
+        cambiarTurno();
         m_formulario->usarPregunta();
     });
 
+    // Sombras de texto para los numeradores
+    constexpr int xOffset = 2;
+    constexpr int yOffset = 1;
 
-    //Sombras de letras
-    int xOffset = 2;
-    int yOffset = 1;
-
-    //Numerar los label
-    for(int i=0;i<m_numeradores.size();i++){
-        m_numeradores[i]->setText(QString::number(i+1));
-        auto effect = new QGraphicsDropShadowEffect(m_numeradores[i]);
+    for (int i = 0; i < m_numeradores.size(); ++i) {
+        m_numeradores[i]->setText(QString::number(i + 1));
+        auto *effect = new QGraphicsDropShadowEffect(m_numeradores[i]);
         effect->setColor(Qt::white);
-        effect->setOffset(xOffset,yOffset);
+        effect->setOffset(xOffset, yOffset);
         m_numeradores[i]->setGraphicsEffect(effect);
     }
 
-    //aplicar sombra a Label extras
-    auto effect_2 = new QGraphicsDropShadowEffect(ui->lblInicio);
-    effect_2->setColor(Qt::white);
-    effect_2->setOffset(xOffset,yOffset);
-    ui->lblInicio->setGraphicsEffect(effect_2);
-    auto effect_3 = new QGraphicsDropShadowEffect(ui->lblMeta);
-    effect_3->setColor(Qt::white);
-    effect_3->setOffset(xOffset,yOffset);
-    ui->lblMeta->setGraphicsEffect(effect_3);
+    // Sombra para labels de inicio y meta
+    auto *efectoInicio = new QGraphicsDropShadowEffect(ui->lblInicio);
+    efectoInicio->setColor(Qt::white);
+    efectoInicio->setOffset(xOffset, yOffset);
+    ui->lblInicio->setGraphicsEffect(efectoInicio);
+
+    auto *efectoMeta = new QGraphicsDropShadowEffect(ui->lblMeta);
+    efectoMeta->setColor(Qt::white);
+    efectoMeta->setOffset(xOffset, yOffset);
+    ui->lblMeta->setGraphicsEffect(efectoMeta);
 }
 
 Tablero::~Tablero()
@@ -198,32 +203,31 @@ void Tablero::cargarWidgets()
     m_casillas.append(ui->Casilla_63);
     m_casillas.append(ui->Casilla_64);
 
-    for(int i=0;i<m_casillas.size();i++){
-        foreach(int casilla,m_casillasOca){
-            if(i+1==casilla){
+    for (int i = 0; i < m_casillas.size(); ++i) {
+        const int numeroCasilla = i + 1;
+
+        for (int casilla : kCasillasOca) {
+            if (numeroCasilla == casilla) {
                 m_casillas[i]->setTipo(Casilla::Tipo::Oca);
-                m_casillas[i]->setStyleSheet("QFrame#frame{"
-                                             "border-image: url(:/Recursos/Imagenes/CasillaOca2.png);"
-                                             "}");
+                m_casillas[i]->setStyleSheet(
+                    QStringLiteral("QFrame#frame{ border-image: url(:/Recursos/Imagenes/CasillaOca2.png); }"));
             }
         }
-        foreach(int casilla,m_casillasPuente){
-            if(i+1==casilla){
+        for (int casilla : kCasillasPuente) {
+            if (numeroCasilla == casilla) {
                 m_casillas[i]->setTipo(Casilla::Tipo::Puente);
-                m_casillas[i]->setStyleSheet("QFrame#frame{"
-                                             "border-image: url(:/Recursos/Imagenes/Portal.png);"
-                                             "}");
+                m_casillas[i]->setStyleSheet(
+                    QStringLiteral("QFrame#frame{ border-image: url(:/Recursos/Imagenes/Portal.png); }"));
             }
         }
-        foreach(int casilla,m_casillasCalabera){
-            if(i+1==casilla){
+        for (int casilla : kCasillasCalavera) {
+            if (numeroCasilla == casilla) {
                 m_casillas[i]->setTipo(Casilla::Tipo::Calavera);
-                m_casillas[i]->setStyleSheet("QFrame#frame{"
-                                             "border-image: url(:/Recursos/Imagenes/CasillaCalavera3.png);"
-                                             "}");
+                m_casillas[i]->setStyleSheet(
+                    QStringLiteral("QFrame#frame{ border-image: url(:/Recursos/Imagenes/CasillaCalavera3.png); }"));
             }
         }
-        if(i+1==m_casillaFinal){
+        if (numeroCasilla == kCasillaFinal) {
             m_casillas[i]->setTipo(Casilla::Tipo::Final);
         }
     }
@@ -231,117 +235,107 @@ void Tablero::cargarWidgets()
 
 void Tablero::moverFicha(int pasos)
 {
-    if(actual==nullptr)
+    if (m_actual == nullptr) {
         return;
-    if(m_preguntas.isEmpty())
-        restaurarPreguntas();
-
-    for(int i=0;i<pasos;i++){
-        delay(m_speed);
-        m_casillas[actual->numCasillas()]->eliminarFicha(actual);
-        m_casillas[actual->numCasillas()+1]->aniadirFicha(actual);
-        actual->setNumCasillas(actual->numCasillas() + 1);
-        QSound::play(":/Recursos/Audio/SoundTap.wav");
     }
-    if(pasos<0){
-        for(int i=0;i>pasos;i--){
-            if(actual->numCasillas()<=0)
+    if (m_preguntas.isEmpty()) {
+        restaurarPreguntas();
+    }
+
+    if (pasos > 0) {
+        for (int i = 0; i < pasos; ++i) {
+            delay(kVelocidadAnimacion);
+            m_casillas[m_actual->numCasillas()]->eliminarFicha(m_actual);
+            m_casillas[m_actual->numCasillas() + 1]->aniadirFicha(m_actual);
+            m_actual->setNumCasillas(m_actual->numCasillas() + 1);
+            SoundPlayer::play(QStringLiteral(":/Recursos/Audio/SoundTap.wav"));
+        }
+    } else if (pasos < 0) {
+        for (int i = 0; i > pasos; --i) {
+            if (m_actual->numCasillas() <= 0) {
                 break;
-            delay(m_speed+100);
-            actual->setNumCasillas(actual->numCasillas() - 1);
-            m_casillas[actual->numCasillas()]->aniadirFicha(actual);
-            m_casillas[actual->numCasillas()+1]->eliminarFicha(actual);
-            QSound::play(":/Recursos/Audio/SoundTap.wav");
+            }
+            delay(kVelocidadAnimacion + 100);
+            m_actual->setNumCasillas(m_actual->numCasillas() - 1);
+            m_casillas[m_actual->numCasillas()]->aniadirFicha(m_actual);
+            m_casillas[m_actual->numCasillas() + 1]->eliminarFicha(m_actual);
+            SoundPlayer::play(QStringLiteral(":/Recursos/Audio/SoundTap.wav"));
         }
     }
+
     m_formulario->mostrarPregunta();
     cambiarTurno();
     m_formulario->usarPregunta();
 }
 
-void Tablero::moverFicha(QString pasosText)
+void Tablero::procesarTirada(int pasos)
 {
-    if(actual==nullptr)
+    if (m_actual == nullptr || pasos == 0) {
         return;
-    if(pasosText.isEmpty())
-        return;
-    if(m_preguntas.isEmpty())
+    }
+    if (m_preguntas.isEmpty()) {
         restaurarPreguntas();
+    }
 
-    int pasos = pasosText.toInt();
-
-    if(actual->numCasillas()+pasos<m_casillaFinal)
-    {
-        for(int i=0;i<pasos;i++){
-            delay(m_speed);
-            m_casillas[actual->numCasillas()]->eliminarFicha(actual);
-            m_casillas[actual->numCasillas()+1]->aniadirFicha(actual);
-            actual->setNumCasillas(actual->numCasillas() + 1);
-            QSound::play(":/Recursos/Audio/SoundTap.wav");
-        }
-        if(pasos<0){
-            for(int i=0;i>pasos;i--){
-                if(actual->numCasillas()<=0)
-                    break;
-                delay(m_speed+150);
-                actual->setNumCasillas(actual->numCasillas() - 1);
-                m_casillas[actual->numCasillas()]->aniadirFicha(actual);
-                m_casillas[actual->numCasillas()+1]->eliminarFicha(actual);
-                QSound::play(":/Recursos/Audio/SoundTap.wav");
-            }
-        }
-        if (actual->numCasillas() == m_casillaFinal) {
-            // La ficha ha llegado a la casilla final
-
+    if (m_actual->numCasillas() + pasos < kCasillaFinal) {
+        // Mover hacia adelante
+        for (int i = 0; i < pasos; ++i) {
+            delay(kVelocidadAnimacion);
+            m_casillas[m_actual->numCasillas()]->eliminarFicha(m_actual);
+            m_casillas[m_actual->numCasillas() + 1]->aniadirFicha(m_actual);
+            m_actual->setNumCasillas(m_actual->numCasillas() + 1);
+            SoundPlayer::play(QStringLiteral(":/Recursos/Audio/SoundTap.wav"));
         }
 
-
-
-        switch (m_casillas[actual->numCasillas()]->getTipo()) {
+        // Evaluar tipo de casilla
+        switch (m_casillas[m_actual->numCasillas()]->getTipo()) {
         case Casilla::Tipo::Normal:
             m_formulario->mostrarPregunta();
-            QSound::play(":/Recursos/Audio/SoundPregunta.wav");
+            SoundPlayer::play(QStringLiteral(":/Recursos/Audio/SoundPregunta.wav"));
             return;
+
         case Casilla::Tipo::Oca:
-            for(int i=0;i<m_casillasOca.size();i++){
-                if(actual->numCasillas()==m_casillasOca[i]-1){
-                    if(i==m_casillasOca.size()-1)
-                        i = -1;
-                    if(actual->numCasillas()==m_casillasOca.last()-1){
+            for (int i = 0; i < kCasillasOca.size(); ++i) {
+                if (m_actual->numCasillas() == kCasillasOca[i] - 1) {
+                    if (m_actual->numCasillas() == kCasillasOca.last() - 1) {
                         m_dado->bloquearDado();
                         break;
                     }
-
-                    QSound::play(":/Recursos/Audio/SoundOca2.wav");
-                    moverFichaA(m_casillasOca[i+1]);
+                    int siguiente = (i + 1 < kCasillasOca.size()) ? i + 1 : 0;
+                    SoundPlayer::play(QStringLiteral(":/Recursos/Audio/SoundOca2.wav"));
+                    moverFichaA(kCasillasOca[siguiente]);
                     m_dado->bloquearDado();
                     break;
                 }
             }
             return;
+
         case Casilla::Tipo::Calavera:
             moverFichaA(1);
-            QSound::play(":/Recursos/Audio/SoundCalavera.wav");
+            SoundPlayer::play(QStringLiteral(":/Recursos/Audio/SoundCalavera.wav"));
             break;
+
         case Casilla::Tipo::Puente:
-            for(int i=0;i<m_casillasPuente.size();i++){
-                if(actual->numCasillas()==m_casillasPuente[i]-1){
-                    if(i==m_casillasPuente.size()-1)
-                        i = -1;
-                    moverFichaA(m_casillasPuente[i+1]);
-                    QSound::play(":/Recursos/Audio/SoundPortal.wav");
+            for (int i = 0; i < kCasillasPuente.size(); ++i) {
+                if (m_actual->numCasillas() == kCasillasPuente[i] - 1) {
+                    int siguiente = (i + 1 < kCasillasPuente.size()) ? i + 1 : 0;
+                    moverFichaA(kCasillasPuente[siguiente]);
+                    SoundPlayer::play(QStringLiteral(":/Recursos/Audio/SoundPortal.wav"));
                     break;
                 }
             }
             break;
+
         case Casilla::Tipo::Final:
-            QSound::play(":/Recursos/Audio/SoundCorrecto.wav");
-            QMessageBox::information(this,tr("Fin del Juego"),actual->NombreJugador()+tr(" ha Ganado el Juego :D"));
+            SoundPlayer::play(QStringLiteral(":/Recursos/Audio/SoundCorrecto.wav"));
+            QMessageBox::information(this,
+                tr("Fin del Juego"),
+                m_actual->nombreJugador() + tr(" ha Ganado el Juego :D"));
             m_music.stop();
             return;
         }
-    }else{
-        QSound::play(":/Recursos/Audio/SoundIncorrecto2.wav");
+    } else {
+        SoundPlayer::play(QStringLiteral(":/Recursos/Audio/SoundIncorrecto2.wav"));
     }
 
     cambiarTurno();
@@ -350,39 +344,41 @@ void Tablero::moverFicha(QString pasosText)
 
 void Tablero::moverFichaA(int casillaDestino)
 {
-    if(actual==nullptr or casillaDestino>m_casillaFinal or casillaDestino<=0)
+    if (m_actual == nullptr || casillaDestino > kCasillaFinal || casillaDestino <= 0) {
         return;
-    delay(m_speed);
-    m_casillas[actual->numCasillas()]->eliminarFicha(actual);
-    m_casillas[casillaDestino-1]->aniadirFicha(actual);
-    actual->setNumCasillas(casillaDestino-1);
-    QSound::play(":/Recursos/Audio/SoundTap.wav");
+    }
+    delay(kVelocidadAnimacion);
+    m_casillas[m_actual->numCasillas()]->eliminarFicha(m_actual);
+    m_casillas[casillaDestino - 1]->aniadirFicha(m_actual);
+    m_actual->setNumCasillas(casillaDestino - 1);
+    SoundPlayer::play(QStringLiteral(":/Recursos/Audio/SoundTap.wav"));
 }
 
-QList<Pregunta *> Tablero::preguntas()
+QList<Pregunta *> Tablero::preguntas() const
 {
     return m_preguntas;
 }
 
-void Tablero::setPreguntas(QList<Pregunta *> newPreguntas)
+void Tablero::setPreguntas(const QList<Pregunta *> &nuevasPreguntas)
 {
-    m_preguntas = newPreguntas;
+    m_preguntas = nuevasPreguntas;
     m_formulario->setPreguntas(&m_preguntas);
-    m_preguntasBase = newPreguntas;
+    m_preguntasBase = nuevasPreguntas;
 }
 
 
 void Tablero::cambiarTurno()
 {
-    if(m_jugadores.size()<0){
-        actual=nullptr;
+    if (m_jugadores.isEmpty()) {
+        m_actual = nullptr;
         return;
     }
     m_turno++;
-    if(m_turno>=m_jugadores.size())
-        m_turno=0;
-    actual = m_jugadores[m_turno];
-    emit actualChanged(actual);
+    if (m_turno >= m_jugadores.size()) {
+        m_turno = 0;
+    }
+    m_actual = m_jugadores[m_turno];
+    emit actualChanged(m_actual);
     m_dado->bloquearDado();
 }
 
@@ -397,17 +393,19 @@ Formulario *Tablero::formulario() const
     return m_formulario;
 }
 
-void Tablero::addFicha(Ficha *newFicha)
+void Tablero::addFicha(Ficha *ficha)
 {
-    if(m_jugadores.size()>=4)
+    if (m_jugadores.size() >= 4) {
         m_jugadores.removeFirst();
-    m_jugadores.append(newFicha);
-    m_casillas[0]->aniadirFicha(m_jugadores.last());
-    if(m_jugadores.size()==1){
-        actual = m_jugadores[0];
-        emit actualChanged(actual);
     }
-    m_turno=0;
+    m_jugadores.append(ficha);
+    m_casillas[0]->aniadirFicha(m_jugadores.last());
+
+    if (m_jugadores.size() == 1) {
+        m_actual = m_jugadores[0];
+        emit actualChanged(m_actual);
+    }
+    m_turno = 0;
     m_formulario->actualizarJugadores();
 }
 
@@ -418,7 +416,9 @@ Dado *Tablero::dado() const
 
 void Tablero::delay(int mSecs)
 {
-    QTime dieTime= QTime::currentTime().addMSecs(mSecs);
-    while (QTime::currentTime() < dieTime)
+    QElapsedTimer timer;
+    timer.start();
+    while (timer.elapsed() < mSecs) {
         QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+    }
 }

@@ -1,25 +1,19 @@
-#ifndef CASILLA_H
-#define CASILLA_H
+#pragma once
+
 #include "ficha.h"
-//#include "preguntas.h"
+
 #include <QWidget>
 #include <QLabel>
 
-namespace Ui {
-class Casilla;
-}
+QT_BEGIN_NAMESPACE
+namespace Ui { class Casilla; }
+QT_END_NAMESPACE
 
 class Casilla : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit Casilla(QWidget *parent = nullptr);
-    ~Casilla();
-    void aniadirFicha(Ficha *newFicha);
-    void eliminarFicha(Ficha *ficha);
-    int casillaEncontrada();
-
     enum class Tipo {
         Normal,
         Calavera,
@@ -28,18 +22,20 @@ public:
         Final
     };
 
-    // Esta es una función miembro constante llamada 'getTipo' que no toma argumentos.
-    // Devuelve el valor del miembro de datos 'tipo'. Como es constante, no puede modificar ningún miembro de datos de la clase.
-    Tipo getTipo() const;
+    explicit Casilla(QWidget *parent = nullptr);
+    ~Casilla() override;
 
-    void setTipo(Tipo newTipo);
+    void aniadirFicha(Ficha *ficha);
+    void eliminarFicha(Ficha *ficha);
+
+    Tipo getTipo() const;
+    void setTipo(Tipo nuevoTipo);
 
 private:
     Ui::Casilla *ui;
-    QVector<Ficha*> m_Fichas;
-    void mostrarFicha();
-    Tipo tipo; //Almacena tipo de casilla
-    QList <QLabel*> LugarFichas;
-};
+    QVector<Ficha *> m_fichas;
+    QList<QLabel *> m_lugarFichas;
+    Tipo m_tipo = Tipo::Normal;
 
-#endif // CASILLA_H
+    void actualizarVistaFichas();
+};

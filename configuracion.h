@@ -1,13 +1,13 @@
-#ifndef CONFIGURACION_H
-#define CONFIGURACION_H
+#pragma once
+
+#include <QDialog>
 
 #include "idiomas.h"
-#include <QDialog>
-#include <temario.h>
+#include "temario.h"
 
-namespace Ui {
-class Configuracion;
-}
+QT_BEGIN_NAMESPACE
+namespace Ui { class Configuracion; }
+QT_END_NAMESPACE
 
 class Configuracion : public QDialog
 {
@@ -15,24 +15,22 @@ class Configuracion : public QDialog
 
 public:
     explicit Configuracion(QWidget *parent = nullptr);
-    ~Configuracion();
+    ~Configuracion() override;
+
     Temario *temario();
+    Idiomas *idiomas();
+
+    void cerrarVentana();
+
 signals:
-    void idiomaCambiado(QString idioma);
-public slots:
-    void cerrarVentana() { this->close(); }
+    void idiomaCambiado(const QString &idioma);
+
 private slots:
-
     void on_btnOpcion_1_clicked();
-
     void on_btnOpcion_2_clicked();
 
 private:
     Ui::Configuracion *ui;
-    Temario *m_temario;
-    Idiomas *m_idiomas;
-public:
-    Idiomas *idiomas() { return m_idiomas; }
+    Temario *m_temario = nullptr;
+    Idiomas *m_idiomas = nullptr;
 };
-
-#endif // CONFIGURACION_H

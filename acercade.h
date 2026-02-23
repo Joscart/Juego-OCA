@@ -1,11 +1,10 @@
-#ifndef ACERCADE_H
-#define ACERCADE_H
+#pragma once
 
 #include <QDialog>
 
-namespace Ui {
-class AcercaDe;
-}
+QT_BEGIN_NAMESPACE
+namespace Ui { class AcercaDe; }
+QT_END_NAMESPACE
 
 class AcercaDe : public QDialog
 {
@@ -13,10 +12,8 @@ class AcercaDe : public QDialog
 
 public:
     explicit AcercaDe(QWidget *parent = nullptr);
-    ~AcercaDe();
+    ~AcercaDe() override;
 
 private:
     Ui::AcercaDe *ui;
 };
-
-#endif // ACERCADE_H

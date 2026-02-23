@@ -1,13 +1,15 @@
 #include "formulario.h"
 #include "ui_formulario.h"
 
-Formulario::Formulario(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Formulario)
+#include <QElapsedTimer>
+
+Formulario::Formulario(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::Formulario)
 {
-    ui->setupUi(this); 
-    ui->lblGanso->setMovie(new QMovie(":/Recursos/Videos/XOsX.gif"));
-    ui->lblGanso->movie()->setScaledSize(QSize(100,100));
+    ui->setupUi(this);
+    ui->lblGanso->setMovie(new QMovie(QStringLiteral(":/Recursos/Videos/XOsX.gif")));
+    ui->lblGanso->movie()->setScaledSize(QSize(100, 100));
     ui->lblGanso->movie()->start();
     actualizarJugadores();
 }
@@ -17,19 +19,19 @@ Formulario::~Formulario()
     delete ui;
 }
 
-void Formulario::setPreguntas(QList<Pregunta *> *newPreguntas)
+void Formulario::setPreguntas(QList<Pregunta *> *nuevasPreguntas)
 {
-    m_preguntas = newPreguntas;
+    m_preguntas = nuevasPreguntas;
     m_actual = m_preguntas->back();
 }
 
 void Formulario::usarPregunta()
 {
-    if(m_preguntas->size()<0 and m_preguntas->isEmpty()){
+    if (m_preguntas == nullptr || m_preguntas->isEmpty()) {
         m_actual = nullptr;
         return;
     }
-    if(m_preguntas->size()==1){
+    if (m_preguntas->size() == 1) {
         m_actual = nullptr;
         m_preguntas->pop_back();
         return;
@@ -40,11 +42,11 @@ void Formulario::usarPregunta()
 
 void Formulario::mostrarPregunta()
 {
-    if(m_actual==nullptr)
+    if (m_actual == nullptr) {
         return;
+    }
     ui->stkPreguntar->setCurrentIndex(0);
     ui->lblPregunta->setText(m_actual->pregunta());
-
 }
 
 Pregunta *Formulario::actual() const
@@ -57,7 +59,6 @@ void Formulario::on_btnVerdadero_clicked()
     emit respuesta(true);
 }
 
-
 void Formulario::on_btnFalso_clicked()
 {
     emit respuesta(false);
@@ -66,7 +67,7 @@ void Formulario::on_btnFalso_clicked()
 void Formulario::correcto()
 {
     ui->stkPreguntar->setCurrentIndex(2);
-    ui->lblPreguntar->setPixmap(QPixmap(":/Recursos/Imagenes/OcaCorrecto.png"));
+    ui->lblPreguntar->setPixmap(QPixmap(QStringLiteral(":/Recursos/Imagenes/OcaCorrecto.png")));
     delay(1000);
     ui->stkPreguntar->setCurrentIndex(1);
 }
@@ -74,38 +75,37 @@ void Formulario::correcto()
 void Formulario::incorrecto()
 {
     ui->stkPreguntar->setCurrentIndex(2);
-    ui->lblPreguntar->setPixmap(QPixmap(":/Recursos/Imagenes/OcaIncorrecto2.png"));
+    ui->lblPreguntar->setPixmap(QPixmap(QStringLiteral(":/Recursos/Imagenes/OcaIncorrecto2.png")));
     delay(1000);
     ui->stkPreguntar->setCurrentIndex(1);
 }
 
 void Formulario::delay(int mSecs)
 {
-    QTime dieTime= QTime::currentTime().addMSecs(mSecs);
-    while (QTime::currentTime() < dieTime)
+    QElapsedTimer timer;
+    timer.start();
+    while (timer.elapsed() < mSecs) {
         QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+    }
 }
 
-void Formulario::setFichaActual(Ficha *newFichaActual)
+void Formulario::setFichaActual(Ficha *ficha)
 {
-    m_fichaActual = newFichaActual;
-    ui->lblTurnoFicha->setText(tr("Turno:\n" )+ m_fichaActual->NombreJugador());
+    m_fichaActual = ficha;
+    ui->lblTurnoFicha->setText(tr("Turno:\n") + m_fichaActual->nombreJugador());
     ui->lblImagenFicha->setPixmap(m_fichaActual->imagen());
     ui->stkPreguntar->setCurrentIndex(1);
 }
 
-void Formulario::setJugadores(QList<Ficha *> *newJugadores)
+void Formulario::setJugadores(QList<Ficha *> *jugadores)
 {
-    m_jugadores = newJugadores;
+    m_jugadores = jugadores;
 }
 
 void Formulario::actualizarJugadores()
 {
-    if(m_jugadores==nullptr)
+    if (m_jugadores == nullptr || m_actual == nullptr) {
         return;
-    if(m_actual==nullptr)
-        return;
-
+    }
     ui->stkPreguntar->setCurrentIndex(1);
 }
-

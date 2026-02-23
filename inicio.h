@@ -1,11 +1,10 @@
-#ifndef INICIO_H
-#define INICIO_H
+#pragma once
 
 #include <QWidget>
 
-namespace Ui {
-class Inicio;
-}
+QT_BEGIN_NAMESPACE
+namespace Ui { class Inicio; }
+QT_END_NAMESPACE
 
 class Inicio : public QWidget
 {
@@ -13,10 +12,8 @@ class Inicio : public QWidget
 
 public:
     explicit Inicio(QWidget *parent = nullptr);
-    ~Inicio();
+    ~Inicio() override;
 
 private:
     Ui::Inicio *ui;
 };
-
-#endif // INICIO_H

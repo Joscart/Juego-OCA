@@ -1,17 +1,13 @@
 #include "casilla.h"
 #include "ui_casilla.h"
 
-Casilla::Casilla(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Casilla)
+Casilla::Casilla(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::Casilla)
 {
     ui->setupUi(this);
-    LugarFichas.append(ui->lbl1);
-    LugarFichas.append(ui->lbl2);
-    LugarFichas.append(ui->lbl3);
-    LugarFichas.append(ui->lbl4);
-    mostrarFicha();
-    setTipo(Tipo::Normal);
+    m_lugarFichas = { ui->lbl1, ui->lbl2, ui->lbl3, ui->lbl4 };
+    actualizarVistaFichas();
 }
 
 Casilla::~Casilla()
@@ -19,59 +15,35 @@ Casilla::~Casilla()
     delete ui;
 }
 
-void Casilla::aniadirFicha(Ficha *newFicha)
+void Casilla::aniadirFicha(Ficha *ficha)
 {
-    m_Fichas.append(newFicha);
-    mostrarFicha();
+    m_fichas.append(ficha);
+    actualizarVistaFichas();
 }
 
 void Casilla::eliminarFicha(Ficha *ficha)
 {
-    for(int i=0;i<m_Fichas.size();i++){
-        if(m_Fichas[i]==ficha){
-            m_Fichas.removeOne(ficha);
-        }
-    }
-    mostrarFicha();
+    m_fichas.removeOne(ficha);
+    actualizarVistaFichas();
 }
 
-
-void Casilla::mostrarFicha()
+void Casilla::actualizarVistaFichas()
 {
-    for(int i=0;i<4;i++){
-        if(i<m_Fichas.size()){
-            LugarFichas[i]->setPixmap(m_Fichas[i]->imagen());
-        }else{
-            LugarFichas[i]->setPixmap(QPixmap());
+    for (int i = 0; i < m_lugarFichas.size(); ++i) {
+        if (i < m_fichas.size()) {
+            m_lugarFichas[i]->setPixmap(m_fichas[i]->imagen());
+        } else {
+            m_lugarFichas[i]->setPixmap(QPixmap());
         }
     }
-
 }
 
-void Casilla::setTipo(Tipo newTipo)
+void Casilla::setTipo(Tipo nuevoTipo)
 {
-    tipo = newTipo;
+    m_tipo = nuevoTipo;
 }
 
 Casilla::Tipo Casilla::getTipo() const
 {
-    return tipo;
+    return m_tipo;
 }
-
-
-int Casilla::casillaEncontrada()
-{
-    switch (tipo) {
-    case Tipo::Normal:
-        return 0;
-    case Tipo::Calavera:
-        return 1;
-    case Tipo::Oca:
-        return 2;
-    case Tipo::Puente:
-        return 3;
-    default:
-        return -1;  // Podría ser útil tener un valor por defecto en caso de error.
-    }
-}
-
